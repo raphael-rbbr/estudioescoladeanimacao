@@ -1,0 +1,3998 @@
+{% extends "base.html" %}
+{% block content %}
+<body data-rsssl="1" class="page-template page-template-inscricao page-template-inscricao-php page page-id-114 logged-in" cz-shortcut-listen="true">
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KV2DD7R"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div id="cover" style="display: none;"></div>
+
+  {% comment %} <div class="popupformcl">
+
+<div class="formpopupcl">
+
+  <span class="closepopupcl"><i class="fas fa-times" aria-hidden="true"></i></span>
+
+  <img src="https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/logo-eea-cl.png">
+
+  <p>Cadastre-se e garanta seu desconto!</p>
+
+
+  <form action="index" method="POST" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+    {% csrf_token %}
+    <div class="flexfields">
+    <input type="text" value="" name="FNAME" class="" id="mce-FNAME" placeholder="Nome Completo">
+
+    <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="E-mail">
+
+    <input type="text" name="PHONE" class="" value="" id="mce-PHONE" placeholder="Telefone">
+
+    <select name="INTERESSE" class="" id="mce-INTERESSE" placeholder="">
+      <option value="">Área de Interesse</option>
+      <option value="Processos da animação">Processos da animação</option>
+      <option value="Princípios da animação">Princípios da animação</option>
+      <option value="Roteiro">Roteiro</option>
+      <option value="Storyboard">Storyboard</option>
+      <option value="Design de personagens">Design de personagens</option>
+      <option value="Outros">Outros</option>
+    </select>
+    </div>
+
+    <div class="response" id="mce-error-response" style="display:none"></div>
+    <div class="response" id="mce-success-response" style="display:none"></div>
+
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_5246cb86ae4edf01550aaeb29_9a93b95153" tabindex="-1" value=""></div>
+
+    <input type="submit" value="Enviar" name="subscribe" id="mc-embedded-subscribe" class="button">
+
+  </form>
+
+</div> {% endcomment %}
+
+<div class="shadowcl"></div>
+
+</div>
+  <div id="topo" style="display: block;"><a href="#gov"><i class="far fa-arrow-alt-circle-up" aria-hidden="true"></i></a></div>
+
+  <div id="menumobile" class="fixed"></div>
+  <div class="menu-mobile-container"><ul id="menu-mobile" class="menu"><li id="menu-item-367" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-367"><a href="http://sh-pro112.teste.website/~estu1649/">Home</a></li>
+<li id="menu-item-372" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-372"><a href="https://estudioescola.com.br/formacao-gratuita/">Formação gratuita</a></li>
+<li id="menu-item-3023" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3023"><a href="https://estudioescola.com.br/cursos-livres/">Cursos Livres</a></li>
+<li id="menu-item-370" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-370"><a href="https://estudioescola.com.br/curtas/">Curtas</a></li>
+<li id="menu-item-377" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-377"><a href="https://estudioescola.com.br/quem-somos/">Quem Somos</a></li>
+<li id="menu-item-369" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-369"><a href="https://estudioescola.com.br/apoie/">Apoie</a></li>
+<li id="menu-item-373" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-373"><a href="https://estudioescola.com.br/fale-conosco/">Fale Conosco</a></li>
+</ul></div>
+  <div class="gov" id="gov">
+
+    <p>Ministério da Cultura, Prefeitura da Cidade do Rio de Janeiro e Secretaria Municipal de Cultura apresentam</p>
+
+  </div>
+
+  <div class="preheader azul">
+
+    <div class="content">
+
+      <div class="redes">
+
+        <ul>
+
+          <li class="youtube">
+            <a href="https://www.youtube.com/user/eescoladeanimacao" target="_blank">YouTube</a>
+          </li>
+
+          <li class="facebook">
+            <a href="https://www.facebook.com/estudioescola/" target="_blank">Facebook</a>
+          </li>
+
+          <li class="instagram">
+            <a href="https://www.instagram.com/estudioescola/" target="_blank">Instagram</a>
+          </li>
+
+          <li class="twitter">
+            <a href="http://twitter.com/estudio_escola" target="_blank">Twitter</a>
+          </li>
+
+          <li class="tiktok">
+            <a href="https://www.tiktok.com/@estudioescoladeanimacao" target="_blank">Tok Tok</a>
+          </li>
+
+        </ul>
+
+      </div>
+
+      <div class="acessibilidade">
+
+        <p class="aumentar">- A +</p>
+
+        <p class="contraste"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path class="cls-1" d="M10,0A10,10,0,1,0,20,10,10,10,0,0,0,10,0Zm0,16.5a6.5,6.5,0,0,1,0-13Z"></path></svg></p>
+
+        <p><a href="http://www.vlibras.gov.br/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path class="cls-1" d="M18.07,4.28a.16.16,0,0,1-.14-.14c0-.69-1.24-1.79-2.83-1.79H13.38L10.07,4.83,6.76,2.35H5c-1.66,0-2.83,1.1-2.83,1.79a.14.14,0,1,1-.28,0C1.93,3.17,3.38,2,5.1,2H6.76l.41-.41a.13.13,0,0,1,.18,0l0,0,2.69,3.17,2.69-3.17a.13.13,0,0,1,.18,0l0,0,.41.41H15c1.72,0,3.17,1.17,3.17,2.14a.17.17,0,0,1-.14.14ZM16,11.45c-.07.48-.14.69-.21.69s-.07.07-.14.07-.06-.07-.06-.14a4.26,4.26,0,0,0,.13-.62,1.25,1.25,0,0,0-.13-.76c0-.07,0-.14.06-.14h.14v.07a1.63,1.63,0,0,1,.14.9Zm-.69.55c0,.07-.07.07-.14.07s-.07-.07-.07-.14a1.85,1.85,0,0,0,.07-.62,1.55,1.55,0,0,0-.21-.76c0-.07,0-.14.07-.14h.14a2.37,2.37,0,0,1,.21.9c0,.49-.07.69-.14.69Zm-.48-.28c-.21.83-.56,1.52-.62,1.8A2.69,2.69,0,0,0,14.07,15,10,10,0,0,1,14,16.76c0,.14-.14.2-.28.2s-.2-.06-.27-.27-.21-1.79-.21-2a.31.31,0,0,0-.21-.28c-.07,0-.14.07-.2.35-.14.62-.35,2.14-.42,2.48s-.21.41-.27.41h-.07a.24.24,0,0,1-.28-.2v-.07c0-.35.28-2.42.28-2.62s0-.21-.07-.21-.07.07-.14.14c-.21.27-1.17,2-1.45,2.55-.07.14-.14.14-.27.14a.26.26,0,0,1-.21-.07c-.07-.07-.21-.28-.14-.41s1-2.35,1.17-2.63.07-.34-.07-.34-.13.07-.27.14c-.35.34-1.66,1.72-1.86,1.86s-.14.14-.21.14-.14-.07-.21-.14a.32.32,0,0,1-.07-.41,29.68,29.68,0,0,0,2.07-2.83c.28-.49.69-1.31-.14-1.31h-.13c-.35,0-.56.07-.76.07a3.57,3.57,0,0,1-.56-.07c-.13-.07-.41-.21-.34-.42s.48-.07.69-.13l.14-.07a6.27,6.27,0,0,0,1.24-.49,7.74,7.74,0,0,1,1.86-.76c.14,0,.28-.06.41-.06a1,1,0,0,1,.49.06,4.58,4.58,0,0,0,1.38,1,1.31,1.31,0,0,1,.2,1.24ZM6.76,13.24a7.48,7.48,0,0,1-.42-1.86,3.67,3.67,0,0,0-.69-1.31,9.76,9.76,0,0,1-.9-1.45c-.07-.14.07-.34.28-.34a.2.2,0,0,1,.21.13c.27.28,1.17,1.38,1.31,1.52a.54.54,0,0,0,.27.14c.14,0,.14-.07.07-.42-.21-.62-.9-2-1-2.27-.21-.48.07-.48.07-.48a.17.17,0,0,1,.14-.07c.06,0,.13,0,.2.13.14.28,1.1,2.21,1.24,2.35s.14.14.21.14.07-.07.07-.21c0-.34-.14-2.28-.21-2.9A.37.37,0,0,1,7.93,6h0a.45.45,0,0,1,.34.27c.07.14.42,2.55.49,2.9a.29.29,0,0,0,.2.28c.07,0,.14-.07.21-.28.07-.48.48-2.34.48-2.55a.26.26,0,0,1,.23-.28H10a.31.31,0,0,1,.27.35c0,.21-.2,2.55-.13,3.31a2.92,2.92,0,0,1-.9.27h0l-.14.07H9a.88.88,0,0,0-.9.42.8.8,0,0,0-.07.55c.14.34.55.55.62.62h0a1.54,1.54,0,0,0,.76.14,3.91,3.91,0,0,0,.76-.07l-.21.41-.07.07c-.13.21-.55.83-1.24,1.73H8.27a1.85,1.85,0,0,0-.62.07s-.56-.07-.9-.9Zm.55,1.52c0,.07-.07.07-.14.07H7.1a1.51,1.51,0,0,1-.69-.56,3.42,3.42,0,0,1-.35-.62c0-.07,0-.13.07-.13s.14,0,.14.06a3.66,3.66,0,0,0,.28.56,1.73,1.73,0,0,0,.62.48c.07,0,.07.07.07.14ZM6.69,15a.07.07,0,0,1-.07.07H6.55a1.54,1.54,0,0,1-.62-.62,1.21,1.21,0,0,1-.28-.69.11.11,0,1,1,.21-.07,1,1,0,0,0,.28.55,1.73,1.73,0,0,0,.55.56c.07,0,.07.07.07.13ZM17,0H3A3,3,0,0,0,0,3V17a3,3,0,0,0,3,3H17a3.07,3.07,0,0,0,3-3V3a3.06,3.06,0,0,0-3-3" transform="translate(0)"></path></svg></a></p>
+
+      </div>
+
+      <div class="menu-pre-header-container"><ul id="menu-pre-header" class="menu"><li id="menu-item-290" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-290"><a href="https://estudioescola.com.br/acessibilidade/">Acessibilidade</a></li>
+<li id="menu-item-2018" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-2018"><a rel="privacy-policy" href="https://estudioescola.com.br/politica-de-privacidade/">Política de privacidade</a></li>
+<li id="menu-item-3707" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3707"><a href="https://estudioescola.com.br/perguntasfrequentes/">Perguntas frequentes</a></li>
+</ul></div>
+      <div class="clear"></div>
+
+    </div>
+
+  </div>
+
+  <div class="header azul ">
+
+    <div class="content">
+
+      <div class="menu-esquerda-container"><ul id="menu-esquerda" class="menu"><li id="menu-item-3684" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3684"><a href="https://estudioescola.com.br/formacao-gratuita/">Formação gratuita</a></li>
+<li id="menu-item-3019" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3019"><a href="https://estudioescola.com.br/cursos-livres/">Cursos Livres</a></li>
+<li id="menu-item-4474" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4474"><a href="https://estudioescola.com.br/curtas/">Curtas</a></li>
+</ul></div>
+      <div class="menu-direita-container"><ul id="menu-direita" class="menu"><li id="menu-item-3020" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3020"><a href="https://estudioescola.com.br/quem-somos/">Quem Somos</a></li>
+<li id="menu-item-1958" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1958"><a href="https://estudioescola.com.br/apoie/">Apoie</a></li>
+<li id="menu-item-288" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-288"><a href="https://estudioescola.com.br/fale-conosco/">Fale Conosco</a></li>
+</ul></div>
+      <p class="logo"><a href="https://estudioescola.com.br">Estudio Escola de Animação</a></p>
+
+      <div class="clear"></div>
+
+    </div>
+
+  </div>
+<div class="site">
+
+  <div class="inscricao">
+
+  <div class="content">
+
+      <div class="form">
+
+          <div class="navform">
+
+              <p class="tabum active">Seus dados</p>
+
+              <p class="tabdois">Sua família</p>
+
+              <p class="tabtres">Sua escolaridade</p>
+
+              <p class="tabquatro">Seus interesses</p>
+
+          </div>
+
+          <form action="." id="criauser" name="criauser" method="POST" enctype="multipart/form-data" novalidate="novalidate"> {% csrf_token %}
+
+              <div class="dadospessoais abaform">
+
+              <input type="checkbox" name="mc4wp-subscribe" value="1" checked="" class="none">
+
+                  <!-- <label><input type="checkbox" id="aceitoregulamento">ao selecionar esta opção e prosseguir com a inscrição, você declara que está de acordo a nossa <a href="https://estudioescola.com.br/politica-de-privacidade/" target="_blank">Política de Privacidade</a>, assim como seus responsáveis legais caso seja menor de idade</label> -->
+
+                  <label for="first_name">Nome Completo (Nome Social para pessoas transgênero):</label>
+                  <input type="text" name="first_name" id="first_name" placeholder="Nome Completo">
+
+                  <!-- <label for="social_name">Nome Social: (Para concorrentes transgênero)</label>
+                  <input type="text" name="social_name" id="social_name" placeholder="Nome Social" /> -->
+
+                  <label for="cpf">CPF (Apenas números)</label>
+                  <input type="number" name="cpf" id="cpf" placeholder="CPF" min="00000000001" max="99999999999">
+
+                  <label for="rg">RG </label>
+                  <input type="tel" name="rg" id="rg" placeholder="RG" min="000000001" max="999999999">
+
+                  <div class="small">
+
+                      <label for="nascimento">Data de Nascimento</label>
+                      <input type="date" name="nascimento" id="nascimento" placeholder="Data de Nascimento">
+
+                  </div>
+
+                  <div class="small nomargin">
+
+                      <label for="idade">Idade</label>
+                      <select name="idade" id="idade">
+                          <option value="">--</option>
+                          <option>15 anos ou menos</option>
+                          <option>16</option>
+                          <option>17</option>
+                          <option>18</option>
+                          <option>19</option>
+                          <option>20</option>
+                          <option>21</option>
+                          <option>22</option>
+                          <option>23</option>
+                          <option>24</option>
+                          <option>25 anos ou mais</option>
+                      </select>
+
+                  </div>
+
+                  <div class="spacer"></div>
+
+                  <label for="genero">Como você se autodeclara em relação à gênero?</label>
+                  <select name="genero" id="genero">
+                      <option value="">--</option>
+                      <option value="Mulher cis">Mulher cis</option>
+                      <option value="Mulher trans">Mulher trans</option>
+                      <option value="Homem cis">Homem cis</option>
+                      <option value="Homem trans">Homem trans</option>
+                      <option value="Não-binária">Não-binária</option>
+           <option value="Outro">Outro</option>
+                  </select>
+
+                  <label for="generooutros">Outros</label>
+                  <input type="text" name="generooutros" id="generooutros" placeholder="Outros">
+
+                  <label for="raca">Como você se autodeclara em relação à cor/raça?</label>
+                  <p class="smalltext">Utilizamos a referência do IBGE que, desde 2010, considera que as categorias preta e parda constituem a população negra e, por isso, só devem ser selecionadas por pessoas que se autodeclaram como tal.<br>Para mais informações, recomendamos: <a href="http://bit.ly/autodeclaracaonobrasil" target="_blank" rel="noopener noreferrer">http://bit.ly/autodeclaracaonobrasil</a></p>
+                  <select name="raca" id="raca">
+                      <option value="">--</option>
+                      <option value="Amarela">Amarela (oriental)</option>
+                      <option value="Branca">Branca</option>
+                      <option value="Indígena">Indígena (oriundos de comunidades indígenas, aldeadas ou urbanas)</option>
+                      <option value="Parda">Parda (negra de pele clara)</option>
+                      <option value="Preta">Preta (negra de pele escura)</option>
+                  </select>
+
+                  <label for="racaoutros">Outros</label>
+                  <input type="text" name="racaoutros" id="racaoutros" placeholder="Outros">
+
+                  <div class="spacer"></div>
+
+                  <label for="cep">CEP</label>
+                  <input type="tel" name="cep" id="cep" placeholder="CEP">
+
+                  <label for="endereco">Endereço</label>
+                  <input type="text" name="endereco" id="endereco" placeholder="Endereço">
+
+                  <div class="small">
+
+                      <label for="complemento">Complemento</label>
+                      <input type="text" name="complemento" id="complemento" placeholder="Complemento">
+
+                  </div>
+
+                  <div class="small nomargin">
+
+                      <label for="bairro">Bairro</label>
+                      <input type="text" name="bairro" id="bairro" placeholder="Bairro">
+
+                  </div>
+
+                  <div class="small">
+
+                      <label for="cidade">Cidade</label>
+                      <select name="cidade" id="cidade" placeholder="Cidade">
+                          <option value="">--</option>
+                          <option>Belford Roxo</option>
+                          <option>Cachoeiras de Macacu</option>
+                          <option>Duque de Caxias</option>
+                          <option>Guapimirim</option>
+                          <option>Itaboraí</option>
+                          <option>Itaguaí</option>
+                          <option>Japeri</option>
+                          <option>Magé</option>
+                          <option>Maricá</option>
+                          <option>Mesquita</option>
+                          <option>Nilópolis</option>
+                          <option>Niterói</option>
+                          <option>Nova Iguaçu</option>
+                          <option>Paracambi</option>
+                          <option>Petrópolis</option>
+                          <option>Queimados</option>
+                          <option>Rio Bonito</option>
+                          <option>Rio de Janeiro</option>
+                          <option>São Gonçalo</option>
+                          <option>São João de Meriti</option>
+                          <option>Seropédica</option>
+                          <option>Tanguá</option>
+                          <option>Outros</option>
+                      </select>
+
+                  </div>
+
+                  <div class="small nomargin">
+                      <label for="outracidade">Outra Cidade</label>
+                      <input type="text" name="outracidade" id="outracidade" placeholder="Outra Cidade">
+                  </div>
+
+                  <div class="spacer"></div>
+
+                  <div class="small">
+                      <label for="telefone">Telefone para contato ( DDD+ Contato; apenas números): </label>
+                      <input type="tel" name="telefone" id="telefone" placeholder="DDD numero" required="" maxlength="11" aria-required="true">
+
+
+                  </div>
+
+                  <div class="small nomargin">
+                      <label for="whatsapp">Whatsapp ( DDD+ Contato; apenas números)</label>
+                      <input type="tel" name="whatsapp" id="whatsapp" placeholder=" DDD numero" maxlength="11">
+                      <p class="smalltext">Caso você seja selecionado (a), enviaremos para este contato o link para agendamento da entrevista. Atente-se para digitar DDD e número corretamente.</p>
+                  </div>
+
+                  <label for="email">E-mail</label>
+                  <input type="email" name="email" id="email" placeholder="E-mail">
+
+                  <p class="smalltext">Caso você seja selecionado (a) este será o email para qual enviaremos todas as informações do projeto, informe um email que você costuma consultar.</p>
+
+                  <a class="btn small tabdois">Seguir</a>
+
+              </div>
+
+              <div class="dadosescolares abaform">
+
+                  <div class="spacer"></div>
+
+                  <p>Nível de Escolaridade:</p>
+
+                  <div class="boxerro">
+                      <input type="radio" name="escolaridade" id="escolaridade_um" value="Ensino Fundamental incompleto em escola pública">
+                      <label for="escolaridade_um">Ensino Fundamental incompleto em escola pública</label>
+                  </div>
+
+                  <div class="clear"></div>
+
+                  <input type="radio" name="escolaridade" id="escolaridade_dois" value="Ensino Fundamental incompleto em escola particular">
+                  <label for="escolaridade_dois">Ensino Fundamental incompleto em escola particular</label>
+                  <input type="radio" name="escolaridade" id="escolaridade_tres" value="Ensino Fundamental completo em escola pública">
+                  <label for="escolaridade_tres">Ensino Fundamental completo em escola pública</label>
+                  <input type="radio" name="escolaridade" id="escolaridade_quatro" value="Ensino Fundamental completo em escola particular">
+                  <label for="escolaridade_quatro">Ensino Fundamental completo em escola particular</label>
+                  <input type="radio" name="escolaridade" id="escolaridade_cinco" value="Ensino Médio incompleto em escola pública">
+                  <label for="escolaridade_cinco">Ensino Médio incompleto em escola pública </label>
+                  <input type="radio" name="escolaridade" id="escolaridade_seis" value="Ensino Médio incompleto em escola particular">
+                  <label for="escolaridade_seis">Ensino Médio incompleto em escola particular</label>
+                  <input type="radio" name="escolaridade" id="escolaridade_sete" value="Ensino Médio completo em escola pública">
+                  <label for="escolaridade_sete">Ensino Médio completo em escola pública</label>
+                  <input type="radio" name="escolaridade" id="escolaridade_oito" value="Ensino Médio completo em escola particular">
+                  <label for="escolaridade_oito">Ensino Médio completo em escola particular</label>
+                  <input type="radio" name="escolaridade" id="escolaridade_nove" value="Ensino superior incompleto em instituição pública">
+                  <label for="escolaridade_nove">Ensino superior incompleto em instituição pública</label>
+                  <input type="radio" name="escolaridade" id="escolaridade_dez" value="Ensino superior incompleto em instituição particular">
+                  <label for="escolaridade_dez">Ensino superior incompleto em instituição particular</label>
+                  <input type="radio" name="escolaridade" id="escolaridade_onze" value="Ensino superior completo em instituição pública">
+                  <label for="escolaridade_onze">Ensino superior completo em instituição pública</label>
+                  <input type="radio" name="escolaridade" id="escolaridade_doze" value="Ensino superior completo em instituição particular">
+                  <label for="escolaridade_doze">Ensino superior completo em instituição particular</label>
+
+                  <div class="spacer"></div>
+
+                  <div class="small">
+                      <label for="instituicao">Instituição de Ensino</label>
+                      <input type="text" name="instituicao" id="instituicao" placeholder="Instituição de Ensino">
+                  </div>
+
+                  <div class="small nomargin">
+                      <label for="serie">Se estiver estudando neste ano, informe série/período:</label>
+                      <input type="text" name="serie" id="serie" placeholder="Série / Período">
+                  </div>
+
+                  <div class="spacer"></div>
+
+                  <label for="curso">Curso (Caso esteja na Escola técnica ou na faculdade)</label>
+                  <input type="text" name="curso" id="curso" placeholder="Curso">
+
+                  <div class="spacer"></div>
+
+                  <p>Turno:</p>
+
+                  <input type="radio" name="turno" id="turno_um" value="Manhã">
+                  <label for="turno_um">Manhã</label>
+                  <input type="radio" name="turno" id="turno_dois" value="Tarde">
+                  <label for="turno_dois">Tarde</label>
+                  <input type="radio" name="turno" id="turno_tres" value="Noite">
+                  <label for="turno_tres">Noite</label>
+                  <input type="radio" name="turno" id="turno_quatro" value="Integral">
+                  <label for="turno_quatro">Integral</label>
+
+                  <div class="spacer"></div>
+
+                  <a class="btn small tabquatro">Seguir</a>
+
+              </div>
+
+              <div class="dadosfamiliares abaform">
+
+              <div class="boxmenor">
+
+                  <p>EM CASO DE TER MENOS DE 18 ANOS, INFORMAR: </p>
+
+                  <label for="nomeresponsavel">Nome completo do Responsável</label>
+                  <input type="text" name="nomeresponsavel" id="nomeresponsavel" placeholder="Nome">
+
+                  <label for="telefoneresponsavel">Telefone para contato </label>
+                  <input type="text" name="telefoneresponsavel" id="telefoneresponsavel" placeholder="Telefone">
+
+                  <!-- <label for="horarioresponsavel">Horário de trabalho</label>
+                  <input type="text" name="horarioresponsavel" id="horarioresponsavel" placeholder="Horário" /> -->
+
+                  </div>
+
+                  <div class="spacer"></div>
+
+                  <p>Você trabalha ou faz estágio?</p>
+
+                      <div class="boxerrorcheckbox">
+                          <input type="radio" name="estagio" id="estagio_nao" value="Não">
+                          <label for="estagio_nao">Não</label>
+                      </div>
+                      <input type="radio" name="estagio" id="estagio_sim" value="Sim">
+                      <label for="estagio_sim">Sim</label>
+
+                  <div class="spacer"></div>
+
+                  <p>Em quais horários você trabalha ou faz estágio?</p>
+
+                  <input type="text" name="horarioestagio" id="horarioestagio" placeholder="Horário">
+
+                  <div class="spacer"></div>
+
+                  <p>Você está em busca de trabalho ou estágio?</p>
+
+                  <div class="boxerrorcheckbox">
+                      <input type="radio" name="buscaestagio" id="buscaestagio_nao" value="Não">
+                      <label for="buscaestagio_nao">Não</label>
+                  </div>
+                      <input type="radio" name="buscaestagio" id="buscaestagio_sim" value="Sim">
+                      <label for="buscaestagio_sim">Sim</label>
+
+                  <div class="spacer"></div>
+
+                  <p>Renda familiar mensal</p>
+                  <p class="smalltext">(Para calcular, some a renda individual das pessoas que moram com você e divida pelo número de indivíduos que residem no domicílio. O resultado é a renda familiar mensal). Valor do salário mínimo em 2023 - R$ 1.302,00.</p>
+
+                      <div class="boxerro">
+                          <input type="radio" name="renda" id="renda_um" value="até 1 salário mínimo (R$ 1.100,00)">
+                          <label for="renda_um">até 1 salário mínimo (R$ 1.302,00)</label>
+                      </div>
+
+                      <div class="clear"></div>
+
+                      <input type="radio" name="renda" id="renda_dois" value="até 2 salários mínimos (R$ 2.200,00)">
+                      <label for="renda_dois">até 2 salários mínimos (R$ 2.604,00)</label>
+
+                      <input type="radio" name="renda" id="renda_tres" value="até 3 salários mínimos (R$ 3.300,00)">
+                      <label for="renda_tres">até 3 salários mínimos (R$ 3.906,00)</label>
+
+                      <input type="radio" name="renda" id="renda_quatro" value="até 4 salários mínimos (R$ 4.400,00)">
+                      <label for="renda_quatro">até 4 salários mínimos (R$ 5.208,00)</label>
+
+                      <input type="radio" name="renda" id="renda_cinco" value="a partir de 4 salários mínimos (R$ 4.400,01)">
+                      <label for="renda_cinco">a partir de 4 salários mínimos (R$ 5.208,01)</label>
+
+                  <div class="clear"></div>
+
+                  <label for="pessoasrenda">Quantas pessoas usufruem desta renda?</label>
+                  <select name="pessoasrenda" id="pessoasrenda">
+                      <option value="">--</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="Mais de 5">Mais de 5</option>
+                  </select>
+
+                  <div class="spacer"></div>
+
+                  <p>Você possui algum tipo de deficiência? Se sim, poderia nos dizer qual?</p>
+
+                      <div class="boxerrorcheckbox">
+                          <input type="radio" name="deficiencia" id="deficiencia_nao" value="Não">
+                          <label for="deficiencia_nao">Não</label>
+                      </div>
+                      <input type="radio" name="deficiencia" id="deficiencia_sim" value="Sim">
+                      <label for="deficiencia_sim">Sim</label>
+
+                      <label for="qualdeficiencia">Qual?</label>
+                      <input type="text" name="qualdeficiencia" id="qualdeficiencia" placeholder="Qual?">
+
+                  <div class="spacer"></div>
+
+                  <p>Precisa de atendimento diferenciado para a realização da entrevista, caso seja selecionado? Se sim, poderia nos dizer qual? </p>
+
+                      <div class="boxerrorcheckbox">
+                          <input type="radio" name="atendimento" id="atendimento_nao" value="Não">
+                          <label for="atendimento_nao">Não</label>
+                      </div>
+                      <input type="radio" name="atendimento" id="atendimento_sim" value="Sim">
+                      <label for="atendimento_sim">Sim</label>
+
+                      <label for="qualatendimento">Qual?</label>
+                      <input type="text" name="qualatendimento" id="qualatendimento" placeholder="Qual?">
+
+                  <div class="spacer"></div>
+
+                      <a class="btn small tabtres">Seguir</a>
+
+              </div>
+
+              <div class="dadosinformacoes abaform">
+
+               <p>Como você ficou sabendo das inscrições para o processo seletivo deste ano? </p>
+
+
+                      <div class="boxerro">
+                          <input type="checkbox" name="conheceu[]" id="conheceu_jornal" value="Jornais/revistas">
+                          <label for="conheceu_jornal">Jornais/revistas</label>
+                      </div>
+
+                      <div class="clear"></div>
+
+                      <input type="checkbox" name="conheceu[]" id="conheceu_site" value="sites">
+                      <label for="conheceu_site">Sites</label>
+
+                      <input type="checkbox" name="conheceu[]" id="conheceu_facebook" value="facebook">
+                      <label for="conheceu_facebook">Facebook</label>
+
+                      <input type="checkbox" name="conheceu[]" id="conheceu_instagram" value="instagram">
+                      <label for="conheceu_instagram">Instagram</label>
+
+                      <input type="checkbox" name="conheceu[]" id="conheceu_youtube" value="youtube">
+                      <label for="conheceu_youtube">YouTube</label>
+
+                      <input type="checkbox" name="conheceu[]" id="conheceu_tiktok" value="tiktok">
+                      <label for="conheceu_tiktok">Tik Tok</label>
+
+                      <input type="checkbox" name="conheceu[]" id="conheceu_twitter" value="twitter">
+                      <label for="conheceu_twitter">Twitter</label>
+
+                      <input type="checkbox" name="conheceu[]" id="conheceu_escola" value="escola">
+                      <label for="conheceu_escola">Escola</label>
+
+                      <input type="checkbox" name="conheceu[]" id="conheceu_email" value="email">
+                      <label for="conheceu_email">Email</label>
+
+                      <input type="checkbox" name="conheceu[]" id="conheceu_whatsapp" value="whatsapp">
+                      <label for="conheceu_whatsapp">Whatsapp</label>
+
+                      <input type="checkbox" name="conheceu[]" id="conheceu_outros" value="outros">
+                      <label for="conheceu_outros">Outros</label>
+
+                      <label for="conheceuoutros">Outros</label>
+                      <input type="text" name="conheceuoutros" id="conheceuoutros" placeholder="Outros">
+
+                  <div class="spacer"></div>
+
+                  <p>Você já se inscreveu para outras edições do Estúdio Escola de Animação?</p>
+
+                      <div class="boxerro">
+                          <input type="radio" name="inscreveu" id="inscreveu_sim1" value="Sim, uma vez.">
+                          <label for="inscreveu_sim1">Sim, uma vez.</label>
+                      </div>
+
+                      <div class="clear"></div>
+
+                      <input type="radio" name="inscreveu" id="inscreveu_sim2" value="Sim, duas vezes.">
+                      <label for="inscreveu_sim2">Sim, duas vezes.</label>
+
+                      <input type="radio" name="inscreveu" id="inscreveu_sim3" value="Sim, três vezes.">
+                      <label for="inscreveu_sim3">Sim, três vezes.</label>
+
+                      <input type="radio" name="inscreveu" id="inscreveu_sim3mais" value="Sim, mais de três vezes.">
+                      <label for="inscreveu_sim3mais">Sim, mais de três vezes.</label>
+
+                      <input type="radio" name="inscreveu" id="inscreveu_nao" value="Não. Esta é a primeira vez que estou me inscrevendo.">
+                      <label for="inscreveu_nao">Não. Esta é a primeira vez que estou me inscrevendo.</label>
+
+                  <div class="spacer"></div>
+
+                  <p>Você já participou da formação do Estúdio Escola de Animação em alguma edição anterior?</p>
+
+                      <div class="boxerro">
+                          <input type="radio" name="participou" id="participou_nao" value="Não">
+                          <label for="participou_nao">Não</label>
+                      </div>
+
+                      <div class="clear"></div>
+
+                      <input type="radio" name="participou" id="participou_sim" value="Sim">
+                      <label for="participou_sim">Sim</label>
+
+                      <div class="small">
+                          <label for="qualedicao">Qual?</label>
+                          <select name="qualedicao" id="qualedicao">
+                              <option>--</option>
+                              <option value="2012">2012</option>
+                              <option value="2013">2013</option>
+                              <option value="2014">2014</option>
+                              <option value="2016">2016</option>
+                              <option value="2017">2017</option>
+                              <option value="2018">2018</option>
+                              <option value="2019">2019</option>
+                              <option value="2020">2020</option>
+                              <option value="2021">2021</option>
+               <option value="2022">2022</option>
+              <option value="2023">2023</option>
+              <option value="2023">2024</option>
+                          </select>
+                      </div>
+
+                  <div class="spacer"></div>
+
+                  <p> A décima segunda edição do Estúdio Escola de Animação será presencial e acontecerá durante 6 meses,  de junho a dezembro de 2024. Serão 2 encontros (aulas)  por semana com duração de 4 horas por dia. A oficina acontece na cidade do Rio de Janeiro e o local de realização das atividades do EEA será situado na região central da cidade. Os custos com transporte serão financiados pelo projeto.</p>
+
+                  <p>VOCÊ ESTÁ DISPOSTO A SE DEDICAR COM ESSA FREQUÊNCIA?</p>
+
+                      <div class="boxerro">
+                          <input type="radio" name="frequencia" id="frequencia_sim" value="Sim">
+                          <label for="frequencia_sim">Sim</label>
+                      </div>
+
+                      <div class="clear"></div>
+
+                      <input type="radio" name="frequencia" id="frequencia_nao" value="Não">
+                      <label for="frequencia_nao">Não</label>
+
+                  <div class="spacer"></div>
+
+                      <p>Caso tenha respondido sim à pergunta anterior, responda de acordo com sua disponibilidade de horário.</p>
+                      <p class="smalltext">ATENÇÃO: SÓ SERÃO DISPONIBILIZADAS TURMAS DE NÍVEL I EM 3 HORÁRIOS  MAS MARQUE TODAS AS SUAS DISPONIBILIDADES POIS NÃO TEMOS COMO GARANTIR EM QUAIS HORÁRIOS TEREMOS TURMAS. ESSA DECISÃO SERÁ TOMADA COM BASE NA DISPONIBILIDADE DOS(AS) CANDIDATOS (AS) SELECIONADOS(AS).</p>
+
+                      <input type="checkbox" name="disponibilidadehorario[]" id="disponibilidadehorario_um" value="Opção 01: 2ª e 4ª – 08h às 12h">
+                      <label for="disponibilidadehorario_um">Opção 01: 2ª e 4ª – 08h às 12h</label>
+
+                      <input type="checkbox" name="disponibilidadehorario[]" id="disponibilidadehorario_dois" value="Opção 02: 2ª e 4ª – 14h às 18h">
+                      <label for="disponibilidadehorario_dois">Opção 02: 2ª e 4ª – 14h às 18h </label>
+
+                      <input type="checkbox" name="disponibilidadehorario[]" id="disponibilidadehorario_quatro" value="Opção 04: 3ª e 5ª – 08h às 12h">
+                      <label for="disponibilidadehorario_quatro">Opção 04: 3ª e 5ª – 08h às 12h</label>
+
+                      <input type="checkbox" name="disponibilidadehorario[]" id="disponibilidadehorario_cinco" value="Opção 05: 3ª e 5ª – 14h às 18h">
+                      <label for="disponibilidadehorario_cinco">Opção 05: 3ª e 5ª – 14h às 18h</label>
+
+                      <input type="checkbox" name="disponibilidadehorario[]" id="disponibilidadehorario_sete" value="Não tenho disponibilidade em nenhuma das opções acima.">
+                      <label for="disponibilidadehorario_sete">Não tenho disponibilidade em nenhuma das opções acima.</label>
+
+                      <div class="spacer"></div>
+
+                      <p>No Estúdio Escola de Animação, a técnica de animação majoritariamente trabalhada em sala de aula é o 2D cut-out digital e por conta disso você utilizará em todas as aulas uma mesa digitalizadora (tablet) para desenhar. Isso permite que seu desenho seja automaticamente digitalizado agilizando o processo de produção. É assim que nossas animações e a de grandes estúdios são produzidas.</p>
+
+                      <p>COMO VOCÊ SE SENTE EM RELAÇÃO A ISSO?</p>
+
+                      <div class="boxerro">
+                          <input type="radio" name="cutout" id="cutout_1" value="Estou tranquilo(a)! Já faço uso da tablet e estou confortável com isso.">
+                          <label for="cutout_1">Estou tranquilo(a)! Já faço uso da tablet e estou confortável com isso.</label>
+                      </div>
+
+                      <div class="clear"></div>
+
+                      <input type="radio" name="cutout" id="cutout_2" value="Estou animado (a) para aprender mais! Sei utilizar um pouco da tablet mas ainda não domino completamente o uso.">
+                      <label for="cutout_2">Estou animado (a) para aprender mais! Sei utilizar um pouco da tablet mas ainda não domino completamente o uso.</label>
+
+                      <input type="radio" name="cutout" id="cutout_3" value="Nunca usei mas quero aprender!">
+                      <label for="cutout_3">Nunca usei mas quero aprender!</label>
+
+                      <input type="radio" name="cutout" id="cutout_3" value="Nunca usei e não quero aprender a usar. ">
+                      <label for="cutout_3">Nunca usei e não quero aprender a usar. </label>
+
+                      <p class="smalltext">Obs. O fato de você não saber usar a tablet ou não dominar completamente o uso da ferramenta, não irá desclassificar você do processo seletivo. Caso você seja selecionado(a), nós ajudaremos você a aprender ou melhorar suas competências a cerca do uso da tablet.</p>
+
+                  <div class="spacer"></div>
+
+                  <p>ATENÇÃO: Esse formulário não é um teste, não é uma prova. Não existem respostas certas ou erradas. Responda com sua intuição, não importa o que os demais estão respondendo.</p>
+
+                  <div class="spacer"></div>
+
+                  <p>1) Você gosta de desenhar?</p>
+
+                      <div class="boxerro">
+                          <input type="radio" name="gostadesenhar" id="gostadesenhar_sim" value="Sim">
+                          <label for="gostadesenhar_sim">Sim</label>
+                      </div>
+
+                      <div class="clear"></div>
+
+                      <input type="radio" name="gostadesenhar" id="gostadesenhar_nao" value="Não">
+                      <label for="gostadesenhar_nao">Não</label>
+
+                  <div class="spacer"></div>
+
+                  <p>2) Com que frequência você desenha?</p>
+
+                  <div class="boxerrorcheckbox">
+                      <input type="radio" name="freqdesenho" id="freqdesenho_1" value="Diariamente">
+                      <label for="freqdesenho_1">Diariamente</label>
+                  </div>
+
+                  <input type="radio" name="freqdesenho" id="freqdesenho_2" value="Semanalmente">
+                  <label for="freqdesenho_2">Semanalmente</label>
+
+                  <input type="radio" name="freqdesenho" id="freqdesenho_3" value="Pelo menos uma vez por mês">
+                  <label for="freqdesenho_3">Pelo menos uma vez por mês</label>
+
+                  <input type="radio" name="freqdesenho" id="freqdesenho_4" value="Raramente desenho">
+                  <label for="freqdesenho_4">Raramente desenho</label>
+
+                  <div class="spacer"></div>
+
+                  <label for="trabalharemgrupo">3) Numa escala de 0 à 10, o quanto você gosta de trabalhar em grupo?</label>
+                  <input type="number" name="trabalharemgrupo" id="trabalharemgrupo" placeholder="0 à 10" min="0" max="10">
+
+                  <label for="criticastrabalgo">4) COMO VOCÊ LIDA COM CRÍTICAS EM RELAÇÃO AO SEU TRABALHO?</label>
+                  <textarea name="criticastrabalgo" id="criticastrabalgo"></textarea>
+
+                  <div class="spacer"></div>
+
+                  {% comment %} <p>5) DOS ITENS ABAIXO, MARQUE AQUELES QUE VOCÊ JÁ TEVE A OPORTUNIDADE DE REALIZAR: </p>
+
+                  <div class="spacer"></div>
+
+                      <div class="litle">
+                          <input type="checkbox" name="oportunidade[]" id="oportunidade_historia" value="Já escrevi uma história">
+                          <label for="oportunidade_historia">Já escrevi uma história</label>
+                      </div>
+
+                      <div class="litle">
+                          <input type="checkbox" name="oportunidade[]" id="oportunidade_historiaquadrinho" value="Já fiz uma história em quadrinhos">
+                          <label for="oportunidade_historiaquadrinho">Já fiz uma história em quadrinhos</label>
+                      </div>
+
+                      <div class="litle">
+                          <input type="checkbox" name="oportunidade[]" id="oportunidade_personagem" value="Já criei um personagem">
+                          <label for="oportunidade_personagem">Já criei um personagem</label>
+                      </div>
+
+                      <div class="litle">
+                          <input type="checkbox" name="oportunidade[]" id="oportunidade_desenhoanimado" value="Já fiz cenários para um desenho animado">
+                          <label for="oportunidade_desenhoanimado">Já fiz cenários para um desenho animado</label>
+                      </div>
+
+                      <div class="litle">
+                          <input type="checkbox" name="oportunidade[]" id="oportunidade_vozes" value="Já fiz vozes para uma animação">
+                          <label for="oportunidade_vozes">Já fiz vozes para uma animação</label>
+                      </div>
+
+                      <div class="litle">
+                          <input type="checkbox" name="oportunidade[]" id="oportunidade_animei" value="Já animei um desenho">
+                          <label for="oportunidade_animei">Já animei um desenho</label>
+                      </div>
+
+                      <div class="litle">
+                          <input type="checkbox" name="oportunidade[]" id="oportunidade_cursos" value="Já fiz outros cursos relacionados à animação">
+                          <label for="oportunidade_cursos">Já fiz outros cursos relacionados à animação</label>
+                      </div>
+
+                      <div class="litle">
+                          <input type="checkbox" name="oportunidade[]" id="oportunidade_divulgar" value="Tenho um local reservado especialmente para divulgar meus trabalhos">
+                          <label for="oportunidade_divulgar">Tenho um local reservado especialmente para divulgar meus trabalhos</label>
+                      </div> {% endcomment %}
+
+                  <div class="spacer"></div>
+
+                  <p>6) HÁ OUTRA COISA QUE VOCÊ JÁ FEZ RELACIONADA À ANIMAÇÃO / AUDIOVISUAL QUE GOSTARIA DE DESTACAR?</p>
+
+                      <textarea name="destacaranimacao" id="destacaranimacao"></textarea>
+
+                  <div class="spacer"></div>
+
+                  <p>7) USE AS LINHAS ABAIXO PARA DAR SEU RECADO: POR QUE VOCÊ SE INTERESSOU EM PARTICIPAR DO ESTÚDIO ESCOLA?</p>
+
+                      <textarea name="porqueinteresse" id="porqueinteresse"></textarea>
+
+                  <div class="spacer"></div>
+
+                  <p>8) VOCÊ POSSUI UM LOCAL ONDE DIVULGA SEU TRABALHO ARTÍSTICO? EM CASO AFIRMATIVO COMPARTILHE O LINK COM A GENTE!</p>
+
+                  <p>Aqui vale de tudo: Instagram, Pasta no Google Drive, Site, Tumblr, Facebook, Behance, Art Station, Devian Art, etc.</p>
+
+                      <textarea name="linkportifolio" id="linkportifolio"></textarea>
+
+                  <p class="smalltext">Obs.: Solicitamos estes links, pois eles nos ajudam a conhecer mais profundamente seus processos de criação e também o volume/frequência em que você produz desenhos. Dos links pedidos acima, se quiser escolher um ou dois, priorize o envio do link do local onde você tem mais trabalhos postados.</p>
+
+                  <div class="spacer"></div>
+
+                  <p>9) COMPILE EM UM PDF DESENHOS QUE VOCÊ CONSIDERE COMO SENDO SUAS MELHORES CRIAÇÕES! QUANTO MAIS DESENHOS MELHOR!</p>
+
+                  <p class="smalltext">DICAS<br>
+
+                  - Se você não compartilhou nenhum link com seus trabalhos, anexe mais desenhos em sua ficha!!<br>
+                  - Em nossa oficina, ensinamos primordialmente animação de personagens. Por isso, na hora de escolher desenhos para anexar à ficha, dê preferência por aqueles que demonstram personagens executando ações. (Pulando, cantando, socando, acenando, etc).<br>
+                  - Desenhos que mostrem o corpo inteiro nos ajudam a entender suas habilidades em relação a como você posa um personagem e isso será útil na animação;<br>
+                  - Desenhos de expressões faciais ( assustado, alegre, triste, chorando, rindo) nos ajudam a entender suas habilidades em transmitir emoções com um desenho e isso também será importante na animação.<br>
+                  -Desenhos de locações e cenários também são super bem vindos, afinal de contas toda história se passa em algum lugar, não é mesmo?!Se você curte isso adicione desenhos desse tipo na sua ficha também.</p>
+
+                  <p class="smalltext">Relembrando alguns critérios de avaliação dos desenhos:<br>
+                  - Originalidade<br>
+                  - Criatividade<br>
+                  - Aplicação de fundamentos básicos do desenho como, perspectiva, luz e sombra, composição, uso das cores, proporção, etc.<br>
+                  - Habilidade em transmitir emoções / contar uma história com o desenho.</p>
+
+                  <div class="spacer"></div>
+
+                  <input type="file" name="desenho" id="desenho" accept="application/pdf">
+
+                  <p class="smalltext">Enviando os desenhos poderemos conhecer melhor seu potencial e você terá mais chances de ser selecionado(a). Lembre-se que todos os desenhos precisam estar no mesmo arquivo e não podem ultrapassar a capacidade de 2MB permitida.</p>
+
+                  <div class="spacer"></div>
+
+                  <input type="submit" value="Finalizar inscrição!" class="btn enviaforminscricao">
+
+              </div>
+
+          </form>
+
+      </div>
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="newsletter">
+
+<div class="content">
+
+  <div class="form">
+
+    <div class="text">
+
+      <p class="tit">Quer saber tudo que rola no Estúdio Escola de Animação?</p>
+
+      <p>Ao se inscrever neste e-mail, você concorda em receber notícias, ofertas e informações do Estúdio Escola de Animação e de nossos parceiros. <a href="https://estudioescola.com.br/politica-de-privacidade">Clique aqui</a> para visitar nossa Política de Privacidade. Links de cancelamento fáceis são fornecidos em todos os e-mails.</p>
+
+    </div>
+
+    {% comment %} <form action="https://estudioescola.us4.list-manage.com/subscribe/post?u=92d1990ad580a14942037b024&amp;id=f68b9907c8" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+
+      <input type="text" placeholder="Nome" value="" name="FNAME" class="" id="mce-FNAME">
+
+      <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="E-mail">
+
+      <input type="text" placeholder="Whatsapp" name="PHONE" class="" value="" id="mce-PHONE">
+
+      <div id="mce-responses">
+        <div class="response" id="mce-error-response" style="display:none"></div>
+        <div class="response" id="mce-success-response" style="display:none"></div>
+      </div>
+      <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_92d1990ad580a14942037b024_f68b9907c8" tabindex="-1" value=""></div>
+
+      <button id="mc-embedded-subscribe">Sim, por favor <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+
+    </form> {% endcomment %}
+
+    <div class="clear"></div>
+
+  </div>
+
+</div>
+
+</div>
+
+<div class="footer">
+
+    <div class="content">
+
+
+
+
+    <div class="patrocinio">
+
+
+
+
+
+            <div class="logopat">
+
+            <p>  </p>
+
+            <a href="" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2024/03/Captura-de-tela-2024-03-14-105332.png" class=""></a>
+
+            </div>
+
+
+
+
+
+            <div class="logopat">
+
+            <p>Copatrocínio  </p>
+
+            <a href="https://eletromidia.com.br/" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2024/03/Horizontal_RGB_laranja-e1711463861213.png" class=""></a>
+
+            </div>
+
+
+            <div class="logopat">
+
+            <p>  </p>
+
+            <a href="https://pages.atlasprofessionals.com/brasil" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2024/03/Captura-de-tela-2024-03-14-110949.png" class=""></a>
+
+            </div>
+
+
+            <div class="logopat">
+
+            <p>  </p>
+
+            <a href="" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2024/06/tke_logo_rgb_standard_black-1-scaled-e1717789967701.jpg" class=""></a>
+
+            </div>
+
+
+            <div class="logopat">
+
+            <p>Apoio  </p>
+
+            <a href="https://dreamers.gr/" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2024/03/Captura-de-tela-2024-03-22-183703.png" class=""></a>
+
+            </div>
+
+
+            <div class="logopat">
+
+            <p>  </p>
+
+            <a href="" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2024/03/Captura-de-tela-2024-03-14-113249.png" class=""></a>
+
+            </div>
+
+
+            <div class="logopat">
+
+            <p>  </p>
+
+            <a href="https://nasajon.com.br/" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2024/03/Captura-de-tela-2024-03-13-160252.png" class=""></a>
+
+            </div>
+
+
+            <div class="logopat">
+
+            <p>  </p>
+
+            <a href="https://luxor.com.br/pt/" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2024/03/Captura-de-tela-2024-03-14-110525.png" class=""></a>
+
+            </div>
+
+
+            <div class="logopat">
+
+            <p>  </p>
+
+            <a href="https://www.grupocard.com.br/" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2024/07/laranja-1.png" class=""></a>
+
+            </div>
+
+
+
+            <div class="logopat">
+
+            <p>Parceria Institucional  </p>
+
+            <a href="https://www.toonboom.com/" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2024/03/TB_logo_30tb_integrated-e1715260457516.png" class=""></a>
+
+            </div>
+
+
+            <div class="logopat">
+
+            <p>  </p>
+
+            <a href="http://www.marcelabronstein.com.br/" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2023/03/8-2.png" class=""></a>
+
+            </div>
+
+
+
+
+            <div class="logopat">
+
+            <p>Patrocínio  </p>
+
+            <a href="https://www.wilsonsons.com.br/pt/grupo" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2024/03/Captura-de-tela-2024-03-14-113131.png" class=""></a>
+
+            </div>
+
+
+            <div class="logopat">
+
+            <p>  </p>
+
+            <a href="https://www.halliburton.com/" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2023/03/Halliburton_logo.svg_.png" class=""></a>
+
+            </div>
+
+
+            <div class="logopat">
+
+            <p>  </p>
+
+            <a href="https://prefeitura.rio/" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2024/12/RIOPREFEITURA-Cultura-horizontal-azul.png" class=""></a>
+
+            </div>
+
+
+
+            <div class="logopat">
+
+            <p>Realização  </p>
+
+            <a href="https://baluartecultura.com.br/" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2023/03/3-2.png" class=""></a>
+
+            </div>
+
+
+            <div class="logopat">
+
+            <p>  </p>
+
+            <a href="http://copastudio.com/pt/copa-pt/" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2023/03/4-2.png" class=""></a>
+
+            </div>
+
+
+            <div class="logopat">
+
+            <p>  </p>
+
+            <a href="https://www.gov.br/turismo/pt-br/secretaria-especial-da-cultura" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2023/03/1-1.png" class="big"></a>
+
+            </div>
+
+
+        <div class="clear"></div>
+
+      </div>
+
+
+
+      <div class="conteudo">
+
+        <p class="logo"><a href="https://estudioescola.com.br">Estúdio Escola de Animação</a></p>
+
+        <div class="clear"></div>
+
+        <div class="redes">
+
+          <ul>
+
+          <li class="youtube">
+            <a href="https://www.youtube.com/user/eescoladeanimacao" target="_blank">YouTube</a>
+          </li>
+
+          <li class="facebook">
+            <a href="https://www.facebook.com/estudioescola/" target="_blank">Facebook</a>
+          </li>
+
+          <li class="instagram">
+            <a href="https://www.instagram.com/estudioescola/" target="_blank">Instagram</a>
+          </li>
+
+          <li class="twitter">
+            <a href="http://twitter.com/estudio_escola" target="_blank">Twitter</a>
+          </li>
+
+          <li class="tiktok">
+            <a href="https://www.tiktok.com/@estudioescoladeanimacao" target="_blank">Tok Tok</a>
+          </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+      <div class="clear"></div>
+
+    </div>
+
+  </div>
+
+  <script src="https://kit.fontawesome.com/04aeb4c834.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet/less" type="text/css" href="https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/css/style.less"><style type="text/css" id="less:wp-content-themes-estudioescoladeanimacao-css-style">* {
+margin: 0;
+padding: 0;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+*:focus {
+outline: 0;
+}
+html {
+overflow: -moz-scrollbars-vertical;
+position: relative;
+height: 100%;
+}
+body {
+position: relative;
+height: 100%;
+font-family: "Nunito", sans-serif;
+font-size: 18px;
+color: #4a4a4a;
+text-align: left;
+}
+.none {
+display: none !important;
+}
+.clear {
+clear: both;
+}
+::selection {
+background: #1bb88f;
+color: #fff;
+}
+::-moz-selection {
+background: #1bb88f;
+color: #fff;
+}
+/***** DEFINIÇÕES ******/
+.fa,
+.fas {
+font-size: 18px;
+}
+a {
+text-decoration: none;
+color: #4a4a4a;
+}
+a:hover {
+color: #4a4a4a;
+}
+a.link {
+font-size: 24px;
+font-weight: bold;
+color: #fff;
+margin-top: 20px;
+display: inline-block;
+}
+a:hover {
+color: #f2cd38;
+}
+.button {
+background: #1bb88f;
+color: #fff;
+text-transform: uppercase;
+font-weight: bold;
+text-align: center;
+padding: 10px 30px;
+border-radius: 10px;
+font-size: 14px;
+transition: all ease 0.2s;
+margin-top: 20px;
+display: inline-block;
+}
+.button.center {
+margin: 0px auto;
+display: table;
+}
+.button.roxo {
+background: #6b0271;
+}
+.button:hover {
+color: #fff;
+background: #42acdc;
+}
+a.btn {
+font-size: 24px;
+text-align: center;
+font-weight: bold;
+color: #fff;
+display: block;
+}
+a.btn.small {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/btn-small.png") no-repeat center center;
+padding: 18px 0px;
+background-size: cover;
+width: 300px !important;
+cursor: pointer;
+}
+a.btn.small:hover {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/btn-small-hover.png") no-repeat center center;
+}
+a.btn.big {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/btn-big.png") no-repeat center center;
+padding: 20px 0px;
+background-size: cover;
+width: 420px;
+}
+a.btn.big:hover {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/btn-big-hover.png") no-repeat center center;
+}
+.content {
+width: 1080px;
+margin: 0px auto;
+}
+.title {
+font-size: 55px;
+font-weight: bold;
+color: #fff;
+line-height: 65px;
+-moz-text-fill-color: white;
+-webkit-text-fill-color: white;
+-moz-text-stroke-color: #000;
+-webkit-text-stroke-color: #000;
+-moz-text-stroke-width: 2px;
+-webkit-text-stroke-width: 2px;
+margin-bottom: 30px;
+}
+.site.fixed {
+margin-top: 190px;
+}
+#topo {
+position: fixed;
+left: 20px;
+bottom: 20px;
+z-index: 200;
+cursor: pointer;
+display: none;
+}
+#topo i {
+font-size: 40px;
+color: #f2cd38;
+}
+#topo i:hover {
+color: #42acdc;
+}
+.redes {
+float: left;
+}
+.redes ul {
+list-style-type: none;
+}
+.redes ul li {
+display: inline-block;
+background-size: cover;
+margin-left: 20px;
+}
+.redes ul li a {
+color: transparent;
+text-transform: uppercase;
+display: block;
+width: 30px;
+height: 30px;
+font-size: 0px;
+}
+.redes ul li.youtube {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/icon-youtube.svg") no-repeat center center;
+}
+.redes ul li.facebook {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/icon-facebook.svg") no-repeat center center;
+}
+.redes ul li.instagram {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/icon-instagram.svg") no-repeat center center;
+}
+.redes ul li.youtube:hover {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/icon-youtube-hover.svg") no-repeat center center;
+}
+.redes ul li.facebook:hover {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/icon-facebook-hover.svg") no-repeat center center;
+}
+.redes ul li.instagram:hover {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/icon-instagram-hover.svg") no-repeat center center;
+}
+.redes ul li.twitter {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/icon-twitter.svg") no-repeat center center;
+}
+.redes ul li.tiktok {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/icon-tiktok.svg") no-repeat center center;
+}
+.redes ul li.tiktok:hover {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/icon-tiktok-hover.svg") no-repeat center center;
+background-size: cover;
+}
+.redes ul li.twitter:hover {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/icon-twitter-hover.svg") no-repeat center center;
+}
+#menumobile {
+display: none;
+}
+.breadcrumb {
+font-size: 12px;
+margin-bottom: 20px;
+}
+h1.vermelho {
+color: #ff2e51;
+}
+h1.azul {
+color: #42acdc;
+}
+h1.marinho {
+color: #3b579d;
+}
+h1.verde {
+color: #1bb88f;
+}
+h1.laranja {
+color: #ff8130;
+}
+.gov {
+background: #3b579d;
+padding: 10px 0px;
+}
+.gov p {
+text-align: center;
+font-size: 14px;
+color: #fff;
+}
+.preheader {
+width: 100%;
+padding: 20px 0px 10px 0px;
+position: relative;
+z-index: 5;
+}
+.preheader .menu {
+float: right;
+list-style-type: none;
+}
+.preheader .menu li {
+display: inline-block;
+margin: 5px 10px 0px 0px;
+padding-right: 15px;
+font-size: 12px;
+}
+.preheader .menu li a {
+color: #fff;
+text-transform: uppercase;
+font-weight: bold;
+}
+.preheader .menu li a:hover {
+color: #f2cd38;
+}
+.preheader .menu li.current-menu-item a {
+color: #f2cd38;
+}
+.preheader .menu li:last-child {
+border-right: none;
+}
+.header.verde {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/bg-header-verde.png") no-repeat center bottom;
+}
+.preheader.verde {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/bg-header-verde.png") no-repeat center center;
+}
+.header.azul {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/bg-header-azul.png") no-repeat center bottom;
+}
+.preheader.azul {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/bg-header-azul.png") no-repeat center center;
+}
+.header.laranja {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/bg-header-laranja.png") no-repeat center bottom;
+}
+.preheader.laranja {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/bg-header-laranja.png") no-repeat center center;
+}
+.header.vermelho {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/bg-header-vermelho.png") no-repeat center bottom;
+}
+.preheader.vermelho {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/bg-header-vermelho.png") no-repeat center center;
+}
+.header.marinho {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/bg-header-marinho.png") no-repeat center bottom;
+}
+.preheader.marinho {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/bg-header-marinho.png") no-repeat center center;
+}
+@keyframes shake {
+0% {
+  transform: translate(1px, 1px) rotate(0deg);
+}
+10% {
+  transform: translate(-1px, -2px) rotate(-1deg);
+}
+20% {
+  transform: translate(-3px, 0px) rotate(1deg);
+}
+30% {
+  transform: translate(3px, 2px) rotate(0deg);
+}
+40% {
+  transform: translate(1px, -1px) rotate(1deg);
+}
+50% {
+  transform: translate(-1px, 2px) rotate(-1deg);
+}
+60% {
+  transform: translate(-3px, 1px) rotate(0deg);
+}
+70% {
+  transform: translate(3px, 1px) rotate(-1deg);
+}
+80% {
+  transform: translate(-1px, -1px) rotate(1deg);
+}
+90% {
+  transform: translate(1px, 2px) rotate(0deg);
+}
+100% {
+  transform: translate(1px, -2px) rotate(-1deg);
+}
+}
+.acessibilidade {
+float: right;
+}
+.acessibilidade p:hover {
+color: #f2cd38;
+}
+.acessibilidade p {
+display: inline-block;
+margin-left: 20px;
+font-weight: bold;
+font-size: 14px;
+color: #fff;
+cursor: pointer;
+}
+.acessibilidade p svg {
+width: 20px;
+height: 20px;
+margin-bottom: -5px;
+cursor: pointer;
+}
+.acessibilidade p svg path {
+fill: #fff;
+}
+.acessibilidade p svg:hover path {
+fill: #f2cd38;
+}
+.home .header,
+.home .preheader {
+background: #1a4c90 url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/dots-lines.png") center center;
+}
+.home .header {
+padding: 0px 0px 0px 0px;
+}
+.home .header.fixed {
+background: #1a4c90 url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/dots-lines.png");
+}
+.header.fixed {
+position: fixed;
+z-index: 150;
+width: 100%;
+top: 0px;
+padding: 0px;
+background-position: center top;
+transition: all ease 0.2s;
+}
+.header.fixed p.logo {
+height: 90px;
+margin: 10px auto 10px auto;
+transition: all ease 0.2s;
+}
+.header.fixed #menu-direita li {
+margin: 35px 55px 0px 0px;
+}
+.header.fixed #menu-esquerda li {
+margin: 35px 20px 0px 0px;
+}
+.header {
+transition: all ease 0.2s;
+padding: 0px 0px 90px 0px;
+position: relative;
+z-index: 5;
+}
+.header p.logo {
+width: 220px;
+height: 150px;
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/logo-eea-verde.png") no-repeat center center;
+background-size: contain;
+color: transparent;
+margin: 0px auto;
+transition: all ease 0.2s;
+}
+.header p.logo a {
+font-size: 0px;
+display: block;
+width: 100%;
+height: -webkit-fill-available;
+height: -moz-fill-available;
+}
+.header p.logo:hover {
+animation: shake 0.5s;
+}
+.header #menu-esquerda {
+float: left;
+}
+.header #menu-esquerda li {
+margin: 50px 20px 0px 0px;
+}
+.header #menu-direita {
+float: right;
+}
+.header #menu-direita li {
+margin: 50px 55px 0px 0px;
+}
+.header .menu {
+list-style-type: none;
+}
+.header .menu li {
+display: inline-block;
+font-size: 14px;
+max-width: 130px;
+vertical-align: top;
+}
+.header .menu li a {
+color: #fff;
+font-weight: bold;
+}
+.header .menu li a:hover {
+color: #f2cd38;
+}
+.header .menu li.current-menu-item a {
+color: #f2cd38;
+}
+.header .menu li:last-child {
+border-right: none;
+}
+.menu-mobile-container {
+display: none;
+}
+.footer {
+padding: 50px 0px;
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/clouds.png") no-repeat center bottom;
+}
+.footer .patrocinio {
+padding: 50px 0px;
+width: 120%;
+margin-left: -8%;
+text-align: center;
+}
+.footer .patrocinio .logopat {
+display: inline-block;
+margin-left: 0px;
+margin-bottom: 30px;
+vertical-align: top;
+}
+.footer .patrocinio .logopat p {
+color: #4a4a4a;
+text-align: left;
+font-weight: bold;
+font-size: 12px;
+margin-bottom: 20px;
+}
+.footer .patrocinio .logopat img {
+max-width: 215px;
+height: 70px;
+object-fit: contain;
+margin-right: 26px;
+}
+.footer .patrocinio .logopat img.big {
+max-width: 350px;
+}
+.footer .conteudo {
+border-top: 2px solid #4a4a4a;
+padding: 60px 30px 100px 30px;
+}
+.footer .conteudo p.logo {
+width: 180px;
+height: 120px;
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/logo-eea-footer.png") no-repeat center center;
+background-size: cover;
+color: transparent;
+margin: 100px auto 50px auto;
+}
+.footer .conteudo p.logo a {
+color: transparent;
+display: block;
+height: 100%;
+}
+.footer .conteudo .redes {
+margin: 0px auto;
+text-align: center;
+float: none;
+}
+.newsletter {
+margin: 80px 0px;
+}
+.newsletter .form:before {
+content: "";
+display: block;
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/devil-2.png") no-repeat center center;
+width: 150px;
+height: 220px;
+position: absolute;
+top: 0px;
+left: -120px;
+}
+.newsletter .form:after {
+content: "";
+display: block;
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/devil-1.png") no-repeat center center;
+width: 170px;
+height: 220px;
+position: absolute;
+bottom: -45px;
+right: -100px;
+}
+.newsletter .form {
+background: #1bb88f;
+border-radius: 10px;
+padding: 20px 30px;
+position: relative;
+}
+.newsletter .form .text {
+width: 45%;
+float: left;
+}
+.newsletter .form .text p {
+color: #fff;
+font-size: 12px;
+}
+.newsletter .form .text p a {
+color: #fff;
+font-weight: bold;
+}
+.newsletter .form .text p a:hover {
+color: #f2cd38;
+}
+.newsletter .form .text .tit {
+font-size: 42px;
+line-height: 52px;
+font-weight: bold;
+margin-bottom: 10px;
+}
+.newsletter .form form {
+width: 50%;
+float: right;
+}
+.newsletter .form form input {
+width: 100%;
+border: none;
+border-radius: 5px;
+height: 45px;
+padding-left: 10px;
+margin-bottom: 10px;
+}
+.newsletter .form form input[type="submit"],
+.newsletter .form form button {
+background: none;
+color: #fff;
+font-weight: bold;
+text-align: left;
+padding-left: 0px;
+font-size: 24px;
+font-family: "Nunito", sans-serif;
+cursor: pointer;
+border: none;
+margin-top: 15px;
+}
+.newsletter .form form input[type="submit"]:hover,
+.newsletter .form form button:hover {
+color: #ff2e51;
+}
+.slide.fixed {
+margin: 150px auto 0px auto;
+}
+.slide {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/bg-slider-home.png") no-repeat center bottom;
+padding: 0px 0px 130px 0px;
+position: relative;
+z-index: 1;
+}
+.slide .boxvideo {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/nuvem-video.png") no-repeat center center;
+background-size: contain;
+padding: 72px 0px;
+}
+.slide .boxvideo iframe {
+width: 570px;
+height: 328px;
+margin: 0px auto;
+display: block;
+background: #fff;
+padding: 5px;
+border-radius: 20px;
+border: 3px solid #000;
+}
+.slide .noticia {
+background: #ff2e51;
+border-radius: 20px;
+margin: 70px auto 0px auto;
+width: 70%;
+padding: 30px;
+color: #fff;
+}
+.slide .noticia .tit {
+font-weight: bold;
+font-size: 20px;
+margin-bottom: 10px;
+}
+.slide .noticia h3 {
+font-size: 42px;
+}
+.slide .noticia .textwidget a {
+font-weight: bold;
+color: #fff;
+}
+.slide .noticia .textwidget a:hover {
+color: #f2cd38;
+}
+.slide .noticia .textwidget div {
+margin: 10px 0px;
+}
+.leftdiv {
+float: left;
+width: 50%;
+}
+.rightdiv {
+float: right;
+width: 45%;
+}
+.eeaonline:after {
+width: 100%;
+height: 100px;
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/bottom-eeaonline.png") no-repeat center center;
+content: "";
+display: block;
+position: absolute;
+bottom: -50px;
+z-index: 100;
+}
+.eeaonline {
+background: #1bb88f url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/dots-lines.png");
+padding: 150px 0px 80px 0px;
+color: #fff;
+margin-top: -60px;
+position: relative;
+}
+.eeaonline .tit {
+font-weight: bold;
+font-size: 46px;
+margin-bottom: 20px;
+line-height: 56px;
+}
+.eeaonline p {
+font-size: 14px;
+line-height: 24px;
+padding-right: 80px;
+}
+.eeaonline iframe {
+width: 100%;
+-webkit-box-shadow: 10px 10px 0px 0px #008c59;
+-moz-box-shadow: 10px 10px 0px 0px #008c59;
+box-shadow: 10px 10px 0px 0px #008c59;
+}
+.eeaonline img.destaqueeea {
+width: 80%;
+transform: rotate(7deg);
+}
+.animacaorj {
+margin-top: -52px !important;
+}
+.mentoriaonline {
+margin-top: -60px;
+padding: 80px 0px 70px 0px;
+color: #fff;
+position: relative;
+overflow: hidden;
+}
+.mentoriaonline img {
+position: absolute;
+top: 0px;
+}
+.mentoriaonline img.left {
+left: -5.5%;
+max-width: 50%;
+height: 100%;
+object-fit: cover;
+object-position: right;
+}
+.mentoriaonline img.right {
+height: 100%;
+object-fit: cover;
+object-position: left;
+max-width: 50%;
+right: 0;
+}
+.mentoriaonline .tit {
+font-weight: bold;
+font-size: 46px;
+margin-bottom: 20px;
+line-height: 56px;
+}
+.mentoriaonline p {
+font-size: 14px;
+line-height: 24px;
+padding-right: 80px;
+}
+.mentoriaonline p a {
+color: #fff;
+}
+.mentoriaonline p a:hover {
+color: #f2cd38;
+}
+.mentoriaonline iframe {
+width: 100%;
+-webkit-box-shadow: 10px 10px 0px 0px #008c59;
+-moz-box-shadow: 10px 10px 0px 0px #008c59;
+box-shadow: 10px 10px 0px 0px #008c59;
+}
+.chome {
+margin-top: -60px !important;
+position: relative;
+}
+.curtas {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/bg-curtas-home.png") no-repeat center center;
+padding: 175px 0px 150px 0px;
+color: #fff;
+margin-top: 50px;
+}
+.curtas .leftdiv {
+float: left;
+width: 35%;
+margin-left: 200px;
+}
+.curtas .rightdiv {
+width: 40%;
+}
+.curtas .tit {
+font-weight: bold;
+font-size: 46px;
+margin-bottom: 20px;
+line-height: 56px;
+}
+.curtas p {
+font-size: 14px;
+line-height: 24px;
+}
+.curtas iframe {
+height: 240px;
+width: 100%;
+-webkit-box-shadow: -10px 10px 0px 0px #fa233c;
+-moz-box-shadow: -10px 10px 0px 0px #fa233c;
+box-shadow: -10px 10px 0px 0px #fa233c;
+}
+.eeaonlinerel {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/bg-rel-eeaonline.png") no-repeat center center;
+padding: 175px 0px 150px 0px;
+color: #fff;
+margin-top: 50px;
+}
+.eeaonlinerel .leftdiv {
+float: left;
+width: 45%;
+}
+.eeaonlinerel .rightdiv {
+width: 50%;
+}
+.eeaonlinerel .rightdiv img {
+width: 80%;
+transform: rotate(7deg);
+float: right;
+}
+.eeaonlinerel .tit {
+font-weight: bold;
+font-size: 46px;
+margin-bottom: 20px;
+line-height: 56px;
+}
+.eeaonlinerel p {
+font-size: 14px;
+line-height: 24px;
+}
+.eeaonlinerel iframe {
+margin-top: 30px;
+height: 300px;
+width: 100%;
+-webkit-box-shadow: 10px 10px 0px 0px #1b9614;
+-moz-box-shadow: 10px 10px 0px 0px #1b9614;
+box-shadow: 10px 10px 0px 0px #1b9614;
+}
+.quemsomosrel {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/bg-rel-apoie.png") no-repeat center center;
+padding: 175px 0px 150px 0px;
+color: #fff;
+margin-top: 50px;
+}
+.quemsomosrel .leftdiv {
+float: left;
+width: 45%;
+}
+.quemsomosrel .rightdiv {
+width: 50%;
+}
+.quemsomosrel .tit {
+font-weight: bold;
+font-size: 46px;
+margin-bottom: 20px;
+line-height: 56px;
+}
+.quemsomosrel p {
+font-size: 14px;
+line-height: 24px;
+}
+.quemsomosrel img {
+margin: -100px 0px -50px 0px;
+}
+.apoierel {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/bg-rel-apoie.png") no-repeat center center;
+padding: 175px 0px 150px 0px;
+color: #fff;
+margin-top: 50px;
+}
+.apoierel .leftdiv {
+float: left;
+width: 45%;
+}
+.apoierel .rightdiv {
+width: 45%;
+}
+.apoierel .tit {
+font-weight: bold;
+font-size: 46px;
+margin-bottom: 20px;
+line-height: 56px;
+}
+.apoierel p {
+font-size: 14px;
+line-height: 24px;
+}
+.apoierel img {
+margin: -100px 0px -50px 0px;
+}
+.internas h1 {
+font-size: 46px;
+margin-bottom: 20px;
+}
+.internas p {
+font-size: 16px;
+line-height: 28px;
+margin-bottom: 10px;
+}
+.internas ul.onecol {
+columns: 1;
+}
+.internas ul {
+list-style-type: none;
+margin: 20px 0px 20px 20px;
+columns: 2;
+}
+.internas ul li {
+display: block;
+font-size: 16px;
+line-height: 28px;
+margin-bottom: 15px;
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/icon-list.png") no-repeat 0px 5px;
+padding-left: 30px;
+}
+.cursoonline {
+background: #1bb88f;
+padding: 30px;
+margin-top: 80px;
+color: #fff;
+}
+.cursoonline img {
+float: left;
+width: 50%;
+margin: -50px 30px 30px 0px;
+}
+.cursoonline .tit {
+font-weight: bold;
+font-size: 42px;
+margin-bottom: 20px;
+}
+.cursoonline p {
+font-size: 16px;
+line-height: 28px;
+margin-bottom: 10px;
+}
+.cursoonline hr {
+width: 90%;
+height: 5px;
+border: none;
+background: #fff;
+border-radius: 10px;
+margin: 0px auto 20px auto;
+}
+.listacurtas:before {
+width: 100%;
+height: 100px;
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/top-patrocinio.png") no-repeat center center;
+content: "";
+display: block;
+position: absolute;
+top: -50px;
+}
+.listacurtas:after {
+width: 100%;
+height: 100px;
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/bottom-patrocinio.png") no-repeat center center;
+content: "";
+display: block;
+position: absolute;
+bottom: -80px;
+}
+.topcurtas {
+margin: -400px 0px -250px 0px;
+}
+.listacurtas {
+background: #fbf6f8;
+padding: 50px 0px;
+position: relative;
+margin: 80px 0px;
+}
+.listacurtas .filtrepor {
+text-align: center;
+font-size: 24px;
+line-height: 34px;
+margin-bottom: 20px;
+}
+.listacurtas .filtrepor span {
+cursor: pointer;
+}
+.listacurtas .filtrepor span.active {
+font-weight: bold;
+color: #ff8130;
+}
+.listacurtas .filtros {
+text-align: right;
+margin-bottom: 30px;
+}
+.listacurtas .filtros p,
+.listacurtas .filtros select {
+display: inline;
+}
+.listacurtas .filtros p {
+font-weight: bold;
+color: #1bb88f;
+}
+.listacurtas .filtros select {
+background: none;
+border: none;
+margin-left: 20px;
+color: #1bb88f;
+}
+.listacurtas .boxcurta:nth-child(even) {
+margin-right: 0px;
+}
+.listacurtas .boxcurta:nth-child(odd) {
+margin-right: 30px;
+}
+.listacurtas .boxcurta {
+width: 48%;
+margin: 10px 0px 30px 0px;
+color: #1bb88f;
+display: inline-block;
+}
+.listacurtas .boxcurta iframe {
+width: 100%;
+max-height: 290px;
+}
+.listacurtas .boxcurta h3 {
+font-size: 24px;
+margin: 10px 0px 5px 0px;
+border-left: 3px solid #1bb88f;
+padding-left: 10px;
+}
+.listacurtas .boxcurta p {
+padding-left: 13px;
+}
+.listaeventos {
+margin: 50px 0px 30px 0px;
+}
+.listaeventos h2 {
+color: #3b579d;
+font-size: 32px;
+margin-bottom: 20px;
+}
+.listaeventos .boxevento {
+background: #ff8130 url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/cloud.png") no-repeat bottom right;
+border-radius: 20px;
+padding: 20px 30px;
+color: #fff;
+}
+.listaeventos .boxevento .text {
+width: 55%;
+float: left;
+}
+.listaeventos .boxevento h3 {
+font-size: 36px;
+margin-bottom: 20px;
+}
+.listaeventos .boxevento img {
+object-fit: cover;
+margin-top: 50px;
+width: 42%;
+float: right;
+}
+.listaev {
+position: relative;
+}
+.listaev button {
+position: absolute;
+bottom: -50px;
+border: none;
+font-size: 0px;
+width: 30px;
+height: 30px;
+display: block;
+cursor: pointer;
+}
+.listaev .slick-prev {
+left: 45%;
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/icon-left.svg") no-repeat center center;
+}
+.listaev .slick-next {
+right: 45%;
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/icon-right.svg") no-repeat center center;
+}
+.wp-block-media-text {
+display: block !important;
+background: #1bb88f;
+border-radius: 10px;
+color: #fff;
+padding-bottom: 20px;
+}
+.wp-block-media-text img {
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+}
+.wp-block-media-text .wp-block-media-text__content {
+padding: 0px;
+}
+.wp-block-media-text .wp-block-media-text__content h3 {
+background: #ff2e51;
+padding: 10px 20px;
+border-radius: 15px;
+display: inline-block;
+margin: -20px 0px 20px -30px;
+}
+.wp-block-media-text .wp-block-media-text__content p {
+font-weight: bold;
+padding: 0px 30px;
+font-size: 14px;
+line-height: 20px;
+}
+.wpcf7,
+.formmentoria,
+#mc-embedded-subscribe-form {
+margin-top: 20px;
+}
+.wpcf7 input,
+.formmentoria input,
+#mc-embedded-subscribe-form input,
+.wpcf7 select,
+.formmentoria select,
+#mc-embedded-subscribe-form select {
+margin-bottom: 10px;
+width: 100%;
+height: 45px;
+border-radius: 5px;
+border: 1px solid #cecece;
+padding-left: 10px;
+}
+.wpcf7 textarea,
+.formmentoria textarea,
+#mc-embedded-subscribe-form textarea {
+margin-bottom: 5px;
+width: 100%;
+border-radius: 5px;
+border: 1px solid #cecece;
+padding: 10px;
+font-family: "Nunito", sans-serif;
+}
+.wpcf7 input[type="checkbox"],
+.formmentoria input[type="checkbox"],
+#mc-embedded-subscribe-form input[type="checkbox"] {
+float: left;
+width: 15px;
+height: 15px;
+margin: 7px 10px 0px -15px;
+}
+.wpcf7 input[type="submit"],
+.formmentoria input[type="submit"],
+#mc-embedded-subscribe-form input[type="submit"] {
+background: #42acdc;
+font-weight: bold;
+color: #fff;
+font-size: 14px;
+display: inline-block;
+width: auto;
+border: none;
+cursor: pointer;
+padding: 10px 20px;
+}
+.wpcf7 input[type="submit"]:hover,
+.formmentoria input[type="submit"]:hover,
+#mc-embedded-subscribe-form input[type="submit"]:hover {
+background: #ff2e51;
+}
+.wpcf7 .wpcf7-list-item-label,
+.formmentoria .wpcf7-list-item-label,
+#mc-embedded-subscribe-form .wpcf7-list-item-label {
+font-size: 12px;
+}
+.patrocinadores:before {
+width: 100%;
+height: 100px;
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/top-patrocinio.png") no-repeat center center;
+content: "";
+display: block;
+position: absolute;
+top: -50px;
+}
+.patrocinadores:after {
+width: 100%;
+height: 100px;
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/bottom-patrocinio.png") no-repeat center center;
+content: "";
+display: block;
+position: absolute;
+bottom: -80px;
+}
+.patrocinadores {
+background: #fbf6f8;
+padding: 50px 0px;
+position: relative;
+margin-bottom: 150px;
+margin-top: -50px;
+}
+.patrocinadores h2 {
+color: #3b579d;
+font-size: 42px;
+}
+.patrocinadores .lista {
+margin-top: 50px;
+display: grid;
+grid-template-columns: auto auto auto;
+margin-bottom: 30px;
+}
+.patrocinadores .lista p {
+text-align: center;
+font-size: 12px;
+line-height: 20px;
+padding: 0px 30px;
+font-style: italic;
+}
+.patrocinadores .lista img {
+width: 70%;
+height: 100px;
+object-fit: contain;
+margin: 0px auto 20px auto;
+display: block;
+}
+.galeriaslick figcaption {
+display: none;
+}
+.galeriaslick .slick-dots {
+columns: 1;
+text-align: center;
+margin: 10px auto;
+}
+.galeriaslick .slick-dots li {
+background: none;
+display: inline-block;
+}
+.galeriaslick .slick-dots li button {
+font-size: 0px;
+background: #3b579d;
+border: none;
+width: 15px;
+height: 15px;
+border-radius: 10px;
+cursor: pointer;
+}
+.galeriaslick .slick-dots li:hover button,
+.galeriaslick .slick-dots li.slick-active button {
+background: #ff2e51;
+}
+.curva {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/bg-sobre-home.png") no-repeat center top;
+height: 220px;
+margin: -200px auto 0px auto;
+width: 100%;
+position: relative;
+}
+.sobre {
+background: #42acdc;
+padding: 0px;
+position: relative;
+}
+.sobre .content {
+position: relative;
+}
+.sobre .coruja {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/des-coruja.png") no-repeat center center;
+width: 705px;
+height: 562px;
+position: absolute;
+top: 0px;
+left: -250px;
+}
+.sobre .nuvens {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/des-nuvens.png") no-repeat center center;
+width: 245px;
+height: 145px;
+position: absolute;
+bottom: 60px;
+left: 190px;
+}
+.sobre .texto {
+width: 50%;
+float: right;
+}
+.sobre .texto p {
+color: #fff;
+font-size: 16px;
+line-height: 24px;
+margin-bottom: 15px;
+}
+.sobre .texto a.btn {
+margin: 40px auto 20px auto;
+}
+.curvadois {
+background: #1bb88f url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/bg-topo-apoie-home.jpg") no-repeat center top;
+height: 50px;
+margin: 0px auto 0px auto;
+width: 100%;
+position: relative;
+}
+.apoiehome {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/bg-apoie-home.jpg") repeat center center;
+background-attachment: fixed;
+background-size: contain;
+padding: 90px 0px 90px 0px;
+}
+.apoiehome .conteudo {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/bg-apoie-home.png") no-repeat center top;
+background-size: cover;
+padding: 6% 12% 9% 35%;
+}
+.apoiehome .conteudo p {
+color: #fff;
+font-size: 16px;
+line-height: 24px;
+margin-bottom: 15px;
+}
+.apoiehome .conteudo a.btn {
+margin: 0px 0px;
+float: right;
+}
+.apoie {
+background: #fcf3d9;
+}
+.apoie .topoapoie {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/bg-topo-apoie.jpg") no-repeat center top;
+padding-top: 100px;
+}
+.apoie .topoapoie .title {
+width: 50%;
+margin-bottom: 230px;
+}
+.apoie .topoapoie .texto {
+width: 55%;
+}
+.apoie .topoapoie .texto p {
+margin-bottom: 15px;
+}
+.apoie .topoapoie .texto p a {
+font-weight: bold;
+}
+.apoie .topoapoie .texto p a:hover {
+color: #ff2e51;
+}
+.apoie .comoapoie {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/bg-como-apoie.png") no-repeat center top;
+padding: 70px 0px 150px 0px;
+margin-top: 50px;
+}
+.apoie .comoapoie .texto {
+width: 45%;
+color: #fff;
+}
+.apoie .comoapoie .texto p {
+margin-bottom: 15px;
+}
+.apoie .comoapoie .texto p a {
+font-weight: bold;
+color: #fff;
+}
+.apoie .comoapoie .texto p a:hover {
+color: #ff2e51;
+}
+.regulamento .conteudo {
+margin-top: 370px;
+}
+.regulamento .conteudo p {
+color: #fff;
+text-align: center;
+font-size: 22px;
+}
+.regulamento .perguntas {
+margin: 30px 0px;
+}
+.regulamento .perguntas .question {
+margin: 20px 0px;
+}
+.regulamento .perguntas .tit:after {
+content: "›";
+font-size: 32px;
+color: #fff;
+float: right;
+margin-right: 20px;
+transform: rotate(90deg);
+margin-top: -10px;
+transition: all ease 0.2s;
+}
+.regulamento .perguntas .tit {
+display: block;
+color: #fff;
+font-weight: bold;
+background: #42acdc;
+text-transform: uppercase;
+padding: 20px 0px 20px 30px;
+}
+.regulamento .perguntas .answer {
+background: #fbf6f8;
+padding: 30px 50px 30px 50px;
+}
+.regulamento .perguntas .answer p {
+margin-bottom: 20px;
+}
+.regulamento .perguntas .answer p a {
+font-weight: bold;
+}
+.regulamento .perguntas .answer p a:hover {
+color: #ff2e51;
+}
+.regulamento .perguntas .answer ul {
+margin: 20px 0px 0px 40px;
+}
+.regulamento .perguntas .answer ul li {
+margin-bottom: 20px;
+}
+.regulamento .perguntas .answer br {
+clear: both;
+margin-bottom: 20px;
+display: block;
+}
+.regulamento .form form {
+text-align: left;
+margin: 30px auto 10px auto;
+}
+.regulamento .form form label {
+font-weight: bold;
+font-size: 22px;
+cursor: pointer;
+}
+.regulamento .form form label input {
+margin-right: 20px;
+}
+.regulamento .form form label:hover {
+color: #f2cd38;
+}
+.regulamento .form #irparainscricao {
+display: none;
+}
+.regulamento .form a {
+float: left;
+font-weight: bold;
+color: #fff;
+}
+.enviada {
+background: #ff2e51 url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/dots-lines.png");
+padding: 150px 0px 80px 0px;
+margin-top: -100px;
+}
+.enviada .conteudo img {
+width: 50%;
+float: left;
+}
+.enviada .conteudo .text {
+width: 48%;
+float: right;
+}
+.enviada .conteudo p {
+font-size: 24px;
+line-height: 34px;
+margin-bottom: 15px;
+font-weight: bold;
+color: #fff;
+}
+.enviada .conteudo p.facebook {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/icon-facebook.svg") no-repeat center left;
+}
+.enviada .conteudo p.twitter {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/icon-twitter.svg") no-repeat center left;
+}
+.enviada .conteudo p.instagram {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/icon-instagram.svg") no-repeat center left;
+}
+.enviada .conteudo p.tiktok {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/icon-tiktok.svg") no-repeat center left;
+}
+.enviada .conteudo p {
+display: block;
+padding-left: 40px;
+margin-top: 30px;
+}
+.enviada .conteudo p a {
+color: #fff;
+-moz-text-fill-color: white;
+-webkit-text-fill-color: white;
+-moz-text-stroke-color: #000;
+-webkit-text-stroke-color: #000;
+-moz-text-stroke-width: 1px;
+-webkit-text-stroke-width: 1px;
+}
+.enviada .conteudo p a:hover {
+-moz-text-fill-color: #f2cd38;
+-webkit-text-fill-color: #f2cd38;
+}
+.classificados {
+background: #1bb88f;
+padding: 50px 0px;
+display: none;
+}
+.classificados h2 {
+color: #fff;
+margin-bottom: 20px;
+}
+.classificados p {
+column-count: 2;
+color: #fff;
+margin-bottom: 5px;
+}
+.inscricao {
+background: #42acdc;
+padding: 150px 0px 80px 0px;
+margin-top: -100px;
+}
+.inscricao .title {
+float: left;
+width: 60%;
+font-size: 45px;
+line-height: 55px;
+}
+.inscricao p.logo {
+width: 180px;
+height: 120px;
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/logo-eea-verde.png") no-repeat center center;
+background-size: cover;
+color: transparent;
+float: right;
+margin-right: 100px;
+}
+.inscricao p.logo a {
+color: transparent;
+display: block;
+height: 100%;
+}
+.inscricao .navform {
+margin-bottom: -30px;
+}
+.inscricao .navform p {
+display: inline-block;
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/tab-form.png") no-repeat center center;
+font-weight: bold;
+font-size: 22px;
+width: 245px;
+padding: 15px 0px;
+text-align: center;
+background-size: contain;
+margin: 0px 10px;
+color: #a6a8a9;
+cursor: pointer;
+}
+.inscricao .navform p.active,
+.inscricao .navform p:hover {
+color: #ff2e51;
+}
+.inscricao form a {
+color: #fff;
+}
+.inscricao form a:hover {
+color: #f2cd38;
+}
+.inscricao form .spacer {
+height: 20px;
+}
+.inscricao form .boxmenor {
+background: #ff2e51;
+padding: 20px;
+border-radius: 10px;
+}
+.inscricao form label.error {
+font-size: 14px;
+color: #ff2e51;
+margin-top: -15px;
+margin-bottom: 15px;
+}
+.inscricao form label,
+.inscricao form p {
+display: block;
+color: #fff;
+font-weight: bold;
+font-size: 16px;
+margin: 0px 0px 10px 10px;
+}
+.inscricao form label span,
+.inscricao form p span {
+font-size: 12px;
+font-style: italic;
+}
+.inscricao form label span.dicas,
+.inscricao form p span.dicas {
+margin-top: 25px;
+display: block;
+}
+.inscricao form p.smalltext {
+font-size: 12px;
+color: #000;
+opacity: 0.5;
+}
+.inscricao form textarea {
+height: 100px;
+}
+.inscricao form input,
+.inscricao form select,
+.inscricao form textarea {
+border: none;
+border-radius: 10px;
+background: #fff;
+padding: 10px 10px 10px 20px;
+display: inline-block;
+margin-bottom: 20px;
+width: 100%;
+}
+.inscricao form input[type="radio"],
+.inscricao form input[type="checkbox"] {
+float: left;
+width: auto;
+margin-right: 10px;
+height: 22px;
+margin-bottom: 0px;
+margin-left: 20px;
+}
+.inscricao form input[type="submit"] {
+font-size: 24px;
+text-align: center;
+font-weight: bold;
+color: #fff;
+display: block;
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/btn-small.png") no-repeat center center;
+padding: 18px 0px;
+background-size: cover;
+width: 300px !important;
+cursor: pointer;
+margin: 0px auto;
+font-family: "Nunito", sans-serif;
+}
+.inscricao form .hide {
+display: none;
+}
+.inscricao form .litle {
+width: 30%;
+margin-right: 20px;
+display: inline-block;
+height: 80px;
+vertical-align: top;
+}
+.inscricao form .litle input {
+float: left;
+width: 40px;
+margin-right: 15px;
+margin-top: -6px;
+padding: 10px 10px;
+}
+.inscricao form .small {
+width: 45%;
+margin-right: 38px;
+display: inline-block;
+vertical-align: top;
+}
+.inscricao form .nomargin {
+margin-right: 0px;
+}
+.inscricao form .dadospessoais {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/bg-form-dadospessoais.png") no-repeat center center;
+background-size: cover;
+padding: 60px 500px 30px 150px;
+display: block;
+}
+.inscricao form .dadosescolares {
+display: none;
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/bg-form-dadosescolares.png") no-repeat center center;
+background-size: cover;
+padding: 60px 150px 30px 500px;
+}
+.inscricao form .dadosescolares label.error {
+margin-top: 0px;
+display: block;
+margin-left: 0px;
+}
+.inscricao form .dadosescolares .boxerro input.error {
+margin-top: 35px;
+}
+.inscricao form .dadosfamiliares {
+background: #42acdc url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/bg-form-dadosfamiliares.png") no-repeat center center;
+background-size: cover;
+padding: 60px 500px 60px 150px;
+display: none;
+}
+.inscricao form .dadosfamiliares label.error {
+margin-top: 0px;
+display: block;
+margin-left: 0px;
+}
+.inscricao form .dadosfamiliares .boxerro input.error {
+margin-top: 35px;
+}
+.inscricao form .dadosinformacoes {
+display: none;
+background: #42acdc url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/bg-form-dadosinformacoes.png") no-repeat center center;
+background-size: cover;
+padding: 50px 100px;
+}
+.inscricao form .dadosinformacoes label.error {
+margin-top: 0px;
+display: block;
+margin-left: 0px;
+}
+.inscricao form .dadosinformacoes .boxerro input.error {
+margin-top: 35px;
+}
+#logos_cl img {
+display: block;
+margin: 0px auto;
+}
+.page-template-page-inscricao-curso-livre .gov {
+background: #3b579d !important;
+}
+.page-template-page-inscricao-curso-livre .preheader,
+.page-template-page-inscricao-curso-livre .header,
+.page-template-page-inscricao-curso-livre .newsletter,
+.page-template-page-inscricao-curso-livre .footer,
+.page-template-page-inscricao-curso-livre .popupformcl {
+display: none !important;
+}
+.page-template-page-inscricao-curso-livre #insc_cl {
+background: #3b579d url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/bg-cl-topo.png") no-repeat center bottom;
+padding: 30px 0px 50px 0px;
+}
+.page-template-page-inscricao-curso-livre #insc_cl .content {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+align-items: center;
+}
+.page-template-page-inscricao-curso-livre #insc_cl .content .pacodiploma {
+width: 45%;
+height: 100%;
+}
+.page-template-page-inscricao-curso-livre #insc_cl .content .forminsc {
+width: 45%;
+}
+.page-template-page-inscricao-curso-livre #insc_cl .content .forminsc img {
+width: 50%;
+margin: 0px auto 20px auto;
+display: block;
+}
+.page-template-page-inscricao-curso-livre #insc_cl .content .forminsc h2 {
+color: #fff;
+font-size: 18px;
+font-weight: normal;
+line-height: 28px;
+}
+.page-template-page-inscricao-curso-livre #insc_cl .content .forminsc form input[type="submit"] {
+background: #6b0271;
+}
+.page-template-page-inscricao-curso-livre #about_cl {
+padding: 40px 0px;
+background: #fbf6f8;
+}
+.page-template-page-inscricao-curso-livre #about_cl h2 {
+font-weight: normal;
+margin-bottom: 30px;
+}
+.page-template-page-inscricao-curso-livre #about_cl p {
+columns: 3;
+column-gap: 30px;
+font-size: 16px;
+line-height: 26px;
+}
+.page-template-page-inscricao-curso-livre #about_cl p span {
+display: block;
+color: #6b0271;
+}
+.page-template-page-inscricao-curso-livre #about_cl p span:before {
+content: "";
+height: 2px;
+width: 50px;
+background: #f2cd38;
+display: block;
+margin-top: 20px;
+margin-bottom: 10px;
+}
+.page-template-page-curso-livre .gov {
+background: #6b0271 !important;
+}
+.page-template-page-curso-livre .preheader,
+.page-template-page-curso-livre .header,
+.page-template-page-curso-livre .newsletter,
+.page-template-page-curso-livre .footer,
+.page-template-page-curso-livre .popupformcl {
+display: none !important;
+}
+.page-template-page-curso-livre .couponcode {
+background: #1bbb53;
+padding: 10px 0px;
+}
+.page-template-page-curso-livre .couponcode p {
+text-align: center;
+font-size: 18px;
+color: #fff;
+}
+.page-template-page-curso-livre .header_cl {
+padding: 40px 0px 120px 0px;
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/bg-cl-topo.png") no-repeat center bottom;
+}
+.page-template-page-curso-livre .header_cl #menu-cursos-livres {
+list-style-type: none;
+text-align: center;
+margin: 0px 0px 100px 0px;
+}
+.page-template-page-curso-livre .header_cl #menu-cursos-livres li {
+display: inline-block;
+margin: 0px 20px;
+}
+.page-template-page-curso-livre .header_cl #menu-cursos-livres li a {
+color: #fff;
+transition: all ease 0.2s;
+}
+.page-template-page-curso-livre .header_cl #menu-cursos-livres li a:hover {
+color: #f2cd38;
+}
+.page-template-page-curso-livre .header_cl #menu-cursos-livres li.btn a {
+border: 2px solid #fff;
+padding: 5px 30px;
+border-radius: 10px;
+}
+.page-template-page-curso-livre .header_cl #menu-cursos-livres li.btn a:hover {
+background: #fff;
+color: #6b0271;
+}
+.page-template-page-curso-livre .header_cl .logoform {
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-gap: 40px;
+}
+.page-template-page-curso-livre .header_cl .logoform img {
+display: block;
+width: 100%;
+max-width: 360px;
+margin: 0px auto;
+}
+.page-template-page-curso-livre .header_cl .logoform .form {
+background: #fff;
+border-radius: 30px;
+width: auto;
+padding: 20px 30px;
+}
+.page-template-page-curso-livre .header_cl .logoform .form .coupon {
+background: #ffcd35;
+color: #000;
+padding: 5px 10px;
+margin: 0px auto;
+font-size: 18px;
+text-align: center;
+}
+.page-template-page-curso-livre .header_cl .logoform .form .coupon strong {
+text-transform: uppercase;
+}
+.page-template-page-curso-livre .header_cl .logoform .form .coupon i {
+margin-left: 20px;
+}
+.page-template-page-curso-livre .header_cl .logoform .form ul {
+list-style-type: none;
+margin: 20px 0px;
+}
+.page-template-page-curso-livre .header_cl .logoform .form ul li {
+font-size: 22px;
+margin-bottom: 20px;
+padding-left: 1em;
+text-indent: -1em;
+}
+.page-template-page-curso-livre .header_cl .logoform .form ul li:before {
+font-family: "Font Awesome 6 Free";
+font-weight: 900;
+content: "\f058";
+color: #1bbb53;
+padding-right: 15px;
+font-size: 16px;
+}
+.page-template-page-curso-livre .header_cl .logoform .form .price {
+margin-top: 10px;
+font-size: 48px;
+color: #000;
+}
+.page-template-page-curso-livre .header_cl .logoform .form .price span {
+color: #1bb88f;
+font-size: 16px;
+display: block;
+text-decoration: line-through;
+}
+.page-template-page-curso-livre .header_cl .logoform .form form input[type="submit"],
+.page-template-page-curso-livre .header_cl .logoform .form form button {
+border: none;
+color: #fff;
+padding: 10px 30px;
+background: #1bb88f !important;
+width: 100% !important;
+text-align: left;
+font-family: "Nunito", sans-serif;
+font-size: 22px !important;
+border-radius: 10px !important;
+cursor: pointer;
+}
+.page-template-page-curso-livre .header_cl .logoform .form form input[type="submit"]:hover,
+.page-template-page-curso-livre .header_cl .logoform .form form button:hover {
+background: #f2cd38 !important;
+}
+.page-template-page-curso-livre .header_cl .logoform .form form input[type="submit"] i,
+.page-template-page-curso-livre .header_cl .logoform .form form button i {
+float: right;
+margin-top: 5px;
+}
+.page-template-page-curso-livre .header_cl .videotext iframe {
+width: 50%;
+float: left;
+height: auto;
+min-height: 304px;
+}
+.page-template-page-curso-livre .header_cl .videotext .text {
+width: 50%;
+float: right;
+}
+.page-template-page-curso-livre .header_cl .videotext .text img {
+display: block;
+margin: 0px auto 40px auto;
+}
+.page-template-page-curso-livre .videosec {
+background: #6b0271;
+padding: 40px 0px;
+}
+.page-template-page-curso-livre .videosec h3 {
+text-align: center;
+font-weight: normal;
+font-size: 46px;
+color: #fff;
+text-transform: uppercase;
+margin-bottom: 20px;
+}
+.page-template-page-curso-livre .videosec h3 strong {
+display: block;
+}
+.page-template-page-curso-livre .videosec iframe {
+display: block;
+width: 100%;
+height: 100%;
+min-height: 550px;
+margin-bottom: 20px;
+}
+.page-template-page-curso-livre .videosec .btn {
+background: #ffcd35 !important;
+color: #000 !important;
+display: table;
+text-align: center;
+margin: 0px auto;
+border-radius: 20px;
+padding: 20px 30px;
+font-weight: normal;
+text-transform: uppercase;
+font-size: 18px;
+}
+.page-template-page-curso-livre #course_cl {
+background: #fff;
+padding: 40px 0px;
+}
+.page-template-page-curso-livre #course_cl .content {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+align-items: center;
+}
+.page-template-page-curso-livre #course_cl .content div {
+width: 100%;
+}
+.page-template-page-curso-livre #course_cl .content div h2 {
+color: #6b0271;
+font-size: 42px;
+font-weight: normal;
+margin-bottom: 30px;
+text-align: center;
+text-transform: uppercase;
+}
+.page-template-page-curso-livre #course_cl .content div p {
+color: #4a4a4a;
+font-size: 16px;
+line-height: 26px;
+text-align: center;
+}
+.page-template-page-curso-livre #course_cl .content div p strong {
+color: #6b0271;
+}
+.page-template-page-curso-livre #course_cl .content div .headtext {
+display: block;
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/icon-head.png") no-repeat left center;
+padding: 40px 0px 40px 150px;
+}
+.page-template-page-curso-livre #diferenciais_cl {
+padding: 40px 0px;
+}
+.page-template-page-curso-livre #diferenciais_cl h2 {
+color: #6b0271;
+font-weight: normal;
+}
+.page-template-page-curso-livre #diferenciais_cl .diferenciaislist {
+margin: 50px 0px;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+align-items: center;
+}
+.page-template-page-curso-livre #diferenciais_cl .diferenciaislist .difbox {
+width: 32%;
+display: flex;
+align-items: center;
+}
+.page-template-page-curso-livre #diferenciais_cl .diferenciaislist .difbox img {
+float: left;
+margin-right: 20px;
+}
+.page-template-page-curso-livre #diferenciais_cl .diferenciaislist .difbox p {
+text-align: left;
+font-size: 14px;
+line-height: 24px;
+}
+.page-template-page-curso-livre #diferenciais_cl .diferenciaislist .difbox p:before {
+content: "";
+height: 2px;
+width: 50px;
+background: #6b0271;
+display: block;
+margin-bottom: 10px;
+}
+.page-template-page-curso-livre #learn_cl {
+background: #6b0271;
+}
+.page-template-page-curso-livre #learn_cl .content {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+align-items: flex-end;
+}
+.page-template-page-curso-livre #learn_cl .content img {
+width: 50%;
+}
+.page-template-page-curso-livre #learn_cl .content .text {
+width: 49%;
+margin-bottom: 40px;
+}
+.page-template-page-curso-livre #learn_cl .content .text p {
+color: #fff;
+font-size: 24px;
+margin-bottom: 20px;
+}
+.page-template-page-curso-livre #learn_cl .content .text ul {
+list-style-type: none;
+}
+.page-template-page-curso-livre #learn_cl .content .text ul li {
+color: #fff;
+font-size: 16px;
+margin-bottom: 15px;
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/icon-star.png") no-repeat 0px 0px;
+padding-left: 30px;
+background-size: contain;
+}
+.page-template-page-curso-livre #teachers_cl {
+padding: 40px 0px;
+}
+.page-template-page-curso-livre #teachers_cl h2 {
+color: #3b579d;
+font-weight: normal;
+margin-bottom: 30px;
+}
+.page-template-page-curso-livre #teachers_cl .teacherslist {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+.page-template-page-curso-livre #teachers_cl .teacherslist .teacherbox {
+width: 20%;
+}
+.page-template-page-curso-livre #teachers_cl .teacherslist .teacherbox h3 {
+font-weight: normal;
+}
+.page-template-page-curso-livre #teachers_cl .teacherslist .teacherbox h3:after {
+content: "";
+height: 2px;
+width: 50px;
+background: #6b0271;
+display: block;
+margin-top: 10px;
+margin-bottom: 20px;
+}
+.page-template-page-curso-livre #teachers_cl .teacherslist .teacherbox p {
+font-size: 14px;
+line-height: 24px;
+}
+.page-template-page-curso-livre #teachers_cl .teacherslist .teacherbox img {
+width: 100%;
+height: auto;
+display: block;
+margin-bottom: 20px;
+}
+.page-template-page-curso-livre #market_cl {
+background: #fbf6f8;
+padding: 40px;
+}
+.page-template-page-curso-livre #market_cl h2 {
+font-weight: normal;
+}
+.page-template-page-curso-livre #market_cl .fonte {
+margin-top: 30px;
+font-size: 12px;
+text-align: center;
+}
+.page-template-page-curso-livre #market_cl .numbers {
+margin-top: 60px;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+.page-template-page-curso-livre #market_cl .numbers .numberbox {
+width: 28%;
+text-align: center;
+}
+.page-template-page-curso-livre #market_cl .numbers .numberbox h3 {
+color: #6b0271;
+margin-bottom: 10px;
+font-size: 32px;
+}
+.page-template-page-curso-livre #market_cl .numbers .numberbox p {
+font-size: 16px;
+line-height: 26px;
+}
+.page-template-page-curso-livre .testmonials {
+background: #fbf6f8;
+padding: 40px 0px;
+}
+.page-template-page-curso-livre .testmonials .content {
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-gap: 40px;
+}
+.page-template-page-curso-livre .testmonials .content h3 {
+font-size: 28px;
+font-weight: normal;
+text-transform: uppercase;
+margin-bottom: 10px;
+}
+.page-template-page-curso-livre .testmonials .content .stars {
+font-size: 20px;
+color: #f2cd38;
+margin-bottom: 30px;
+}
+.page-template-page-curso-livre .testmonials .content a {
+background: #1eb88f !important;
+color: #fff !important;
+display: inline-block;
+text-align: center;
+border-radius: 15px;
+padding: 10px 30px;
+font-weight: normal;
+text-transform: uppercase;
+font-size: 18px;
+margin-top: 20px;
+}
+.page-template-page-curso-livre .testmonials .content .headtext {
+display: block;
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/icon-head.png") no-repeat left center;
+padding: 70px 0px 70px 0px;
+margin-bottom: 30px;
+}
+.page-template-page-curso-livre .testmonials .content #testmonialslist .boxtestmonial {
+display: block;
+width: 100%;
+background: #fff;
+padding: 20px;
+box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.09);
+margin-bottom: 20px;
+}
+.page-template-page-curso-livre .testmonials .content #testmonialslist .boxtestmonial h3 {
+font-size: 16px;
+margin-bottom: 0px;
+font-weight: bold;
+}
+.page-template-page-curso-livre .testmonials .content #testmonialslist .boxtestmonial i {
+font-size: 14px;
+color: #f2cd38;
+margin-bottom: 10px;
+}
+.page-template-page-curso-livre .testmonials .content #testmonialslist .boxtestmonial p {
+font-size: 14px;
+line-height: 24px;
+}
+.page-template-page-curso-livre #areas_cl {
+display: flex;
+flex-wrap: wrap;
+background: #f2cd38;
+}
+.page-template-page-curso-livre #areas_cl .areabox {
+text-align: center;
+width: 33%;
+color: #fff;
+padding: 50px 0px;
+}
+.page-template-page-curso-livre #areas_cl .areabox h3,
+.page-template-page-curso-livre #areas_cl .areabox p {
+width: 60%;
+margin: 0px auto 10px auto;
+}
+.page-template-page-curso-livre #areas_cl .areabox ul {
+list-style-type: none;
+text-align: left;
+width: 270px;
+margin: 0px auto;
+}
+.page-template-page-curso-livre #areas_cl .areabox ul li {
+color: #fff;
+font-size: 16px;
+margin-bottom: 10px;
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/icon-star.png") no-repeat 0px 0px;
+padding-left: 30px;
+background-size: 23px;
+}
+.page-template-page-curso-livre #areas_cl .areabox.blue {
+background: #3b579d;
+}
+.page-template-page-curso-livre #areas_cl .areabox.yellow {
+background: #f2cd38;
+}
+.page-template-page-curso-livre #areas_cl .areabox.yellow p {
+color: #3b579d;
+font-weight: bold;
+font-size: 46px;
+}
+.page-template-page-curso-livre #areas_cl .areabox.purple {
+background: #6b0271;
+}
+.page-template-page-curso-livre #about_cl {
+padding: 40px 0px;
+}
+.page-template-page-curso-livre #about_cl h2 {
+font-weight: normal;
+margin-bottom: 30px;
+}
+.page-template-page-curso-livre #about_cl p {
+columns: 3;
+column-gap: 30px;
+font-size: 16px;
+line-height: 26px;
+}
+.page-template-page-curso-livre #about_cl p strong {
+display: block;
+color: #6b0271;
+}
+.page-template-page-curso-livre #about_cl p strong:before {
+content: "";
+height: 2px;
+width: 50px;
+background: #f2cd38;
+display: block;
+margin-top: 20px;
+margin-bottom: 10px;
+}
+.page-template-page-curso-livre #faq_cl {
+padding: 40px 0px;
+background: #fbf6f8;
+}
+.page-template-page-curso-livre #faq_cl h2 {
+font-weight: normal;
+margin-bottom: 30px;
+}
+.page-template-page-curso-livre #faq_cl .questionsfaq .questionbox {
+padding: 10px;
+border-top: 1px solid #4a4a4a;
+transition: all ease 0.2s;
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/icon-faq.png") no-repeat 100% 1vw;
+}
+.page-template-page-curso-livre #faq_cl .questionsfaq .questionbox h3 {
+font-size: 18px;
+cursor: pointer;
+}
+.page-template-page-curso-livre #faq_cl .questionsfaq .questionbox h3:hover {
+color: #6b0271;
+}
+.page-template-page-curso-livre #faq_cl .questionsfaq .questionbox .answerbox {
+display: none;
+margin: 20px 0px;
+}
+.page-template-page-curso-livre #faq_cl .questionsfaq .questionbox .answerbox p {
+margin-bottom: 10px;
+}
+.page-template-page-curso-livre #faq_cl .questionsfaq .questionbox.on {
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/icon-faq-open.png") no-repeat 100% 1vw;
+}
+.page-template-page-curso-livre #faq_cl .questionsfaq .questionbox.on .answerbox {
+display: block;
+}
+.popupformcl .shadowcl {
+background: #000;
+opacity: 0.5;
+position: fixed;
+left: 0px;
+top: 0px;
+width: 100%;
+height: 100%;
+z-index: 9998;
+}
+.popupformcl .formpopupcl {
+z-index: 9999;
+position: fixed;
+background: url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/bg-popup-cl.png") no-repeat center center;
+width: 1056px;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+min-height: 611px;
+}
+.popupformcl .formpopupcl .closepopupcl {
+font-size: 24px;
+color: #fff;
+background: #f2cd38;
+padding: 5px 20px;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+position: absolute;
+right: 115px;
+top: 70px;
+cursor: pointer;
+}
+.popupformcl .formpopupcl .closepopupcl:hover {
+color: #6b0271;
+}
+.popupformcl .formpopupcl p {
+width: 40%;
+margin: 0px auto;
+color: #fff;
+font-size: 14px;
+line-height: 24px;
+text-align: center;
+}
+.popupformcl .formpopupcl p span {
+color: #f2cd38;
+font-weight: bold;
+}
+.popupformcl .formpopupcl img {
+width: 200px;
+margin: 60px auto 30px auto;
+display: block;
+}
+.popupformcl .formpopupcl form {
+width: 40%;
+margin: 0px auto;
+text-align: center;
+}
+.popupformcl .formpopupcl form .flexfields {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+.popupformcl .formpopupcl form .flexfields input,
+.popupformcl .formpopupcl form .flexfields select {
+width: 48% !important;
+}
+.popupformcl .formpopupcl form .flexfields input[type="submit"] {
+background: #6b0271 !important;
+}
+.page-template-inscricao .popupformcl,
+.page-template-regulamento .popupformcl,
+.page-template-inscricao-enviada .popupformcl {
+display: none;
+}
+.boxerrorcheckbox {
+position: relative;
+padding-top: 30px;
+}
+.boxerrorcheckbox label.error {
+position: absolute;
+left: 30px;
+top: 0px;
+}
+</style>
+  <link rel="stylesheet/less" type="text/css" href="https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/css/mobile.less"><style type="text/css" id="less:wp-content-themes-estudioescoladeanimacao-css-mobile">/********** DEFINIÇÕES **********/
+* {
+margin: 0px;
+padding: 0px;
+}
+html,
+body {
+width: 100%;
+height: 100%;
+margin: 0px;
+padding: 0px;
+overflow-x: hidden;
+}
+/********/
+@media screen and (max-width: 480px) {
+.content {
+  width: 85%;
+  margin: 0px auto;
+}
+a.btn {
+  font-size: 5vw;
+}
+a.btn.big {
+  background-size: contain;
+  width: 100%;
+}
+a.btn.big:hover {
+  background-size: contain;
+}
+.gov {
+  position: relative;
+  z-index: 80;
+}
+.gov p {
+  font-size: 9px;
+  padding: 0px 10px;
+}
+.preheader,
+.menu-esquerda-container,
+.menu-direita-container {
+  display: none;
+}
+body.on #menumobile {
+  background-position: center bottom;
+  z-index: 999;
+  position: fixed;
+}
+body.on .site,
+body.on .footer {
+  display: none;
+}
+body.on .menu-mobile-container {
+  display: block;
+  background: #1bb88f url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/dots-lines.png");
+  color: #fff;
+  font-weight: bold;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 800;
+  padding: 55px 50px 0px 100px;
+  height: -webkit-fill-available;
+}
+body.on .menu-mobile-container ul {
+  list-style-type: none;
+}
+body.on .menu-mobile-container ul li {
+  margin-bottom: 20px;
+}
+body.on .menu-mobile-container ul li a {
+  color: #fff;
+}
+#menumobile.fixed {
+  top: 20px;
+  z-index: 900;
+  position: fixed;
+}
+#menumobile {
+  display: block;
+  position: absolute;
+  top: 60px;
+  left: 10px;
+  z-index: 100;
+  background: url(https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/icon-menu.svg) no-repeat center top;
+  height: 38px;
+  width: 50px;
+  overflow: hidden;
+  background-size: cover;
+}
+.header {
+  padding-top: 10px;
+}
+.footer .patrocinio {
+  text-align: center !important;
+}
+.footer .patrocinio .logopat {
+  margin-left: 0px;
+  width: 100%;
+  display: block;
+}
+.footer .patrocinio .logopat p {
+  text-align: center !important;
+}
+.footer .patrocinio .logopat img {
+  margin: 0px auto 30px auto;
+  display: block;
+  max-width: 100%;
+}
+.footer .conteudo {
+  text-align: center;
+}
+.footer .conteudo p.logo {
+  float: none;
+  margin: 0px auto 30px auto;
+}
+.footer .conteudo p {
+  margin: 0px auto 30px auto;
+}
+.footer .redes {
+  float: none;
+}
+.newsletter .form .text,
+.newsletter .form form {
+  width: 100%;
+  float: none;
+  margin-bottom: 20px;
+}
+.newsletter .form .text .tit,
+.newsletter .form form .tit {
+  font-size: 24px;
+  line-height: 28px;
+}
+.newsletter .form:before {
+  display: none;
+}
+.slide {
+  margin: -270px 0px 0px 0px;
+  padding: 230px 0px 0px 0px;
+}
+.slide .boxvideo {
+  padding: 0px;
+  margin-top: 70px;
+}
+.slide .boxvideo iframe {
+  width: 100%;
+  height: 190px;
+}
+.slide .noticia {
+  margin: 30px auto 0px auto;
+  width: 100%;
+}
+.leftdiv,
+.rightdiv {
+  width: 100%;
+  float: none;
+  margin-bottom: 20px;
+}
+.eeaonline p {
+  padding-right: 0px;
+}
+.mentoriaonline img {
+  display: none;
+}
+.mentoriaonline p {
+  padding-right: 0px;
+}
+.curtas {
+  background: #ff8130 url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/dots-lines.png");
+  padding: 40px 0px 50px 0px;
+}
+.curtas .leftdiv,
+.curtas .rightdiv {
+  width: 100%;
+  float: none;
+  margin-bottom: 20px;
+  margin-left: 0px;
+}
+.internas ul {
+  columns: 1;
+}
+.cursoonline img {
+  width: 100%;
+  float: none;
+}
+.topcurtas {
+  display: none;
+}
+.listacurtas .boxcurta {
+  width: 100%;
+}
+.listaeventos .boxevento .text {
+  width: 100%;
+  float: none;
+}
+.listaeventos .boxevento img {
+  object-fit: cover;
+  margin-top: 50px;
+  width: 100%;
+  float: none;
+  margin-right: 0;
+}
+.patrocinadores .lista {
+  grid-template-columns: auto;
+}
+.eeaonlinerel {
+  background: #1bb88f url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/dots-lines.png");
+  padding: 50px 0px 50px 0px;
+}
+.eeaonlinerel .leftdiv,
+.eeaonlinerel .rightdiv {
+  width: 100%;
+  float: none;
+  margin-bottom: 20px;
+  margin-left: 0px;
+}
+.apoierel,
+.quemsomosrel {
+  background: #42acdc url("https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/dots-lines.png");
+  padding: 50px 0px 50px 0px;
+}
+.apoierel .leftdiv,
+.quemsomosrel .leftdiv,
+.apoierel .rightdiv,
+.quemsomosrel .rightdiv {
+  width: 100%;
+  float: none;
+  margin-bottom: 20px;
+  margin-left: 0px;
+}
+.apoierel .leftdiv img,
+.quemsomosrel .leftdiv img,
+.apoierel .rightdiv img,
+.quemsomosrel .rightdiv img {
+  display: block;
+  width: 100%;
+  margin: 30px auto;
+}
+.sobre {
+  padding: 40px 0px 10px 0px;
+}
+.sobre .coruja,
+.sobre .nuvens {
+  display: none;
+}
+.sobre .texto {
+  float: none;
+  width: 100%;
+}
+.sobre .texto .title {
+  font-size: 11vw;
+  line-height: 12vw;
+  text-align: center;
+}
+.apoiehome {
+  padding: 20px 0px 50px 0px;
+}
+.apoiehome .conteudo {
+  padding: 80px 30px 100px 30px;
+  text-align: center;
+}
+.apoie .topoapoie {
+  background-position: 30% -90%;
+  padding-top: 50px;
+}
+.apoie .topoapoie .title {
+  font-size: 9vw;
+  line-height: 9vw;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 120px;
+}
+.apoie .topoapoie .texto {
+  width: 100%;
+}
+.apoie .comoapoie {
+  background: #1bb88f;
+}
+.apoie .comoapoie .texto {
+  width: 100%;
+}
+.regulamento {
+  background-position: 53% 0%;
+  background-size: 300%;
+}
+.regulamento .title {
+  float: none;
+  text-align: center;
+  padding-top: 300px;
+}
+.regulamento .conteudo {
+  margin-top: 0px;
+}
+.regulamento .perguntas .question .tit {
+  padding: 20px;
+}
+.regulamento .perguntas .answer {
+  padding: 30px 30px 30px 30px;
+  font-size: 4vw;
+}
+.regulamento .perguntas .answer p {
+  word-break: break-word;
+}
+.regulamento .form form label {
+  font-size: 4vw;
+}
+.regulamento .form #irparainscricao {
+  margin: 30px 0px;
+}
+.inscricao .title {
+  float: none;
+  width: 100%;
+  font-size: 9vw;
+  line-height: 12vw;
+  text-align: center;
+}
+.inscricao p.logo {
+  margin: 20px auto;
+  float: none;
+}
+.inscricao .navform {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.inscricao form .dadospessoais,
+.inscricao form .dadosescolares,
+.inscricao form .dadosfamiliares,
+.inscricao form .dadosinformacoes {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 30px 20px;
+}
+.inscricao form .litle,
+.inscricao form .small {
+  width: 100%;
+}
+.enviada {
+  background: #ff2e51;
+}
+.enviada .conteudo {
+  width: 100%;
+  float: none;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}
+.enviada .conteudo p {
+  float: none;
+  width: 100%;
+}
+.classificados h2 {
+  text-align: center;
+}
+.classificados p {
+  column-count: 1;
+  text-align: center;
+}
+#logos_cl img {
+  width: 100%;
+}
+.popupformcl .formpopupcl {
+  width: 90%;
+}
+.popupformcl .formpopupcl .closepopupcl {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 0px;
+  position: absolute;
+  right: 25px;
+  top: -15px;
+}
+.popupformcl .formpopupcl p {
+  width: 90%;
+}
+.popupformcl .formpopupcl form {
+  width: 80%;
+}
+.page-template-page-inscricao-curso-livre .gov p {
+  font-size: 13px !important;
+}
+.page-template-page-inscricao-curso-livre #menumobile {
+  display: none !important;
+}
+.page-template-page-inscricao-curso-livre #insc_cl .content .pacodiploma {
+  display: none;
+}
+.page-template-page-inscricao-curso-livre #insc_cl .content .forminsc {
+  width: 100%;
+}
+.page-template-page-inscricao-curso-livre #about_cl p {
+  columns: 1;
+}
+.page-template-page-curso-livre .gov p {
+  font-size: 13px !important;
+}
+.page-template-page-curso-livre #menumobile {
+  display: none !important;
+}
+.page-template-page-curso-livre .header_cl {
+  background-color: #566db1;
+}
+.page-template-page-curso-livre .header_cl #menu-cursos-livres {
+  display: none;
+}
+.page-template-page-curso-livre .header_cl .videotext {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.page-template-page-curso-livre .header_cl .videotext iframe,
+.page-template-page-curso-livre .header_cl .videotext .text {
+  width: 100%;
+  float: none;
+}
+.page-template-page-curso-livre .header_cl .videotext .text {
+  margin-bottom: 30px;
+}
+.page-template-page-curso-livre .header_cl .logoform {
+  grid-template-columns: 1fr;
+}
+.page-template-page-curso-livre .header_cl .logoform img {
+  width: 100%;
+}
+.page-template-page-curso-livre #course_cl .content div {
+  width: 100%;
+}
+.page-template-page-curso-livre .testmonials .content {
+  grid-template-columns: 1fr;
+}
+.page-template-page-curso-livre #diferenciais_cl .diferenciaislist .difbox {
+  width: 100%;
+  margin-bottom: 30px;
+}
+.page-template-page-curso-livre #diferenciais_cl .diferenciaislist .difbox img {
+  min-width: 110px;
+}
+.page-template-page-curso-livre #learn_cl {
+  padding: 40px 0px;
+}
+.page-template-page-curso-livre #learn_cl .content img {
+  display: none;
+}
+.page-template-page-curso-livre #learn_cl .content .text {
+  width: 100%;
+}
+.page-template-page-curso-livre #learn_cl .content .text ul li {
+  padding-left: 50px;
+}
+.page-template-page-curso-livre #teachers_cl .teacherslist .teacherbox {
+  width: 100%;
+  margin-bottom: 30px;
+}
+.page-template-page-curso-livre #teachers_cl .teacherslist .teacherbox img {
+  max-width: 230px;
+  margin: 0px auto 40px auto;
+}
+.page-template-page-curso-livre #market_cl .numbers .numberbox {
+  width: 100%;
+  margin-bottom: 30px;
+}
+.page-template-page-curso-livre #areas_cl .areabox {
+  width: 100%;
+}
+.page-template-page-curso-livre #about_cl p {
+  columns: 1;
+}
+.page-template-page-curso-livre #faq_cl .questionsfaq .questionbox h3 {
+  padding-right: 30px;
+}
+}
+</style>
+  <link rel="stylesheet/less" type="text/css" href="https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/css/acessibilidade.less"><style type="text/css" id="less:wp-content-themes-estudioescoladeanimacao-css-acessibilidade">body.aumentar h2 {
+font-size: 38px;
+}
+body.aumentar p {
+font-size: 24px;
+line-height: 34px;
+}
+body.aumentar .inscricao form label,
+body.aumentar .inscricao form p {
+font-size: 24px;
+line-height: 34px;
+}
+body.aumentar .inscricao form .litle input {
+margin-bottom: 110px;
+}
+body.aumentar .inscricao form .litle {
+height: auto !important;
+}
+body.constrasteon {
+background: #000;
+}
+body.constrasteon .contraste svg path {
+fill: #fffc00;
+}
+body.constrasteon .contraste:hover svg path {
+fill: #00FFFF;
+}
+body.constrasteon svg path {
+fill: #fff;
+}
+body.constrasteon p,
+body.constrasteon h1,
+body.constrasteon h2,
+body.constrasteon h3,
+body.constrasteon h4,
+body.constrasteon h5,
+body.constrasteon h6,
+body.constrasteon .breadcrumb,
+body.constrasteon ul li {
+color: #fff !important;
+}
+body.constrasteon a {
+color: #fffc00 !important;
+}
+body.constrasteon a:hover {
+color: #00FFFF !important;
+}
+body.constrasteon .btn {
+background: #000000;
+color: #fffc00;
+}
+body.constrasteon .btn:hover {
+color: #00FFFF;
+}
+body.constrasteon .gov,
+body.constrasteon .preheader,
+body.constrasteon .header,
+body.constrasteon .slide,
+body.constrasteon .eeaonline,
+body.constrasteon .mentoriaonline,
+body.constrasteon .curtas,
+body.constrasteon .eeaonlinerel,
+body.constrasteon .apoierel,
+body.constrasteon .quemsomosrel,
+body.constrasteon .listacurtas,
+body.constrasteon .patrocinadores,
+body.constrasteon .regulamento .perguntas .answer,
+body.constrasteon .inscricao,
+body.constrasteon .inscricao form .dadospessoais,
+body.constrasteon .inscricao form .dadosfamiliares,
+body.constrasteon .inscricao form .dadosinformacoes,
+body.constrasteon .inscricao form .dadosescolares {
+background: #000000 !important;
+}
+body.constrasteon .inscricao .navform p {
+background: #000000 !important;
+border-bottom: 2px solid #fffc00;
+}
+body.constrasteon .eeaonline:after,
+body.constrasteon .listacurtas:before,
+body.constrasteon .listacurtas:after,
+body.constrasteon .patrocinadores:before,
+body.constrasteon .patrocinadores:after {
+display: none;
+}
+</style>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/js/jquery.validate.min.js"></script>
+  <script src="https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/js/jquery.mask.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
+  <script src="https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/js/main.js"></script>
+
+  <script type="text/javascript" src="https://estudioescola.com.br/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=5.9.5" id="swv-js"></script>
+<script type="text/javascript" id="contact-form-7-js-extra">
+/* <![CDATA[ */
+var wpcf7 = {"api":{"root":"https:\/\/estudioescola.com.br\/wp-json\/","namespace":"contact-form-7\/v1"},"cached":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://estudioescola.com.br/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.9.5" id="contact-form-7-js"></script>
+
+  <script>
+    less = {
+      env: "production"
+    };
+  </script>
+  <script src="https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/js/less.min.js" data-env="production"></script>
+
+  <script type="text/javascript">
+{% comment %}
+    $(document).ready(function() {
+
+      $(window).on('load', function() {
+           $("#cover").hide();
+        });
+        setTimeout(function(){$('#cover').hide();}, 500);
+    }); {% endcomment %}
+
+  </script>
+<script src="https://cdn.popupsmart.com/bundle.js" data-id="835026" async="" defer=""></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,400i,900,900i" rel="stylesheet">
+
+
+
+</body>
+{% endblock %}
