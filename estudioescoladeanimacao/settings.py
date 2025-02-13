@@ -98,7 +98,7 @@ WSGI_APPLICATION = 'estudioescoladeanimacao.wsgi.application'
 
 if "DATABASE_SECRET" in environ:
     database_secret = environ.get("DATABASE_SECRET")
-    db_url = json.loads(database_secret)["DATABASE_URL"]
+    db_url = json.loads(database_secret)["postgres://django:EstudioEscola2025@estudioescoladeanimacao-db.c9q0gqwcucwk.us-east-2.rds.amazonaws.com/django"]
     DATABASES = {"default": dj_database_url.parse(db_url)}
 else:
     DATABASES = {"default": dj_database_url.parse("sqlite:///db.sqlite3")}
