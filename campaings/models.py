@@ -46,9 +46,9 @@ class Inscription(models.Model):
         ("NB", "Não binário"),
         ("OUT", "Outra"),
     ]
-    gender = models.CharField(max_length=50, choices=GENDER_CHOICES, default="MC", verbose_name=("genero"),
+    gender = models.CharField(max_length=50, choices=GENDER_CHOICES, default=" ", verbose_name=("genero"),
                              help_text=("Clique para selecionar"))
-    gender_other = models.CharField(max_length=80, verbose_name=("genero_outro"), help_text=("em casa de outro:"), blank=True, null=True)
+    gender_other = models.CharField(max_length=80, verbose_name=("genero_outro"), default=" ", help_text=("em casa de outro:"), blank=True, null=True)
     # ETHNICITY_CHOICES = [
     #     ("AMA", "Amarelo (oriental)"),
     #     ("BRA", "Branca"),
@@ -57,13 +57,13 @@ class Inscription(models.Model):
     #     ("PRE", "Preta (negra de pele escura)"),
     #     ("OUT", "Outra"),
     # ]
-    ethnicity = models.CharField(max_length=50, default="OUT", verbose_name=("etinia"),
+    ethnicity = models.CharField(max_length=50, default=" ", verbose_name=("etinia"),
                              help_text=("Clique para selecionar"), blank=True, null=True)
-    ethnicity_other = models.CharField(max_length=80, verbose_name=("etinia"), help_text=("Em caso de outra etinia favor informa-la"), blank=True)
-    zipcode = models.CharField(max_length=20, null=True, blank=True, help_text="CEP do usuário")
-    address = models.CharField(max_length=80, verbose_name=("Endereço"), help_text=("Endereço"))
-    address_line_1 = models.CharField(max_length=80, verbose_name=("Complemento"), help_text=("Complemento"))
-    neighberhood = models.CharField(max_length=80, verbose_name=("Bairro"), help_text=("Bairro"))
+    ethnicity_other = models.CharField(max_length=80, default=" ", verbose_name=("etinia"), help_text=("Em caso de outra etinia favor informa-la"), blank=True)
+    zipcode = models.CharField(max_length=20, default=" ", null=True, blank=True, help_text="CEP do usuário")
+    address = models.CharField(max_length=80, default=" ", verbose_name=("Endereço"), help_text=("Endereço"))
+    address_line_1 = models.CharField(max_length=80, default=" ", verbose_name=("Complemento"), help_text=("Complemento"))
+    neighberhood = models.CharField(max_length=80, default=" ", verbose_name=("Bairro"), help_text=("Bairro"))
     # CITY_CHOICES = [
     #     ("BEL", "Belford Roxo"),
     #     ("CDM", "Cachoeiras de Macacu"),
@@ -82,16 +82,16 @@ class Inscription(models.Model):
     #     ("PET", "Petrópolis"),
     #     ("QUE", "Queimados"),
     #     ("RIB", "Rio Bonito"),
-    #     ("RJ", "Rio de Janeiro"),
+    #     ("RJ", ""),
     #     ("SAG", "São Gonçalo"),
     #     ("SAJ", "São João de Meriti"),
     #     ("SER", "Seropédica"),
     #     ("TAN", "Tanguá"),
     #     ("OUT", "Outra"),
     # ]
-    city = models.CharField(max_length=50,  default="RJ", verbose_name=("city"),
+    city = models.CharField(max_length=50,  default="Rio de Janeiro", verbose_name=("city"),
                              help_text=("Clique para selecionar"))
-    city_other = models.CharField(max_length=80, verbose_name=("Outra_cidade"), help_text=("Em caso de outra cidade favor informa-la"), blank=True)
+    city_other = models.CharField(max_length=80, default=" ", verbose_name=("Outra_cidade"), help_text=("Em caso de outra cidade favor informa-la"), blank=True)
 
     phone = PhoneNumberField(verbose_name="Telefone")
     whatsapp = PhoneNumberField(verbose_name="Whatsapp")
@@ -111,11 +111,11 @@ class Inscription(models.Model):
     #     ("ESCPU", "Ensino superior completo em instituição pública"),
     #     ("ESCPR", "Ensino superior completo em instituição particular"),
     # ]
-    scholl_level = models.CharField(max_length=50, default="", verbose_name=("escolaridade"),
+    scholl_level = models.CharField(max_length=50, default=" ", verbose_name=("escolaridade"),
                              help_text=("NÍVEL DE ESCOLARIDADE:"))
 
-    school = models.CharField(max_length=80, verbose_name=("Escola"), help_text=("INSTITUIÇÃO DE ENSINO:"))
-    grade = models.CharField(max_length=80, verbose_name=("Série"), help_text=("SE ESTIVER ESTUDANDO NESTE ANO, INFORME SÉRIE / PERÍODO:"))
+    school = models.CharField(max_length=80, default=" ", verbose_name=("Escola"), help_text=("INSTITUIÇÃO DE ENSINO:"))
+    grade = models.CharField(max_length=80, default=" ", verbose_name=("Série"), help_text=("SE ESTIVER ESTUDANDO NESTE ANO, INFORME SÉRIE / PERÍODO:"))
 
     # STUDING_CHOICES = [
     #     ("MAN", "manhã"),
@@ -124,25 +124,25 @@ class Inscription(models.Model):
     #     ("INT", "integral"),
 
     # ]
-    studing = models.CharField(max_length=50, default="MAN", verbose_name=("período"),
+    studing = models.CharField(max_length=50, default="Manhã", verbose_name=("período"),
                              help_text=("SE ESTIVER ESTUDANDO NESTE ANO, INFORME SÉRIE / PERÍODO:"),null=False,blank=False)
 
-    course = models.CharField(max_length=80, verbose_name=("Curso"), help_text=("CURSO (CASO ESTEJA NA ESCOLA TÉCNICA OU NA FACULDADE):"), blank=True)
-    parent = models.CharField(max_length=80, verbose_name=("Responsalvel"), help_text=("Nome completo do responsável "), blank=True)
-    parent_phone = PhoneNumberField(max_length=50, verbose_name="Telefone", blank=True)
-    intern = models.CharField(max_length=50, verbose_name=("Estágio"), null=False, blank=False)
-    intern_time = models.CharField(max_length=80, verbose_name=("horarios"), help_text=("CEM QUAIS HORÁRIOS VOCÊ TRABALHA OU FAZ ESTÁGIO? "), blank=True)
-    looking_work = models.CharField(max_length=50, verbose_name=("trabalho"), null=False, blank=False)
+    course = models.CharField(max_length=80, default=" ", verbose_name=("Curso"), help_text=("CURSO (CASO ESTEJA NA ESCOLA TÉCNICA OU NA FACULDADE):"), blank=True)
+    parent = models.CharField(max_length=80, default=" ", verbose_name=("Responsalvel"), help_text=("Nome completo do responsável "), blank=True)
+    parent_phone = PhoneNumberField(max_length=50, default=" ", verbose_name="Telefone", blank=True)
+    intern = models.CharField(max_length=50, default=" ", verbose_name=("Estágio"), null=False, blank=False)
+    intern_time = models.CharField(max_length=80, default=" ", verbose_name=("horarios"), help_text=("CEM QUAIS HORÁRIOS VOCÊ TRABALHA OU FAZ ESTÁGIO? "), blank=True)
+    looking_work = models.CharField(max_length=50, default=" ", verbose_name=("trabalho"), null=False, blank=False)
 
-    income = models.CharField(max_length=50, default="TO1", verbose_name=("renda"),
+    income = models.CharField(max_length=50, default=" ", verbose_name=("renda"),
                              help_text=("RENDA FAMILIAR MENSAL"),null=False,blank=False)
 
     family = models.CharField(max_length=50, default="2", verbose_name=("familia"),
                              help_text=("Clique para selecionar"))
-    deficincy = models.CharField(max_length=50, verbose_name=("deficiente"), null=False, blank=False)
-    deficincy_type = models.CharField(max_length=80, verbose_name=("deficiencia"), help_text=("VOCÊ POSSUI ALGUM TIPO DE DEFICIÊNCIA? SE SIM, PODERIA NOS DIZER QUAL?"), blank=True)
-    special_need = models.CharField(max_length=50, verbose_name=("cuidado_especial"), null=False, blank=False)
-    special_interview = models.CharField(max_length=80, verbose_name=("cuidado_entrevista"), help_text=("SE SIM, PODERIA NOS DIZER QUAL?"), blank=True)
+    deficincy = models.CharField(max_length=50, default=" ", verbose_name=("deficiente"), null=False, blank=False)
+    deficincy_type = models.CharField(max_length=80, default=" ", verbose_name=("deficiencia"), help_text=("VOCÊ POSSUI ALGUM TIPO DE DEFICIÊNCIA? SE SIM, PODERIA NOS DIZER QUAL?"), blank=True)
+    special_need = models.CharField(max_length=50, default=" ", verbose_name=("cuidado_especial"), null=False, blank=False)
+    special_interview = models.CharField(max_length=80, default=" ", verbose_name=("cuidado_entrevista"), help_text=("SE SIM, PODERIA NOS DIZER QUAL?"), blank=True)
 
     # KNOWLOGE_CHOICES = [
     #     ("JR", "Jornais/revistas "),
@@ -160,7 +160,7 @@ class Inscription(models.Model):
     # ]
     knowloge = models.CharField(max_length=80, default="outros", verbose_name=("conhecia"),
                              help_text=("Clique para selecionar"))
-    knowloge_other = models.CharField(max_length=80, verbose_name=("conhecimento"), help_text="COMO VOCÊ FICOU SABENDO DAS INSCRIÇÕES PARA O PROCESSO SELETIVO DESTE ANO? ", blank=True)
+    knowloge_other = models.CharField(max_length=80, default=" ", verbose_name=("conhecimento"), help_text="COMO VOCÊ FICOU SABENDO DAS INSCRIÇÕES PARA O PROCESSO SELETIVO DESTE ANO? ", blank=True)
 
 
     # PRIOR_INSCRIPTION_CHOICES = [
@@ -178,12 +178,12 @@ class Inscription(models.Model):
     #     ("2023", "2023 "),
     #     ("2024", "2024 "),
     # ]
-    prior_inscription = models.CharField(max_length=80,  default="2012", verbose_name=("inscricao_anterior"),
-                             help_text=("Clique para selecionar"))
+    prior_inscription = models.CharField(max_length=80,  default=" ", verbose_name=("inscricao_anterior"),
+                             help_text=("Clique para selecionar"), null=True, blank=True)
 
-    prior_course = models.CharField(max_length=50, verbose_name="curso_anterior", null=False, blank=True)
-    prior_course_year = models.CharField(max_length=50, verbose_name="curso_anterior", null=False, blank=True)
-    dedication = models.CharField(max_length=50, verbose_name=("dedicação"), null=False, blank=False)
+    prior_course = models.CharField(max_length=50, default=" ", verbose_name="curso_anterior", null=True, blank=True)
+    prior_course_year = models.CharField(max_length=50, default=" ", verbose_name="curso_anterior", null=True, blank=True)
+    dedication = models.CharField(max_length=50, default=" ", verbose_name=("dedicação"), null=True, blank=True)
     # multiplechoices
     # TABLET_CHOICES = [
     #     ("OK", "Estou tranquilo(a)! Já faço uso da tablet e estou confortável com isso."),
@@ -193,7 +193,7 @@ class Inscription(models.Model):
     # ]
     tablet = models.CharField(max_length=100,  default="OK", verbose_name=("tablet"),
                              help_text=("Clique para selecionar"))
-    likes_to_draw = models.CharField(max_length=50, verbose_name=("desenha"), null=False, blank=False)
+    likes_to_draw = models.CharField(max_length=50, default=" ", verbose_name=("desenha"), null=False, blank=False)
     # FREQUENCY_CHOICES = [
     #     ("DAY", "Diariamente"),
     #     ("WEK", "Semanalmente"),
@@ -206,9 +206,9 @@ class Inscription(models.Model):
     group_rating =  models.PositiveIntegerField(default=10, validators=[MinValueValidator(1), MaxValueValidator(10)], verbose_name=("grupo"), help_text=("Numa escala de 0 à 10, o quanto você gosta de trabalhar em grupo?"))
     critics = models.CharField(max_length=80, verbose_name=("criticas"), help_text=("COMO VOCÊ LIDA COM CRÍTICAS EM RELAÇÃO AO SEU TRABALHO?"))
     # multiple choices
-    previous_work = models.CharField(max_length=80, verbose_name=("experiencia"), help_text=("HÁ OUTRA COISA QUE VOCÊ JÁ FEZ RELACIONADA À ANIMAÇÃO / AUDIOVISUAL QUE GOSTARIA DE DESTACAR?"))
-    message = models.CharField(max_length=80, verbose_name=("recado"), help_text=("USE AS LINHAS ABAIXO PARA DAR SEU RECADO: POR QUE VOCÊ SE INTERESSOU EM PARTICIPAR DO ESTÚDIO ESCOLA?"))
-    portifolio = models.CharField(max_length=80, verbose_name=("portifolio"), help_text=("VOCÊ POSSUI UM LOCAL ONDE DIVULGA SEU TRABALHO ARTÍSTICO? EM CASO AFIRMATIVO COMPARTILHE O LINK COM A GENTE!"))
+    previous_work = models.CharField(max_length=80, default=" ", verbose_name=("experiencia"), help_text=("HÁ OUTRA COISA QUE VOCÊ JÁ FEZ RELACIONADA À ANIMAÇÃO / AUDIOVISUAL QUE GOSTARIA DE DESTACAR?"))
+    message = models.CharField(max_length=80, default=" ", verbose_name=("recado"), help_text=("USE AS LINHAS ABAIXO PARA DAR SEU RECADO: POR QUE VOCÊ SE INTERESSOU EM PARTICIPAR DO ESTÚDIO ESCOLA?"))
+    portifolio = models.CharField(max_length=80, default=" ", verbose_name=("portifolio"), help_text=("VOCÊ POSSUI UM LOCAL ONDE DIVULGA SEU TRABALHO ARTÍSTICO? EM CASO AFIRMATIVO COMPARTILHE O LINK COM A GENTE!"))
     file = models.FileField(upload_to='file_uploads/', null=True, blank=True)
 
 
