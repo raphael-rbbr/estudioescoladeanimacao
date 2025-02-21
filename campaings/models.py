@@ -35,18 +35,18 @@ class Inscription(models.Model):
     #     ("24", "24"),
     #     ("25", "25 anos ou mais"),
     # ]
-    age = models.CharField(max_length=50, default="15", verbose_name=("idade"),
+    age = models.CharField(max_length=50, default=" ", verbose_name=("idade"),
                              help_text=("Clique para selecionar"))
 
-    GENDER_CHOICES = [
-        ("MC", "Mulher cis"),
-        ("MT", "Mulher trans"),
-        ("HC", "Homem cis"),
-        ("HT", "Homem trans"),
-        ("NB", "Não binário"),
-        ("OUT", "Outra"),
-    ]
-    gender = models.CharField(max_length=50, choices=GENDER_CHOICES, default=" ", verbose_name=("genero"),
+    # GENDER_CHOICES = [
+    #     ("MC", "Mulher cis"),
+    #     ("MT", "Mulher trans"),
+    #     ("HC", "Homem cis"),
+    #     ("HT", "Homem trans"),
+    #     ("NB", "Não binário"),
+    #     ("OUT", "Outra"),
+    # ]
+    gender = models.CharField(max_length=50, default=" ", verbose_name=("genero"),
                              help_text=("Clique para selecionar"))
     gender_other = models.CharField(max_length=80, verbose_name=("genero_outro"), default=" ", help_text=("em casa de outro:"), blank=True, null=True)
     # ETHNICITY_CHOICES = [
@@ -124,7 +124,7 @@ class Inscription(models.Model):
     #     ("INT", "integral"),
 
     # ]
-    studing = models.CharField(max_length=50, default="Manhã", verbose_name=("período"),
+    studing = models.CharField(max_length=50, default=" ", verbose_name=("período"),
                              help_text=("SE ESTIVER ESTUDANDO NESTE ANO, INFORME SÉRIE / PERÍODO:"),null=False,blank=False)
 
     course = models.CharField(max_length=80, default=" ", verbose_name=("Curso"), help_text=("CURSO (CASO ESTEJA NA ESCOLA TÉCNICA OU NA FACULDADE):"), blank=True)

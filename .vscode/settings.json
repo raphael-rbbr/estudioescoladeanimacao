@@ -9,5 +9,6 @@
       "database": "estudioescoladeanimacao",
       "username": "postgres"
     }
-  ]
+  ],
+  "python.analysis.autoImportCompletions": false
 }
