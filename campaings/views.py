@@ -223,10 +223,6 @@ def inscription_pdf(request):
 	# Loop
 	for line in lines:
 		textob.textLine(line)
-		# c.drawText(textob)
-		# c.showPage()
-
-
 
     # Finish Up
 	c.drawText(textob)
