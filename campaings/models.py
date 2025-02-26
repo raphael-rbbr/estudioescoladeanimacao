@@ -115,7 +115,7 @@ class Inscription(models.Model):
                              help_text=("NÍVEL DE ESCOLARIDADE:"))
 
     school = models.CharField(max_length=80, default=" ", verbose_name=("Escola"), help_text=("INSTITUIÇÃO DE ENSINO:"))
-    grade = models.CharField(max_length=80, default=" ", verbose_name=("Série"), help_text=("SE ESTIVER ESTUDANDO NESTE ANO, INFORME SÉRIE / PERÍODO:"))
+    grade = models.CharField(max_length=80, default=" ", verbose_name=("Série"), help_text=("SE ESTIVER ESTUDANDO NESTE ANO, INFORME SÉRIE / PERÍODO:"),null=True,blank=True)
 
     # STUDING_CHOICES = [
     #     ("MAN", "manhã"),
@@ -125,7 +125,7 @@ class Inscription(models.Model):
 
     # ]
     studing = models.CharField(max_length=50, default=" ", verbose_name=("período"),
-                             help_text=("SE ESTIVER ESTUDANDO NESTE ANO, INFORME SÉRIE / PERÍODO:"),null=False,blank=False)
+                             help_text=("SE ESTIVER ESTUDANDO NESTE ANO, INFORME SÉRIE / PERÍODO:"),null=True,blank=True)
 
     course = models.CharField(max_length=80, default=" ", verbose_name=("Curso"), help_text=("CURSO (CASO ESTEJA NA ESCOLA TÉCNICA OU NA FACULDADE):"), blank=True)
     parent = models.CharField(max_length=80, default=" ", verbose_name=("Responsalvel"), help_text=("Nome completo do responsável "), blank=True)
@@ -204,11 +204,11 @@ class Inscription(models.Model):
                              help_text=("Clique para selecionar"))
 
     group_rating =  models.PositiveIntegerField(default=10, validators=[MinValueValidator(1), MaxValueValidator(10)], verbose_name=("grupo"), help_text=("Numa escala de 0 à 10, o quanto você gosta de trabalhar em grupo?"))
-    critics = models.CharField(max_length=80, verbose_name=("criticas"), help_text=("COMO VOCÊ LIDA COM CRÍTICAS EM RELAÇÃO AO SEU TRABALHO?"))
+    critics = models.TextField(max_length=1000, verbose_name=("criticas"), help_text=("COMO VOCÊ LIDA COM CRÍTICAS EM RELAÇÃO AO SEU TRABALHO?"))
     # multiple choices
-    previous_work = models.CharField(max_length=80, default=" ", verbose_name=("experiencia"), help_text=("HÁ OUTRA COISA QUE VOCÊ JÁ FEZ RELACIONADA À ANIMAÇÃO / AUDIOVISUAL QUE GOSTARIA DE DESTACAR?"))
-    message = models.CharField(max_length=80, default=" ", verbose_name=("recado"), help_text=("USE AS LINHAS ABAIXO PARA DAR SEU RECADO: POR QUE VOCÊ SE INTERESSOU EM PARTICIPAR DO ESTÚDIO ESCOLA?"))
-    portifolio = models.CharField(max_length=80, default=" ", verbose_name=("portifolio"), help_text=("VOCÊ POSSUI UM LOCAL ONDE DIVULGA SEU TRABALHO ARTÍSTICO? EM CASO AFIRMATIVO COMPARTILHE O LINK COM A GENTE!"))
+    previous_work = models.TextField(max_length=1000, default=" ", verbose_name=("experiencia"), help_text=("HÁ OUTRA COISA QUE VOCÊ JÁ FEZ RELACIONADA À ANIMAÇÃO / AUDIOVISUAL QUE GOSTARIA DE DESTACAR?"))
+    message = models.TextField(max_length=1000, default=" ", verbose_name=("recado"), help_text=("USE AS LINHAS ABAIXO PARA DAR SEU RECADO: POR QUE VOCÊ SE INTERESSOU EM PARTICIPAR DO ESTÚDIO ESCOLA?"))
+    portifolio = models.TextField(max_length=1000, default=" ", verbose_name=("portifolio"), help_text=("VOCÊ POSSUI UM LOCAL ONDE DIVULGA SEU TRABALHO ARTÍSTICO? EM CASO AFIRMATIVO COMPARTILHE O LINK COM A GENTE!"))
     file = models.FileField(upload_to='file_uploads/', null=True, blank=True)
 
 

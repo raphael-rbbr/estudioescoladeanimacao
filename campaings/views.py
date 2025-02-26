@@ -6,9 +6,18 @@ import csv
 from django.http import FileResponse
 import io
 from reportlab.pdfgen import canvas
-from reportlab.lib.units import inch
-from reportlab.lib.pagesizes import letter
+from reportlab.lib.units import cm
+from reportlab.lib.pagesizes import A4
+from django.views.generic.detail import DetailView
+from pypdf import PdfWriter
 
+
+# from reportlab.lib.utils import simpleSplit
+# L = simpleSplit(text,canv._fontname,canv._fontsize,maxWidth)
+
+# for t in L:
+# canv.drawString(x,y,t)
+# y -= canv._leading
 
 def CreateInscriprion(request):
     if request.method == "POST":
@@ -125,6 +134,12 @@ def ListInscriprion(request):
     return render(request, 'list.html', {'inscriptions': inscriptions})
 
 
+class InscriptionDetailView(DetailView):
+    # specify the model to use
+    model = Inscription
+
+
+
 # Generate CSV File inscription List
 def inscription_csv(request):
 	response = HttpResponse(content_type='text/csv')
@@ -146,88 +161,91 @@ def inscription_csv(request):
 
 
 
-def inscription_pdf(request):
+def inscription_pdf(request, pk):
 	# Create Bytestream buffer
 	buf = io.BytesIO()
 	# Create a canvas
-	c = canvas.Canvas(buf, pagesize=letter, bottomup=0)
+	c = canvas.Canvas(buf, pagesize=A4, bottomup=0)
 	# Create a text object
 	textob = c.beginText()
-	textob.setTextOrigin(inch, inch)
-	textob.setFont("Helvetica", 12)
+	textob.setTextOrigin(1*cm, 1*cm)
+	textob.setFont("Helvetica", 11)
+	textob.maxLineLength=80
 	# Designate The Model
-	inscriptions = Inscription.objects.all()
+	inscription = Inscription.objects.get(id=pk)
 	# Create blank list
 	lines = []
-	for inscription in inscriptions:
-		lines.append("Nome:" + inscription.name)
-		lines.append("CPF:" + str(inscription.cpf))
-		lines.append("RG:" + str(inscription.rg))
-		lines.append("Idade:" + inscription.age)
-		lines.append("Data de Nascimento: " + str(inscription.birthday))
-		lines.append("Gênero: " + inscription.gender)
-		lines.append("Gênero outro: " +inscription.gender_other)
-		lines.append("Raça: " + inscription.ethnicity)
-		lines.append("Etinia outra " +inscription.ethnicity_other)
-		lines.append("CEP: " + inscription.zipcode)
-		lines.append("Endereço: " + inscription.address)
-		lines.append("Complemento: " + inscription.address_line_1)
-		lines.append("Bairro: " + inscription.neighberhood)
-		lines.append("Cidade: " + inscription.city)
-		lines.append("Outra cidade " + inscription.city_other)
-		lines.append("Telefone: " + str(inscription.phone))
-		lines.append("Whatsapp: " + str(inscription.whatsapp))
-		lines.append("E-mail: " + str(inscription.email))
-		lines.append("Escolaridade: " + inscription.scholl_level)
-		lines.append("Instituição: " + inscription.school)
-		lines.append("Série: " + inscription.grade)
-		lines.append("Turno: " + inscription.studing)
-		lines.append("Curso: " + inscription.course)
-		lines.append("Renda familiar: " + inscription.income)
-		lines.append("Quantas pessoas usufruem desta renda? " + inscription.family)
-		lines.append("Trabalha ou faz estágio: " + inscription.intern)
-		lines.append("Horário Trabalho/Estágio: " + inscription.intern_time)
-		# lines.append(" " + inscription.looking_work)
-		lines.append("Possui alguma deficiência? " + inscription.deficincy)
-		lines.append("Qual defiencia? " + inscription.deficincy_type)
-		lines.append("Precisa de atendimento especial? " + inscription.special_need)
-		lines.append("Qual atendimento especial? " + inscription.special_interview)
-		lines.append("Já se inscreveu: " + inscription.prior_inscription)
-		lines.append("Como conheceu: " + inscription.knowloge)
-		lines.append("Conheceu outro lugar " + inscription.knowloge_other)
-		lines.append("Já participou? " + inscription.prior_course)
-		lines.append("Qual edição? " + str(inscription.prior_course_year))
-		lines.append("Está disposto a se dedicar com essa frequência? " + inscription.dedication)
-		lines.append("Qual a disponibilidade de horário? " )
-		lines.append("Como você se sente em relação ao uso do cut-out? ")
-		lines.append(inscription.tablet)
-		lines.append("Você gosta de desenhar? " + inscription.likes_to_draw)
-		lines.append("Com que frequência você desenha? " + inscription.frequency)
-		lines.append("Numa escala de - à 10, o quanto você gosta de trabalhar em grupo? " + str(inscription.group_rating))
-		lines.append("Como você lida com críticas em relação ao seu trabalho? ")
-		lines.append(inscription.critics)
-		lines.append(" ")
-		lines.append("Dos itens abaixo, marque aqueles que você já teve a oportunidade de realizar: ")
-		lines.append(" ")
-		lines.append("Há outra coisa que você já fez relacionada à animação? ")
-		lines.append(inscription.previous_work)
-		lines.append("  ")
-		lines.append("Por que você se interessou em participar do Estúdio Escola? ")
-		lines.append(inscription.message )
-		lines.append(" ")
-		lines.append("Possui um local onde divulga o seu trabalho artístico? ")
-		lines.append(inscription.portifolio)
-		lines.append(inscription.parent)
-		lines.append(str(inscription.parent_phone))
-		lines.append(" ")
+	lines.append("Nome:" + inscription.name)
+	lines.append("CPF:" + str(inscription.cpf))
+	lines.append("RG:" + str(inscription.rg))
+	lines.append("Idade:" + inscription.age)
+	lines.append("Data de Nascimento: " + str(inscription.birthday))
+	lines.append("Gênero: " + inscription.gender)
+	lines.append("Gênero outro: " +inscription.gender_other)
+	lines.append("Raça: " + inscription.ethnicity)
+	lines.append("Etinia outra " +inscription.ethnicity_other)
+	lines.append("CEP: " + inscription.zipcode)
+	lines.append("Endereço: " + inscription.address)
+	lines.append("Complemento: " + inscription.address_line_1)
+	lines.append("Bairro: " + inscription.neighberhood)
+	lines.append("Cidade: " + inscription.city)
+	lines.append("Outra cidade " + inscription.city_other)
+	lines.append("Telefone: " + str(inscription.phone))
+	lines.append("Whatsapp: " + str(inscription.whatsapp))
+	lines.append("E-mail: " + str(inscription.email))
+	lines.append("Escolaridade: " + inscription.scholl_level)
+	lines.append("Instituição: " + inscription.school)
+	lines.append("Série: " + inscription.grade)
+	lines.append("Turno: " + inscription.studing)
+	lines.append("Curso: " + inscription.course)
+	lines.append("Renda familiar: " + inscription.income)
+	lines.append("Quantas pessoas usufruem desta renda? " + inscription.family)
+	lines.append("Trabalha ou faz estágio: " + inscription.intern)
+	lines.append("Horário Trabalho/Estágio: " + inscription.intern_time)
+	# lines.append(" " + inscription.looking_work)
+	lines.append("Possui alguma deficiência? " + inscription.deficincy)
+	lines.append("Qual defiencia? " + inscription.deficincy_type)
+	lines.append("Precisa de atendimento especial? " + inscription.special_need)
+	lines.append("Qual atendimento especial? " + inscription.special_interview)
+	lines.append("Já se inscreveu: " + inscription.prior_inscription)
+	lines.append("Como conheceu: " + inscription.knowloge)
+	lines.append("Conheceu outro lugar " + inscription.knowloge_other)
+	lines.append("Já participou? " + inscription.prior_course)
+	lines.append("Qual edição? " + str(inscription.prior_course_year))
+	lines.append("Está disposto a se dedicar com essa frequência? " + inscription.dedication)
+	lines.append("Qual a disponibilidade de horário? " )
+	lines.append("Como você se sente em relação ao uso do cut-out? ")
+	lines.append(inscription.tablet)
+	lines.append("Você gosta de desenhar? " + inscription.likes_to_draw)
+	lines.append("Com que frequência você desenha? " + inscription.frequency)
+	lines.append("Numa escala de - à 10, o quanto você gosta de trabalhar em grupo? " + str(inscription.group_rating))
+	lines.append("Como você lida com críticas em relação ao seu trabalho? ")
+	lines.append(inscription.critics)
+	lines.append(" ")
+	lines.append("Dos itens abaixo, marque aqueles que você já teve a oportunidade de realizar: ")
+	lines.append(" ")
+	lines.append("Há outra coisa que você já fez relacionada à animação? ")
+	lines.append(inscription.previous_work)
+	lines.append("  ")
+	lines.append("Por que você se interessou em participar do Estúdio Escola? ")
+	lines.append(inscription.message )
+	lines.append(" ")
+	lines.append("Possui um local onde divulga o seu trabalho artístico? ")
+	lines.append(inscription.portifolio)
+	lines.append(" ")
 	# Loop
 	for line in lines:
+		# wraped_text = "\n".join(wrap(Desc,100)) # 100 is line width
 		textob.textLine(line)
 
     # Finish Up
 	c.drawText(textob)
 	c.showPage()
-	c.save()
+	pdf = c.save()
+	# merger = PdfWriter()
+	# merger.append(inscription.file)
+	# merger.write()
+	# merger.close()
 	buf.seek(0)
     # Return something
-	return FileResponse(buf, as_attachment=True, filename='inscriptions.pdf')
+	return FileResponse(buf, as_attachment=True, filename=inscription.name +'.pdf')
