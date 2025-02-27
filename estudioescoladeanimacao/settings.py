@@ -99,7 +99,7 @@ DATABASES = {
         'NAME': 'your_db_name',
         'USER': 'dbmasteruser',
         'PASSWORD': '8OL[};$%$fBX:o<0VTB`ses]6{a>66!>',
-        'HOST': 'ls-99371b3833212dae41b60f0c74193344e6e65b40.cg18io8mso62.us-east-1.rds.amazonaws.com',
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }
