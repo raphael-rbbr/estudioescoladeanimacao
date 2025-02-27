@@ -93,12 +93,16 @@ WSGI_APPLICATION = 'estudioescoladeanimacao.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-if "DATABASE_SECRET" in environ:
-    database_secret = environ.get("DATABASE_SECRET")
-    db_url = json.loads(database_secret)["postgres://django:EstudioEscola2025@estudioescoladeanimacao-db.c9q0gqwcucwk.us-east-2.rds.amazonaws.com/django"]
-    DATABASES = {"default": dj_database_url.parse(db_url)}
-else:
-    DATABASES = {"default": dj_database_url.parse("sqlite:///db.sqlite3")}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'your_db_name',
+        'USER': 'dbmasteruser',
+        'PASSWORD': '8OL[};$%$fBX:o<0VTB`ses]6{a>66!>',
+        'HOST': 'ls-99371b3833212dae41b60f0c74193344e6e65b40.cg18io8mso62.us-east-1.rds.amazonaws.com',
+        'PORT': '5432',
+    }
+}
 
 
 # Password validation
