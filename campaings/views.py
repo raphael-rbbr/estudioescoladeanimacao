@@ -249,3 +249,8 @@ def inscription_pdf(request, pk):
 	buf.seek(0)
     # Return something
 	return FileResponse(buf, as_attachment=True, filename=inscription.name +'.pdf')
+
+
+def Return200(request):
+
+    return HttpResponse(status=200)

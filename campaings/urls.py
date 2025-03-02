@@ -7,6 +7,7 @@ urlpatterns = [
     path("list", views.ListInscriprion, name="list"),
     path('inscription_csv', views.inscription_csv, name='inscription_csv'),
     path('/<pk>/inscription_pdf', views.inscription_pdf, name='inscription_pdf'),
+    path("up", views.Return200, name='return200')
     # path('<pk>/', views.InscriptionDetailView.as_view()),
 
 ]

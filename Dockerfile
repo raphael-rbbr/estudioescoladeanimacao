@@ -24,4 +24,6 @@ COPY . /estudioescoladeanimacao/
 EXPOSE 80
 
 # Run Django’s development server
+RUN python manage.py collectstatic
+
 CMD ["python", "manage.py", "runserver", "0.0.0.0:80"]
