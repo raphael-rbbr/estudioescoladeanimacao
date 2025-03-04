@@ -15,7 +15,10 @@ from pathlib import Path
 import json
 import dj_database_url
 from os import environ
-
+import os
+from dotenv import load_dotenv
+# Load environment variables from .env file
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -89,20 +92,24 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = 'estudioescoladeanimacao.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+
+
+
 DATABASES = {
         "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "mydb",
+        "NAME": os.getenv("NAME"),
         "USER": "dbmasteruser",
         "PASSWORD": "Ru=9Gq?JC;U9Iq8dDfQ#,Foggk&7M}fw",
-        "HOST": "ls-acd547e8f997acde208fd498b7981a748b280baa.cg18io8mso62.us-east-1.rds.amazonaws.com",
-        "PORT": "5432",
+        "HOST": os.getenv("HOST"),
+        "PORT": os.getenv("PORT"),
     }
 }
 
