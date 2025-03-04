@@ -24,6 +24,9 @@ COPY . /estudioescoladeanimacao/
 # Expose the Django port
 EXPOSE 80
 
+
+RUN mkdir /file_uploads
+
 # Run Django’s development server
 RUN python manage.py collectstatic
 
