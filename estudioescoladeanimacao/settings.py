@@ -101,15 +101,14 @@ WSGI_APPLICATION = 'estudioescoladeanimacao.wsgi.application'
 
 
 
-
 DATABASES = {
         "default": {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "mydb",
         "USER": "dbmasteruser",
         "PASSWORD": "Ru=9Gq?JC;U9Iq8dDfQ#,Foggk&7M}fw",
-        "HOST": os.getenv("HOST"),
-        "PORT": os.getenv("PORT"),
+        "HOST": "ls-acd547e8f997acde208fd498b7981a748b280baa.cg18io8mso62.us-east-1.rds.amazonaws.com",
+        "PORT": "5432",
     }
 }
 
