@@ -5,6 +5,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 # from cpffield import cpffield
 from django.core.validators import MaxValueValidator, MinValueValidator
 # from django.urls import reverse_lazy
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 # from constrainedfilefield.fields import ConstrainedFileField
@@ -20,8 +21,8 @@ class Inscription(models.Model):
     created_at = models.DateTimeField(verbose_name="Data_criação", auto_now_add=True)
 
     birthday = models.DateTimeField(verbose_name="nascimento", null=True)
-    cpf = models.PositiveSmallIntegerField(verbose_name="CPF", unique=True,)
-    rg = models.PositiveSmallIntegerField(verbose_name="RG",null=False,blank=False)
+    cpf = models.BigIntegerField(verbose_name="CPF", unique=True)
+    rg = models.BigIntegerField(verbose_name="RG",null=False,blank=False)
     # AGE_CHOICES = [
     #     ("15", "anos ou menos"),
     #     ("16", "16"),

@@ -10,7 +10,8 @@
   <h5>{{ inscription.cpf  }}</h5>
 
     <h5 style="margin-left: 25px">{{ inscription.name }}</h5>
-    <h5 style="margin-left: 25px">{{ inscription.file }}</h5>
+
+    <a style="margin-left: 25px" href="{{ inscription.file.url }}">{{inscription.file.url}}</a>
     <a style="margin-left: 25px" href="{% url 'inscription_pdf' inscription.id %}">Arquivo PDF de {{ inscription.name }}</a>
   </div>
 {% endfor%}

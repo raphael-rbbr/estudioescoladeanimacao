@@ -152,7 +152,7 @@ def inscription_csv(request):
 	inscriptions = Inscription.objects.all()
 
 	# Add column headings to the csv file
-	writer.writerow(['Nome', 'idade', '', ', ' 'cpf', 'rg', 'genero', 'genero  outro', 'etinia', 'etinia outra', 'email', 'CEP', 'endereço', 'complemento', 'bairro', 'Cidade', 'cidade outra', 'terlefone ', 'whatsapp', 'escolaridade', 'escola', 'série', 'período', 'curso', 'responsavel', 'telefone responsavel', 'estágio', 'horarios', 'trabalha', 'renda', 'familia renda', 'deficiencia', 'deficiencia qual', 'cuidado especial', 'cuidado entrevista', 'como conheceu', 'como conhgeceu outros', 'ja se inscreveu', 'curso anterior', 'dedicacao', 'tablet', 'gosta de desenhar', 'frequencia','avaliacao grupo', 'criticas', 'experiancia anterior', 'menssagem', 'portifolio'])
+	writer.writerow(['Nome', 'idade', 'cpf', 'rg', 'genero', 'genero  outro', 'etinia', 'etinia outra', 'email', 'CEP', 'endereço', 'complemento', 'bairro', 'Cidade', 'cidade outra', 'terlefone ', 'whatsapp', 'escolaridade', 'escola', 'série', 'período', 'curso', 'responsavel', 'telefone responsavel', 'estágio', 'horarios', 'trabalha', 'renda', 'familia renda', 'deficiencia', 'deficiencia qual', 'cuidado especial', 'cuidado entrevista', 'como conheceu', 'como conhgeceu outros', 'ja se inscreveu', 'curso anterior', 'dedicacao', 'tablet', 'gosta de desenhar', 'frequencia','avaliacao grupo', 'criticas', 'experiancia anterior', 'menssagem', 'portifolio'])
 
 	# Loop Thu and output
 	for inscription in inscriptions:
