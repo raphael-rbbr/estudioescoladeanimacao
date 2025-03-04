@@ -16,6 +16,7 @@ import json
 import dj_database_url
 from os import environ
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -51,6 +52,7 @@ THIRD_PARTY_APPS = [
     # "crispy_forms",
     'phonenumber_field',
     'bootstrap_datepicker_plus',
+    'bootstrap5',
     # 'cpffield',
 
 ]
