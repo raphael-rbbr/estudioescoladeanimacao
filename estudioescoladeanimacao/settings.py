@@ -105,7 +105,7 @@ WSGI_APPLICATION = 'estudioescoladeanimacao.wsgi.application'
 DATABASES = {
         "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.getenv("NAME"),
+        "NAME": "mydb",
         "USER": "dbmasteruser",
         "PASSWORD": "Ru=9Gq?JC;U9Iq8dDfQ#,Foggk&7M}fw",
         "HOST": os.getenv("HOST"),
