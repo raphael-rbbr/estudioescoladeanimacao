@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Inscription
 import csv
@@ -10,6 +10,7 @@ from reportlab.lib.units import cm
 from reportlab.lib.pagesizes import A4
 from django.views.generic.detail import DetailView
 from pypdf import PdfWriter
+from django.contrib.auth.decorators import login_required
 
 
 # from reportlab.lib.utils import simpleSplit
@@ -126,12 +127,16 @@ def CreateInscriprion(request):
     return render(request, "home.html", context)
 
 
+@login_required(login_url='/admin/')
 def ListInscriprion(request):
-    inscriptions = Inscription.objects.all
     # context= {'incripitions': incripitions}
     # incripitions = Inscription.objects.all()
+    if request.user.is_authenticated:
+        inscriptions = Inscription.objects.all
+        return render(request, 'list.html', {'inscriptions': inscriptions})
+    else:
+         return redirect(CreateInscriprion)
 
-    return render(request, 'list.html', {'inscriptions': inscriptions})
 
 
 class InscriptionDetailView(DetailView):
