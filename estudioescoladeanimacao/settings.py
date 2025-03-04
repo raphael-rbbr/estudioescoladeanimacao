@@ -51,6 +51,7 @@ THIRD_PARTY_APPS = [
     # "crispy_forms",
     'phonenumber_field',
     'bootstrap_datepicker_plus',
+    'bootstrap5',
     # 'cpffield',
 
 ]

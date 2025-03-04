@@ -1,18 +1,38 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div style="display: flex; flex-direction: column;">
-  <a class="dropdown-item" href="{% url 'inscription_csv' %}">Excell com inscrições</a>
-  {% comment %} <a class="dropdown-item" href="{% url 'inscription_pdf' %}">Venue PDF File</a> {% endcomment %}
-</div>
-{% for inscription in inscriptions %}
-<div style="display: flex; flex-direction: row; align-items: center;">
-  <h5>{{ inscription.cpf  }}</h5>
 
-    <h5 style="margin-left: 25px">{{ inscription.name }}</h5>
-
-    <a style="margin-left: 25px" href="{{ inscription.file.url }}">{{inscription.file.url}}</a>
-    <a style="margin-left: 25px" href="{% url 'inscription_pdf' inscription.id %}">Arquivo PDF de {{ inscription.name }}</a>
+<div class="container mt-5">
+  <div class="text-center mb-5">
+    <h3>Lista de candidatos</h3>
+    <p class="lead">Lista de todos os inscritos. Links para desenho enviado e arquivo pdf da inscrição do canditato</p>
+    <p class="lead">Para arquivo excel utilizar o primeiro link</p>
   </div>
-{% endfor%}
+
+  <div class="text-center mb-5">
+    <a class="btn btn-primary" href="{% url 'inscription_csv' %}">Excell com todas as inscrições</a>
+  </div>
+  {% for inscription in inscriptions %}
+
+  <div class="card mb-3">
+    <div class="card-body">
+      <div class="d-flex flex-column flex-lg-row">
+        <div class="row flex-fill">
+          <div class="col-sm-5">
+            <h4 class="h5">{{ inscription.name }}</h4>
+            <span class="badge bg-secondary">{{ inscription.cpf  }}</span>
+          </div>
+          <div class="col-sm-4 py-2">
+            <a class="btn btn-secondary" target="_blank" href="{{ inscription.file.url }}">Desenho</a>
+
+          </div>
+          <div class="col-sm-3 text-lg-end">
+            <a class="btn btn-primary" href="{% url 'inscription_pdf' inscription.id %}">Arquivo PDF</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor%}
+</div>
 {% endblock %}
