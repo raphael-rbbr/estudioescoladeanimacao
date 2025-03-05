@@ -1,9 +1,7 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, FileResponse
 from .models import Inscription
 import csv
-# for pdf
-from django.http import FileResponse
 import io
 from reportlab.pdfgen import canvas
 from reportlab.lib.units import cm
@@ -11,6 +9,11 @@ from reportlab.lib.pagesizes import A4
 from django.views.generic.detail import DetailView
 from pypdf import PdfWriter
 from django.contrib.auth.decorators import login_required
+from pdf2image import convert_from_path
+from django.core.files.storage import default_storage
+import os
+import tempfile
+from textwrap import wrap
 
 
 # from reportlab.lib.utils import simpleSplit
@@ -147,24 +150,78 @@ class InscriptionDetailView(DetailView):
 
 # Generate CSV File inscription List
 def inscription_csv(request):
-	response = HttpResponse(content_type='text/csv')
-	response['Content-Disposition'] = 'attachment; filename=inscription.csv'
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename=inscription.csv'
 
-	# Create a csv writer
-	writer = csv.writer(response)
+    # Create a csv writer
+    writer = csv.writer(response, quoting=csv.QUOTE_ALL)
 
-	# Designate The Model
-	inscriptions = Inscription.objects.all()
+    # Designate The Model
+    inscriptions = Inscription.objects.all()
 
-	# Add column headings to the csv file
-	writer.writerow(['Nome', 'idade', 'cpf', 'rg', 'genero', 'genero  outro', 'etinia', 'etinia outra', 'email', 'CEP', 'endereço', 'complemento', 'bairro', 'Cidade', 'cidade outra', 'terlefone ', 'whatsapp', 'escolaridade', 'escola', 'série', 'período', 'curso', 'responsavel', 'telefone responsavel', 'estágio', 'horarios', 'trabalha', 'renda', 'familia renda', 'deficiencia', 'deficiencia qual', 'cuidado especial', 'cuidado entrevista', 'como conheceu', 'como conhgeceu outros', 'ja se inscreveu', 'curso anterior', 'dedicacao', 'tablet', 'gosta de desenhar', 'frequencia','avaliacao grupo', 'criticas', 'experiancia anterior', 'menssagem', 'portifolio'])
+    # Add column headings to the csv file
+    writer.writerow(['Nome', 'idade', 'cpf', 'rg', 'genero', 'genero outro', 'etinia', 'etinia outra', 'email', 'CEP', 'endereço', 'complemento', 'bairro', 'Cidade', 'cidade outra', 'telefone', 'whatsapp', 'escolaridade', 'escola', 'série', 'período', 'curso', 'responsavel', 'telefone responsavel', 'estágio', 'horarios', 'trabalha', 'renda', 'familia renda', 'deficiencia', 'deficiencia qual', 'cuidado especial', 'cuidado entrevista', 'como conheceu', 'como conheceu outros', 'ja se inscreveu', 'curso anterior', 'dedicacao', 'tablet', 'gosta de desenhar', 'frequencia', 'avaliacao grupo', 'criticas', 'experiencia anterior', 'mensagem', 'portifolio'])
 
-	# Loop Thu and output
-	for inscription in inscriptions:
-		writer.writerow([inscription.name, inscription.age, inscription.cpf, inscription.rg, inscription.gender, inscription.gender_other, inscription.ethnicity, inscription.ethnicity_other, inscription.email, inscription.zipcode, inscription.address, inscription.address_line_1, inscription.neighberhood, inscription.city, inscription.city_other, inscription.phone, inscription.whatsapp, inscription.scholl_level, inscription.school, inscription.grade, inscription.studing, inscription.course, inscription.parent, inscription.parent_phone, inscription.intern, inscription.intern_time, inscription.looking_work, inscription.income, inscription.family, inscription.deficincy, inscription.deficincy_type, inscription.special_need, inscription.special_interview, inscription.knowloge, inscription.knowloge_other, inscription.prior_inscription, inscription.prior_course, inscription.dedication, inscription.tablet, inscription.likes_to_draw, inscription.frequency, inscription.group_rating, inscription.critics, inscription.previous_work, inscription.message, inscription.portifolio])
-	return response
+    # Loop through and output
+    for inscription in inscriptions:
+        writer.writerow([
+            inscription.name,
+            inscription.age,
+            inscription.cpf,
+            inscription.rg,
+            inscription.gender,
+            inscription.gender_other,
+            inscription.ethnicity,
+            inscription.ethnicity_other,
+            inscription.email,
+            inscription.zipcode,
+            inscription.address,
+            inscription.address_line_1,
+            inscription.neighberhood,
+            inscription.city,
+            inscription.city_other,
+            inscription.phone,
+            inscription.whatsapp,
+            inscription.scholl_level,
+            inscription.school,
+            inscription.grade,
+            inscription.studing,
+            inscription.course,
+            inscription.parent,
+            inscription.parent_phone,
+            inscription.intern,
+            inscription.intern_time,
+            inscription.looking_work,
+            inscription.income,
+            inscription.family,
+            inscription.deficincy,
+            inscription.deficincy_type,
+            inscription.special_need,
+            inscription.special_interview,
+            inscription.knowloge,
+            inscription.knowloge_other,
+            inscription.prior_inscription,
+            inscription.prior_course,
+            inscription.dedication,
+            inscription.tablet,
+            inscription.likes_to_draw,
+            inscription.frequency,
+            inscription.group_rating,
+            inscription.critics,
+            inscription.previous_work,
+            inscription.message,
+            inscription.portifolio
+        ])
+
+    return response
 
 
+from pdf2image import convert_from_path, convert_from_bytes
+from pdf2image.exceptions import (
+    PDFInfoNotInstalledError,
+    PDFPageCountError,
+    PDFSyntaxError
+)
 
 def inscription_pdf(request, pk):
 	# Create Bytestream buffer
@@ -174,7 +231,7 @@ def inscription_pdf(request, pk):
 	# Create a text object
 	textob = c.beginText()
 	textob.setTextOrigin(1*cm, 1*cm)
-	textob.setFont("Helvetica", 11)
+	textob.setFont("Helvetica", 10)
 	textob.maxLineLength=80
 	# Designate The Model
 	inscription = Inscription.objects.get(id=pk)
@@ -240,20 +297,46 @@ def inscription_pdf(request, pk):
 	lines.append(" ")
 	# Loop
 	for line in lines:
-		# wraped_text = "\n".join(wrap(Desc,100)) # 100 is line width
-		textob.textLine(line)
+		wrapped_lines = wrap(line, 127)  # Wrap text to fit within 100 characters per line
+		for wrapped_line in wrapped_lines:
+			textob.textLine(wrapped_line)
 
     # Finish Up
 	c.drawText(textob)
 	c.showPage()
-	pdf = c.save()
-	# merger = PdfWriter()
-	# merger.append(inscription.file)
-	# merger.write()
-	# merger.close()
+	print(str(inscription.file.url))
+	# images = convert_from_path("/estudioescoladeanimacao" + str(inscription.file.url))
+
+  # Construct the correct file path
+	file_path = default_storage.path(inscription.file.name)
+	print(file_path)
+
+    # Check if the file exists
+	# if not os.path.exists(file_path):
+	# 	return HttpResponse("File not found.", status=404)
+
+    # Convert PDF to images
+	images = convert_from_path(file_path)
+	for image in images:
+		with tempfile.NamedTemporaryFile(delete=False, suffix=".jpg") as temp_image:
+			image.save(temp_image, format='JPEG')
+			temp_image_path = temp_image.name
+        # Get the dimensions of the image
+		img_width, img_height = image.size
+        # Adjust the transformation matrix to flip the image vertically
+		c.saveState()
+		c.translate(0, A4[1])
+		c.scale(1, -1)
+		c.drawImage(temp_image_path, 0, 0, width=A4[0], height=A4[1])
+		c.restoreState()
+		c.showPage()
+		os.remove(temp_image_path)
+
+	c.save()
 	buf.seek(0)
     # Return something
 	return FileResponse(buf, as_attachment=True, filename=inscription.name +'.pdf')
+
 
 
 def Return200(request):
