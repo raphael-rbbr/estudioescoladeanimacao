@@ -22,7 +22,7 @@ class Inscription(models.Model):
 
     birthday = models.DateTimeField(verbose_name="nascimento", null=True)
     cpf = models.BigIntegerField(verbose_name="CPF", unique=True)
-    rg = models.BigIntegerField(verbose_name="RG",null=False,blank=False)
+    rg = models.CharField(verbose_name="RG",null=False,blank=False)
     # AGE_CHOICES = [
     #     ("15", "anos ou menos"),
     #     ("16", "16"),

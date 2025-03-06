@@ -77,7 +77,8 @@ def CreateInscriprion(request):
         new_message = request.POST.get('porqueinteresse')
         new_portifolio = request.POST.get('linkportifolio')
         new_file = request.FILES['desenho']
-        Inscription.objects.create(name = new_name,
+        Inscription.objects.create(
+                                    name = new_name,
                                     birthday = new_birthday,
                                     cpf = new_cpf,
                                     rg = new_rg,
@@ -126,8 +127,17 @@ def CreateInscriprion(request):
                                     message = new_message,
                                     portifolio = new_portifolio,
                                     file = new_file,)
+        return redirect(InscriptionSucess)
+
     context= {}
     return render(request, "home.html", context)
+
+
+
+def InscriptionSucess(request):
+    # specify the model to use
+    return render(request, 'sucess.html')
+
 
 
 @login_required(login_url='/admin/')
@@ -142,16 +152,12 @@ def ListInscriprion(request):
 
 
 
-class InscriptionDetailView(DetailView):
-    # specify the model to use
-    model = Inscription
-
 
 
 # Generate CSV File inscription List
 def inscription_csv(request):
     response = HttpResponse(content_type='text/csv')
-    response['Content-Disposition'] = 'attachment; filename=inscription.csv'
+    response['Content-Disposition'] = 'attachment; filename=inscription.xls'
 
     # Create a csv writer
     writer = csv.writer(response, quoting=csv.QUOTE_ALL)
