@@ -8,8 +8,8 @@ image: raphaelrrb/estudioescoladeanimacao
 servers:
   web:
     hosts:
-      - 23.23.204.145
-      - 44.194.202.102
+      - 54.209.170.53
+      - 18.204.185.157
 
   # job:
   #   hosts:
