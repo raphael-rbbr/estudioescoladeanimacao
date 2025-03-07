@@ -178,9 +178,9 @@
 
                   <label for="cpf">CPF (Apenas números)</label>
                   <input type="number" name="cpf" id="cpf" placeholder="CPF" min="00000000001" max="99999999999">
-
+{% comment %}
                   <label for="rg">RG </label>
-                  <input type="text" name="rg" id="rg" placeholder="RG" min="000000001" max="999999999">
+                  <input type="text" name="rg" id="rg" placeholder="RG" min="000000001" max="999999999"> {% endcomment %}
 
                   <div class="small">
 
@@ -244,7 +244,7 @@
                   <label for="cep">CEP</label>
                   <input type="number" name="cep" id="cep" placeholder="CEP">
 
-                  <label for="endereco">Endereço</label>
+                  {% comment %} <label for="endereco">Endereço</label>
                   <input type="text" name="endereco" id="endereco" placeholder="Endereço">
 
                   <div class="small">
@@ -252,7 +252,7 @@
                       <label for="complemento">Complemento</label>
                       <input type="text" name="complemento" id="complemento" placeholder="Complemento">
 
-                  </div>
+                  </div> {% endcomment %}
 
                   <div class="small nomargin">
 
@@ -360,7 +360,7 @@
 
                   <div class="spacer"></div>
 
-                  <div class="small">
+                  {% comment %} <div class="small">
                       <label for="instituicao">Instituição de Ensino</label>
                       <input type="text" name="instituicao" id="instituicao" placeholder="Instituição de Ensino">
                   </div>
@@ -388,30 +388,7 @@
                   <input type="radio" name="turno" id="turno_quatro" value="Integral">
                   <label for="turno_quatro">Integral</label>
 
-                  <div class="spacer"></div>
-
-                  <a class="btn small tabquatro">Seguir</a>
-
-              </div>
-
-              <div class="dadosfamiliares abaform">
-
-              <div class="boxmenor">
-
-                  <p>EM CASO DE TER MENOS DE 18 ANOS, INFORMAR: </p>
-
-                  <label for="nomeresponsavel">Nome completo do Responsável</label>
-                  <input type="text" name="nomeresponsavel" id="nomeresponsavel" placeholder="Nome">
-
-                  <label for="telefoneresponsavel">Telefone para contato </label>
-                  <input type="text" name="telefoneresponsavel" id="telefoneresponsavel" placeholder="Telefone">
-
-                  <!-- <label for="horarioresponsavel">Horário de trabalho</label>
-                  <input type="text" name="horarioresponsavel" id="horarioresponsavel" placeholder="Horário" /> -->
-
-                  </div>
-
-                  <div class="spacer"></div>
+                  <div class="spacer"></div> {% endcomment %}
 
                   <p>Você trabalha ou faz estágio?</p>
 
@@ -438,6 +415,29 @@
                   </div>
                       <input type="radio" name="buscaestagio" id="buscaestagio_sim" value="Sim">
                       <label for="buscaestagio_sim">Sim</label>
+                  <a class="btn small tabquatro">Seguir</a>
+
+              </div>
+
+              <div class="dadosfamiliares abaform">
+
+              <div class="boxmenor">
+
+                  <p>EM CASO DE TER MENOS DE 18 ANOS, INFORMAR: </p>
+
+                  <label for="nomeresponsavel">Nome completo do Responsável</label>
+                  <input type="text" name="nomeresponsavel" id="nomeresponsavel" placeholder="Nome">
+
+                  <label for="telefoneresponsavel">Telefone para contato </label>
+                  <input type="text" name="telefoneresponsavel" id="telefoneresponsavel" placeholder="Telefone">
+
+                  <!-- <label for="horarioresponsavel">Horário de trabalho</label>
+                  <input type="text" name="horarioresponsavel" id="horarioresponsavel" placeholder="Horário" /> -->
+
+                  </div>
+
+                  <div class="spacer"></div>
+
 
                   <div class="spacer"></div>
 
@@ -677,7 +677,7 @@
 
                   <div class="spacer"></div>
 
-                  <p>1) Você gosta de desenhar?</p>
+                  {% comment %} <p>1) Você gosta de desenhar?</p>
 
                       <div class="boxerro">
                           <input type="radio" name="gostadesenhar" id="gostadesenhar_sim" value="Sim">
@@ -687,11 +687,11 @@
                       <div class="clear"></div>
 
                       <input type="radio" name="gostadesenhar" id="gostadesenhar_nao" value="Não">
-                      <label for="gostadesenhar_nao">Não</label>
+                      <label for="gostadesenhar_nao">Não</label> {% endcomment %}
 
                   <div class="spacer"></div>
 
-                  <p>2) Com que frequência você desenha?</p>
+                  <p>1) Com que frequência você desenha?</p>
 
                   <div class="boxerrorcheckbox">
                       <input type="radio" name="freqdesenho" id="freqdesenho_1" value="Diariamente">
@@ -709,10 +709,10 @@
 
                   <div class="spacer"></div>
 
-                  <label for="trabalharemgrupo">3) Numa escala de 0 à 10, o quanto você gosta de trabalhar em grupo?</label>
+                  <label for="trabalharemgrupo">2) Numa escala de 0 à 10, o quanto você gosta de trabalhar em grupo?</label>
                   <input type="number" name="trabalharemgrupo" id="trabalharemgrupo" placeholder="0 à 10" min="0" max="10">
 
-                  <label for="criticastrabalgo">4) COMO VOCÊ LIDA COM CRÍTICAS EM RELAÇÃO AO SEU TRABALHO?</label>
+                  <label for="criticastrabalgo">3) COMO VOCÊ LIDA COM CRÍTICAS EM RELAÇÃO AO SEU TRABALHO?</label>
                   <textarea name="criticastrabalgo" id="criticastrabalgo"></textarea>
 
                   <div class="spacer"></div>
@@ -763,19 +763,19 @@
 
                   <div class="spacer"></div>
 
-                  <p>6) HÁ OUTRA COISA QUE VOCÊ JÁ FEZ RELACIONADA À ANIMAÇÃO / AUDIOVISUAL QUE GOSTARIA DE DESTACAR?</p>
+                  <p>4) HÁ OUTRA COISA QUE VOCÊ JÁ FEZ RELACIONADA À ANIMAÇÃO / AUDIOVISUAL QUE GOSTARIA DE DESTACAR?</p>
 
                       <textarea name="destacaranimacao" id="destacaranimacao"></textarea>
 
                   <div class="spacer"></div>
 
-                  <p>7) USE AS LINHAS ABAIXO PARA DAR SEU RECADO: POR QUE VOCÊ SE INTERESSOU EM PARTICIPAR DO ESTÚDIO ESCOLA?</p>
+                  <p>5) USE AS LINHAS ABAIXO PARA DAR SEU RECADO: POR QUE VOCÊ SE INTERESSOU EM PARTICIPAR DO ESTÚDIO ESCOLA?</p>
 
                       <textarea name="porqueinteresse" id="porqueinteresse"></textarea>
 
                   <div class="spacer"></div>
 
-                  <p>8) VOCÊ POSSUI UM LOCAL ONDE DIVULGA SEU TRABALHO ARTÍSTICO? EM CASO AFIRMATIVO COMPARTILHE O LINK COM A GENTE!</p>
+                  <p>6) VOCÊ POSSUI UM LOCAL ONDE DIVULGA SEU TRABALHO ARTÍSTICO? EM CASO AFIRMATIVO COMPARTILHE O LINK COM A GENTE!</p>
 
                   <p>Aqui vale de tudo: Instagram, Pasta no Google Drive, Site, Tumblr, Facebook, Behance, Art Station, Devian Art, etc.</p>
 
@@ -785,7 +785,7 @@
 
                   <div class="spacer"></div>
 
-                  <p>9) COMPILE EM UM PDF DESENHOS QUE VOCÊ CONSIDERE COMO SENDO SUAS MELHORES CRIAÇÕES! QUANTO MAIS DESENHOS MELHOR!</p>
+                  <p>7) COMPILE EM UM PDF DESENHOS QUE VOCÊ CONSIDERE COMO SENDO SUAS MELHORES CRIAÇÕES! QUANTO MAIS DESENHOS MELHOR!</p>
 
                   <p class="smalltext">DICAS<br>
 

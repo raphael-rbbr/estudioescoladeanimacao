@@ -31,15 +31,15 @@ def CreateInscriprion(request):
         new_name = request.POST.get('first_name')
         new_birthday = request.POST.get('nascimento')
         new_cpf = request.POST.get('cpf')
-        new_rg = request.POST.get('rg')
+        # new_rg = request.POST.get('rg')
         new_age = request.POST.get('idade')
         new_gender = request.POST.get('genero')
         new_gender_other = request.POST.get('generooutros')
         new_ethnicity = request.POST.get('raca')
         new_ethnicity_other = request.POST.get('racaoutros')
         new_zipcode = request.POST.get('cep')
-        new_address = request.POST.get('endereco')
-        new_address_line_1 = request.POST.get('complemento')
+        # new_address = request.POST.get('endereco')
+        # new_address_line_1 = request.POST.get('complemento')
         new_neighberhood = request.POST.get('bairro')
         new_city = request.POST.get('cidade')
         new_city_other = request.POST.get('outracidade')
@@ -47,13 +47,13 @@ def CreateInscriprion(request):
         new_whatsapp = request.POST.get('whatsapp')
         new_email = request.POST.get('email')
         new_scholl_level = request.POST.get('escolaridade')
-        new_school = request.POST.get('instituicao')
-        new_grade = request.POST.get('serie')
-        if request.POST.get('turno') == None:
-            new_studing = " "
-        else:
-            new_studing = request.POST.get('turno')
-        new_course = request.POST.get('curso')
+        # new_school = request.POST.get('instituicao')
+        # new_grade = request.POST.get('serie')
+        # if request.POST.get('turno') == None:
+        #     new_studing = " "
+        # else:
+        #     new_studing = request.POST.get('turno')
+        # new_course = request.POST.get('curso')
         new_parent = request.POST.get('nomeresponsavel')
         new_parent_phone = request.POST.get('telefoneresponsavel')
         new_intern = request.POST.get('estagio')
@@ -72,7 +72,7 @@ def CreateInscriprion(request):
         new_prior_course_year = request.POST.get('qualedicao')
         new_dedication = request.POST.get('frequencia')
         new_tablet = request.POST.get('cutout')
-        new_likes_to_draw = request.POST.get('gostadesenhar')
+        # new_likes_to_draw = request.POST.get('gostadesenhar')
         new_frequency = request.POST.get('freqdesenho')
         new_group_rating = request.POST.get('trabalharemgrupo')
         new_critics = request.POST.get('criticastrabalgo')
@@ -84,14 +84,14 @@ def CreateInscriprion(request):
                                     name = new_name,
                                     birthday = new_birthday,
                                     cpf = new_cpf,
-                                    rg = new_rg,
+                                    # rg = new_rg,
                                     age = new_age,
                                     gender = new_gender,
                                     gender_other = new_gender_other,
                                     ethnicity = new_ethnicity,
                                     ethnicity_other = new_ethnicity_other,
-                                    address = new_address,
-                                    address_line_1 = new_address_line_1,
+                                    # address = new_address,
+                                    # address_line_1 = new_address_line_1,
                                     neighberhood = new_neighberhood,
                                     city = new_city,
                                     city_other = new_city_other,
@@ -102,10 +102,10 @@ def CreateInscriprion(request):
                                     parent = new_parent,
                                     parent_phone = new_parent_phone,
                                     scholl_level = new_scholl_level,
-                                    school = new_school,
-                                    grade = new_grade,
-                                    studing = new_studing,
-                                    course = new_course,
+                                    # school = new_school,
+                                    # grade = new_grade,
+                                    # studing = new_studing,
+                                    # course = new_course,
                                     intern = new_intern,
                                     intern_time = new_intern_time,
                                     looking_work = new_looking_work,
@@ -122,7 +122,7 @@ def CreateInscriprion(request):
                                     prior_course_year = new_prior_course_year,
                                     dedication = new_dedication,
                                     tablet = new_tablet,
-                                    likes_to_draw = new_likes_to_draw,
+                                    # likes_to_draw = new_likes_to_draw,
                                     frequency = new_frequency,
                                     group_rating = new_group_rating,
                                     critics = new_critics,
