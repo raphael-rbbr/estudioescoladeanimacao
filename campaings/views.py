@@ -180,7 +180,7 @@ def inscription_csv(request):
     inscriptions = Inscription.objects.all()
 
     # Add column headings to the csv file
-    writer.writerow(['Nome', 'idade', 'cpf', 'rg', 'genero', 'genero outro', 'etinia', 'etinia outra', 'email', 'CEP', 'endereço', 'complemento', 'bairro', 'Cidade', 'cidade outra', 'telefone', 'whatsapp', 'escolaridade', 'escola', 'série', 'período', 'curso', 'responsavel', 'telefone responsavel', 'estágio', 'horarios', 'trabalha', 'renda', 'familia renda', 'deficiencia', 'deficiencia qual', 'cuidado especial', 'cuidado entrevista', 'como conheceu', 'como conheceu outros', 'ja se inscreveu', 'curso anterior', 'dedicacao', 'tablet', 'gosta de desenhar', 'frequencia', 'avaliacao grupo', 'criticas', 'experiencia anterior', 'mensagem', 'portifolio'])
+    writer.writerow(['Nome', 'idade', 'cpf', 'genero', 'genero outro', 'etinia', 'etinia outra', 'email', 'CEP', 'bairro', 'Cidade', 'cidade outra', 'telefone', 'whatsapp', 'escolaridade', 'responsavel', 'telefone responsavel', 'estágio', 'horarios', 'trabalha', 'renda', 'familia renda', 'deficiencia', 'deficiencia qual', 'cuidado especial', 'cuidado entrevista', 'como conheceu', 'como conheceu outros', 'ja se inscreveu', 'curso anterior', 'dedicacao', 'tablet', 'frequencia', 'avaliacao grupo', 'criticas', 'experiencia anterior', 'mensagem', 'portifolio'])
 
     # Loop through and output
     for inscription in inscriptions:
@@ -188,25 +188,25 @@ def inscription_csv(request):
             inscription.name,
             inscription.age,
             inscription.cpf,
-            inscription.rg,
+            # inscription.rg,
             inscription.gender,
             inscription.gender_other,
             inscription.ethnicity,
             inscription.ethnicity_other,
             inscription.email,
             inscription.zipcode,
-            inscription.address,
-            inscription.address_line_1,
+            # inscription.address,
+            # inscription.address_line_1,
             inscription.neighberhood,
             inscription.city,
             inscription.city_other,
             inscription.phone,
             inscription.whatsapp,
             inscription.scholl_level,
-            inscription.school,
-            inscription.grade,
-            inscription.studing,
-            inscription.course,
+            # inscription.school,
+            # inscription.grade,
+            # inscription.studing,
+            # inscription.course,
             inscription.parent,
             inscription.parent_phone,
             inscription.intern,
@@ -224,7 +224,7 @@ def inscription_csv(request):
             inscription.prior_course,
             inscription.dedication,
             inscription.tablet,
-            inscription.likes_to_draw,
+            # inscription.likes_to_draw,
             inscription.frequency,
             inscription.group_rating,
             inscription.critics,
@@ -259,7 +259,7 @@ def inscription_pdf(request, pk):
 	lines = []
 	lines.append("Nome:" + inscription.name)
 	lines.append("CPF:" + str(inscription.cpf))
-	lines.append("RG:" + str(inscription.rg))
+	# lines.append("RG:" + str(inscription.rg))
 	lines.append("Idade:" + inscription.age)
 	lines.append("Data de Nascimento: " + str(inscription.birthday))
 	lines.append("Gênero: " + inscription.gender)
@@ -267,8 +267,8 @@ def inscription_pdf(request, pk):
 	lines.append("Raça: " + inscription.ethnicity)
 	lines.append("Etinia outra " +inscription.ethnicity_other)
 	lines.append("CEP: " + inscription.zipcode)
-	lines.append("Endereço: " + inscription.address)
-	lines.append("Complemento: " + inscription.address_line_1)
+	# lines.append("Endereço: " + inscription.address)
+	# lines.append("Complemento: " + inscription.address_line_1)
 	lines.append("Bairro: " + inscription.neighberhood)
 	lines.append("Cidade: " + inscription.city)
 	lines.append("Outra cidade " + inscription.city_other)
@@ -276,10 +276,10 @@ def inscription_pdf(request, pk):
 	lines.append("Whatsapp: " + str(inscription.whatsapp))
 	lines.append("E-mail: " + str(inscription.email))
 	lines.append("Escolaridade: " + inscription.scholl_level)
-	lines.append("Instituição: " + inscription.school)
-	lines.append("Série: " + inscription.grade)
-	lines.append("Turno: " + inscription.studing)
-	lines.append("Curso: " + inscription.course)
+	# lines.append("Instituição: " + inscription.school)
+	# lines.append("Série: " + inscription.grade)
+	# lines.append("Turno: " + inscription.studing)
+	# lines.append("Curso: " + inscription.course)
 	lines.append("Renda familiar: " + inscription.income)
 	lines.append("Quantas pessoas usufruem desta renda? " + inscription.family)
 	lines.append("Trabalha ou faz estágio: " + inscription.intern)
@@ -298,7 +298,7 @@ def inscription_pdf(request, pk):
 	lines.append("Qual a disponibilidade de horário? " )
 	lines.append("Como você se sente em relação ao uso do cut-out? ")
 	lines.append(inscription.tablet)
-	lines.append("Você gosta de desenhar? " + inscription.likes_to_draw)
+	# lines.append("Você gosta de desenhar? " + inscription.likes_to_draw)
 	lines.append("Com que frequência você desenha? " + inscription.frequency)
 	lines.append("Numa escala de - à 10, o quanto você gosta de trabalhar em grupo? " + str(inscription.group_rating))
 	lines.append("Como você lida com críticas em relação ao seu trabalho? ")

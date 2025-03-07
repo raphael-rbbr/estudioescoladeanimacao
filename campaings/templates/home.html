@@ -149,8 +149,20 @@
   <div class="content">
 
       <div class="form">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>
+          <label class="form-check-label " for="flexCheckDefault" style="display: block;
+        color: #fff;
+        font-weight: bold;
+        font-size: 16px;
+        margin: 0px 0px 10px 10px;">
+            Ao selecionar esta opção e prosseguir com a inscrição, você declara que está de acordo a nossa Política de Privacidade
 
-          <div class="navform">
+            <a href="https://estudioescola.com.br/politica-de-privacidade" target="_blank" rel="noopener noreferrer">https://estudioescola.com.br/politica-de-privacidade</a>
+            , assim como seus responsáveis legais caso seja menor de idade"
+          </label>
+        </div>
+    <div class="navform">
 
               <p class="tabum active">Seus dados</p>
 
@@ -225,15 +237,16 @@
                   <label for="generooutros">Outros</label>
                   <input type="text" name="generooutros" id="generooutros" placeholder="Outros">
 
-                  <label for="raca">Como você se autodeclara em relação à cor/raça?</label>
-                  <p class="smalltext">Utilizamos a referência do IBGE que, desde 2010, considera que as categorias preta e parda constituem a população negra e, por isso, só devem ser selecionadas por pessoas que se autodeclaram como tal.<br>Para mais informações, recomendamos: <a href="http://bit.ly/autodeclaracaonobrasil" target="_blank" rel="noopener noreferrer">http://bit.ly/autodeclaracaonobrasil</a></p>
+                  <label for="raca">Como você se autodeclara em relação à raça/etnia?</label>
+                  <p class="smalltext">Utilizamos a referência do IBGE que, desde 2010, considera que as categorias preta e parda constituem a população negra e, por isso, só devem ser selecionadas por pessoas que se autodeclaram como tal.<br>Para mais informações, recomendamos: <a href="https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/13ee0337cffc1de37bf0cd4da3988e1f.pdf" target="_blank" rel="noopener noreferrer">https://agenciadenoticias.ibge.gov.br/13ee0337cffc1de37bf0cd4da3988e1f.pdf</a></p>
                   <select name="raca" id="raca">
                       <option value="">--</option>
-                      <option value="Amarela">Amarela (oriental)</option>
+                      <option value="Amarela">Amarelo (pessoa de origem oriental, japonesa, chinesa, coreana, etc.)'</option>
                       <option value="Branca">Branca</option>
                       <option value="Indígena">Indígena (oriundos de comunidades indígenas, aldeadas ou urbanas)</option>
                       <option value="Parda">Parda (negra de pele clara)</option>
                       <option value="Preta">Preta (negra de pele escura)</option>
+                      <option value="Preta">Outros</option>
                   </select>
 
                   <label for="racaoutros">Outros</label>
@@ -442,26 +455,25 @@
                   <div class="spacer"></div>
 
                   <p>Renda familiar mensal</p>
-                  <p class="smalltext">(Para calcular, some a renda individual das pessoas que moram com você e divida pelo número de indivíduos que residem no domicílio. O resultado é a renda familiar mensal). Valor do salário mínimo em 2023 - R$ 1.302,00.</p>
-
+                  <p class="smalltext">(Para calcular, some a renda individual das pessoas que moram com você e divida pelo número de indivíduos que residem no domicílio. O resultado é a renda familiar mensal). Valor do salário mínimo em 2024 - R$ 1.412,00</p>
                       <div class="boxerro">
-                          <input type="radio" name="renda" id="renda_um" value="até 1 salário mínimo (R$ 1.100,00)">
-                          <label for="renda_um">até 1 salário mínimo (R$ 1.302,00)</label>
+                          <input type="radio" name="renda" id="renda_um" value="até 1 salário mínimo  (R$ 1.412,00)">
+                          <label for="renda_um">até 1 salário mínimo  (R$ 1.412,00)</label>
                       </div>
 
                       <div class="clear"></div>
 
-                      <input type="radio" name="renda" id="renda_dois" value="até 2 salários mínimos (R$ 2.200,00)">
-                      <label for="renda_dois">até 2 salários mínimos (R$ 2.604,00)</label>
+                      <input type="radio" name="renda" id="renda_dois" value="até 2 salários mínimos  (R$ 2.824,00) ">
+                      <label for="renda_dois">até 2 salários mínimos  (R$ 2.824,00) </label>
 
-                      <input type="radio" name="renda" id="renda_tres" value="até 3 salários mínimos (R$ 3.300,00)">
-                      <label for="renda_tres">até 3 salários mínimos (R$ 3.906,00)</label>
+                      <input type="radio" name="renda" id="renda_tres" value="até 3 salários mínimos (R$ 4.236,00) ">
+                      <label for="renda_tres">até 3 salários mínimos (R$ 4.236,00) </label>
 
-                      <input type="radio" name="renda" id="renda_quatro" value="até 4 salários mínimos (R$ 4.400,00)">
-                      <label for="renda_quatro">até 4 salários mínimos (R$ 5.208,00)</label>
+                      <input type="radio" name="renda" id="renda_quatro" value="até 4 salários mínimos (R$ 5.648,00)">
+                      <label for="renda_quatro">até 4 salários mínimos (R$ 5.648,00)</label>
 
-                      <input type="radio" name="renda" id="renda_cinco" value="a partir de 4 salários mínimos (R$ 4.400,01)">
-                      <label for="renda_cinco">a partir de 4 salários mínimos (R$ 5.208,01)</label>
+                      <input type="radio" name="renda" id="renda_cinco" value="a partir de 4 salários mínimos  (R$ 5.648,01)">
+                      <label for="renda_cinco">a partir de 4 salários mínimos  (R$ 5.648,01)</label>
 
                   <div class="clear"></div>
 
@@ -613,7 +625,7 @@
 
                   <div class="spacer"></div>
 
-                  <p> A décima terceirta edição do Estúdio Escola de Animação será presencial e acontecerá durante 7 meses,  de junho a dezembro de 2025. Serão 2 encontros (aulas)  por semana com duração de 4 horas por dia. A oficina acontece na cidade do Rio de Janeiro e o local de realização das atividades do EEA será situado na região central da cidade. Os custos com transporte serão financiados pelo projeto.</p>
+                  <p> A décima terceira edição do Estúdio Escola de Animação será presencial e acontecerá durante 7 meses, de maio a dezembro de 2025. Serão 2 encontros (aulas)  por semana com duração de 4 horas por dia. A oficina acontece na cidade do Rio de Janeiro e o local de realização das atividades do EEA será situado na região central da cidade. Os custos com transporte serão financiados pelo projeto.</p>
 
                   <p>VOCÊ ESTÁ DISPOSTO A SE DEDICAR COM ESSA FREQUÊNCIA?</p>
 
@@ -639,10 +651,10 @@
                       <label for="disponibilidadehorario_dois">Opção 02: 2ª e 4ª – 14h às 18h </label>
 
                       <input type="checkbox" name="disponibilidadehorario[]" id="disponibilidadehorario_quatro" value="Opção 04: 3ª e 5ª – 08h às 12h">
-                      <label for="disponibilidadehorario_quatro">Opção 04: 3ª e 5ª – 08h às 12h</label>
+                      <label for="disponibilidadehorario_quatro">Opção 03: 3ª e 5ª – 08h às 12h</label>
 
                       <input type="checkbox" name="disponibilidadehorario[]" id="disponibilidadehorario_cinco" value="Opção 05: 3ª e 5ª – 14h às 18h">
-                      <label for="disponibilidadehorario_cinco">Opção 05: 3ª e 5ª – 14h às 18h</label>
+                      <label for="disponibilidadehorario_cinco">Opção 04: 3ª e 5ª – 14h às 18h</label>
 
                       <input type="checkbox" name="disponibilidadehorario[]" id="disponibilidadehorario_sete" value="Não tenho disponibilidade em nenhuma das opções acima.">
                       <label for="disponibilidadehorario_sete">Não tenho disponibilidade em nenhuma das opções acima.</label>
@@ -763,7 +775,7 @@
 
                   <div class="spacer"></div>
 
-                  <p>4) HÁ OUTRA COISA QUE VOCÊ JÁ FEZ RELACIONADA À ANIMAÇÃO / AUDIOVISUAL QUE GOSTARIA DE DESTACAR?</p>
+                  <p>4) HÁ ALGUMA COISA QUE VOCÊ JÁ FEZ RELACIONADA À ANIMAÇÃO / AUDIOVISUAL QUE GOSTARIA DE DESTACAR?</p>
 
                       <textarea name="destacaranimacao" id="destacaranimacao"></textarea>
 
@@ -777,7 +789,7 @@
 
                   <p>6) VOCÊ POSSUI UM LOCAL ONDE DIVULGA SEU TRABALHO ARTÍSTICO? EM CASO AFIRMATIVO COMPARTILHE O LINK COM A GENTE!</p>
 
-                  <p>Aqui vale de tudo: Instagram, Pasta no Google Drive, Site, Tumblr, Facebook, Behance, Art Station, Devian Art, etc.</p>
+                  <p>Aqui vale de tudo: Instagram, Pasta no Google Drive, Site, Tumblr, Facebook, Behance, Art Station, Devian Art, etc.  Obs: Lembre-se de liberar o acesso de visualização dos links quando necessário.</p>
 
                       <textarea name="linkportifolio" id="linkportifolio"></textarea>
 
@@ -836,24 +848,6 @@
       <p>Ao se inscrever neste e-mail, você concorda em receber notícias, ofertas e informações do Estúdio Escola de Animação e de nossos parceiros. <a href="https://estudioescola.com.br/politica-de-privacidade">Clique aqui</a> para visitar nossa Política de Privacidade. Links de cancelamento fáceis são fornecidos em todos os e-mails.</p>
 
     </div>
-
-    {% comment %} <form action="https://estudioescola.us4.list-manage.com/subscribe/post?u=92d1990ad580a14942037b024&amp;id=f68b9907c8" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
-
-      <input type="text" placeholder="Nome" value="" name="FNAME" class="" id="mce-FNAME">
-
-      <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="E-mail">
-
-      <input type="text" placeholder="Whatsapp" name="PHONE" class="" value="" id="mce-PHONE">
-
-      <div id="mce-responses">
-        <div class="response" id="mce-error-response" style="display:none"></div>
-        <div class="response" id="mce-success-response" style="display:none"></div>
-      </div>
-      <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_92d1990ad580a14942037b024_f68b9907c8" tabindex="-1" value=""></div>
-
-      <button id="mc-embedded-subscribe">Sim, por favor <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
-
-    </form> {% endcomment %}
 
     <div class="clear"></div>
 
