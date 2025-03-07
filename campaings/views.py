@@ -130,18 +130,17 @@ def CreateInscriprion(request):
                                     message = new_message,
                                     portifolio = new_portifolio,
                                     file = new_file,)
-        html = render_to_string('emails/inscriprionconfirmed.html',{
-            'name': new_name,
-            'email': new_email,
-        })
-        send_mail(
-        "Inscrição realizada com sucesso",
-        " ola",
-        "from@example.com",
-        ["to@example.com"],
-        html_message=html,
-        fail_silently=False,
-        )
+        # html = render_to_string('emails/inscriprionconfirmed.html',{
+        #     'name': new_name,
+        #     'email': new_email,
+        # })
+        # send_mail(
+        # "Inscrição realizada com sucesso",
+        # " ola",
+        # ['email'],
+        # html_message=html,
+        # fail_silently=False,
+        # )
         return redirect(InscriptionSucess)
 
     context= {}

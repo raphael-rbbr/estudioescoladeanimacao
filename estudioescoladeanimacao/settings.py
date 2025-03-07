@@ -177,20 +177,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
-# # Host for sending e-mail.
-# EMAIL_HOST = 'localhost'
-# # Port for sending e-mail.
-# EMAIL_PORT = 1025
-# # Optional SMTP authentication information for EMAIL_HOST.
-# EMAIL_HOST_USER = ''
-# EMAIL_HOST_PASSWORD = ''
-# EMAIL_USE_TLS = False
-
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "smtp.gmail.com"
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
-EMAIL_HOST_USER = "emailCreatedOnlyForApp@myDomain.com"
-# This is a Google App Password from https://myaccount.google.com/u/0/apppasswords
-# Be sure to log in to that link with the above email address
-EMAIL_HOST_PASSWORD = "abcdefghijklmnop"
+# Host for sending e-mail.
+EMAIL_HOST = 'localhost'
+# Port for sending e-mail.
+EMAIL_PORT = 1025
+# Optional SMTP authentication information for EMAIL_HOST.
+EMAIL_HOST_USER = 'estudioescoladeanimacao@gmail.com'
+EMAIL_HOST_PASSWORD = 'kszv adke wtdg dqwd'
+EMAIL_USE_TLS = False
