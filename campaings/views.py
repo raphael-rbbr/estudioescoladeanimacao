@@ -334,19 +334,19 @@ def inscription_pdf(request, pk):
     # if not os.path.exists(file_path):
     #     return HttpResponse("File not found.", status=404)
 
-    # Convert PDF to images using PyMuPDF
+# Convert PDF to images using PyMuPDF with higher DPI
     pdf_document = fitz.open(file_path)
     for page_num in range(len(pdf_document)):
         page = pdf_document.load_page(page_num)
-        pix = page.get_pixmap(dpi=300)
+        # Rotate the page by 90 degrees if it is in landscape orientation
+        if page.rect.width > page.rect.height:
+            page.set_rotation(90)
+        pix = page.get_pixmap(dpi=300)  # Set DPI to 300 for higher quality
         with tempfile.NamedTemporaryFile(delete=False, suffix=".png") as temp_image:
             pix.save(temp_image.name)
             temp_image_path = temp_image.name
         # Get the dimensions of the image
-        if pix.width == 595:
-            img_width, img_height = 842, 595
-        else:
-            img_width, img_height = 595, 842
+        img_width, img_height = 595, 842
         # Adjust the transformation matrix to flip the image vertically
         c.saveState()
         c.translate(0, A4[1])
