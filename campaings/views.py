@@ -131,18 +131,18 @@ def CreateInscriprion(request):
                                     message = new_message,
                                     portifolio = new_portifolio,
                                     file = new_file,)
-        html = render_to_string('emails/inscriprionconfirmed.html',{
-            'name': new_name,
-            'email': new_email,
-        })
-        send_mail(
-        "Inscrição realizada com sucesso",
-        " ola",
-        "from@example.com",
-        ["to@example.com"],
-        html_message=html,
-        fail_silently=False,
-        )
+        # html = render_to_string('emails/inscriprionconfirmed.html',{
+        #     'name': new_name,
+        #     'email': new_email,
+        # })
+        # send_mail(
+        # "Inscrição realizada com sucesso",
+        # " ola",
+        # "from@example.com",
+        # ["to@example.com"],
+        # html_message=html,
+        # fail_silently=False,
+        # )
         return redirect(InscriptionSucess)
 
     context= {}
@@ -331,8 +331,8 @@ def inscription_pdf(request, pk):
     file_path = default_storage.path(inscription.file.name)
 
     # Check if the file exists
-    if not os.path.exists(file_path):
-        return HttpResponse("File not found.", status=404)
+    # if not os.path.exists(file_path):
+    #     return HttpResponse("File not found.", status=404)
 
     # Convert PDF to images using PyMuPDF
     pdf_document = fitz.open(file_path)
@@ -343,9 +343,10 @@ def inscription_pdf(request, pk):
             pix.save(temp_image.name)
             temp_image_path = temp_image.name
         # Get the dimensions of the image
-        img_width, img_height = 595, 842
-        print(img_width)
-        print(img_height)
+        if pix.width == 595:
+            img_width, img_height = 842, 595
+        else:
+            img_width, img_height = 595, 842
         # Adjust the transformation matrix to flip the image vertically
         c.saveState()
         c.translate(0, A4[1])
