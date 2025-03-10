@@ -16,6 +16,7 @@ import os
 import tempfile
 from textwrap import wrap
 from django.core.mail import send_mail
+import fitz  # PyMuPDF
 
 
 
@@ -245,118 +246,118 @@ from pdf2image.exceptions import (
 )
 
 def inscription_pdf(request, pk):
-	# Create Bytestream buffer
-	buf = io.BytesIO()
-	# Create a canvas
-	c = canvas.Canvas(buf, pagesize=A4, bottomup=0)
-	# Create a text object
-	textob = c.beginText()
-	textob.setTextOrigin(1*cm, 1*cm)
-	textob.setFont("Helvetica", 10)
-	textob.maxLineLength=80
-	# Designate The Model
-	inscription = Inscription.objects.get(id=pk)
-	# Create blank list
-	lines = []
-	lines.append("Nome:" + inscription.name)
-	lines.append("CPF:" + str(inscription.cpf))
-	# lines.append("RG:" + str(inscription.rg))
-	lines.append("Idade:" + inscription.age)
-	lines.append("Data de Nascimento: " + str(inscription.birthday))
-	lines.append("Gênero: " + inscription.gender)
-	lines.append("Gênero outro: " +inscription.gender_other)
-	lines.append("Raça: " + inscription.ethnicity)
-	lines.append("Etinia outra " +inscription.ethnicity_other)
-	lines.append("CEP: " + inscription.zipcode)
-	# lines.append("Endereço: " + inscription.address)
-	# lines.append("Complemento: " + inscription.address_line_1)
-	lines.append("Bairro: " + inscription.neighberhood)
-	lines.append("Cidade: " + inscription.city)
-	lines.append("Outra cidade " + inscription.city_other)
-	lines.append("Telefone: " + str(inscription.phone))
-	lines.append("Whatsapp: " + str(inscription.whatsapp))
-	lines.append("E-mail: " + str(inscription.email))
-	lines.append("Escolaridade: " + inscription.scholl_level)
-	# lines.append("Instituição: " + inscription.school)
-	# lines.append("Série: " + inscription.grade)
-	# lines.append("Turno: " + inscription.studing)
-	# lines.append("Curso: " + inscription.course)
-	lines.append("Renda familiar: " + inscription.income)
-	lines.append("Quantas pessoas usufruem desta renda? " + inscription.family)
-	lines.append("Trabalha ou faz estágio: " + inscription.intern)
-	lines.append("Horário Trabalho/Estágio: " + inscription.intern_time)
-	# lines.append(" " + inscription.looking_work)
-	lines.append("Possui alguma deficiência? " + inscription.deficincy)
-	lines.append("Qual defiencia? " + inscription.deficincy_type)
-	lines.append("Precisa de atendimento especial? " + inscription.special_need)
-	lines.append("Qual atendimento especial? " + inscription.special_interview)
-	lines.append("Já se inscreveu: " + inscription.prior_inscription)
-	lines.append("Como conheceu: " + inscription.knowloge)
-	lines.append("Conheceu outro lugar " + inscription.knowloge_other)
-	lines.append("Já participou? " + inscription.prior_course)
-	lines.append("Qual edição? " + str(inscription.prior_course_year))
-	lines.append("Está disposto a se dedicar com essa frequência? " + inscription.dedication)
-	lines.append("Qual a disponibilidade de horário? " )
-	lines.append("Como você se sente em relação ao uso do cut-out? ")
-	lines.append(inscription.tablet)
-	# lines.append("Você gosta de desenhar? " + inscription.likes_to_draw)
-	lines.append("Com que frequência você desenha? " + inscription.frequency)
-	lines.append("Numa escala de - à 10, o quanto você gosta de trabalhar em grupo? " + str(inscription.group_rating))
-	lines.append("Como você lida com críticas em relação ao seu trabalho? ")
-	lines.append(inscription.critics)
-	lines.append(" ")
-	lines.append("Dos itens abaixo, marque aqueles que você já teve a oportunidade de realizar: ")
-	lines.append(" ")
-	lines.append("Há outra coisa que você já fez relacionada à animação? ")
-	lines.append(inscription.previous_work)
-	lines.append("  ")
-	lines.append("Por que você se interessou em participar do Estúdio Escola? ")
-	lines.append(inscription.message )
-	lines.append(" ")
-	lines.append("Possui um local onde divulga o seu trabalho artístico? ")
-	lines.append(inscription.portifolio)
-	lines.append(" ")
-	# Loop
-	for line in lines:
-		wrapped_lines = wrap(line, 127)  # Wrap text to fit within 100 characters per line
-		for wrapped_line in wrapped_lines:
-			textob.textLine(wrapped_line)
+    # Create Bytestream buffer
+    buf = io.BytesIO()
+    # Create a canvas
+    c = canvas.Canvas(buf, pagesize=A4, bottomup=0)
+    # Create a text object
+    textob = c.beginText()
+    textob.setTextOrigin(1*cm, 1*cm)
+    textob.setFont("Helvetica", 10)
+    textob.maxLineLength = 80
+    # Designate The Model
+    inscription = Inscription.objects.get(id=pk)
+    # Create blank list
+    lines = []
+    lines.append("Nome:" + inscription.name)
+    lines.append("CPF:" + str(inscription.cpf))
+    # lines.append("RG:" + str(inscription.rg))
+    lines.append("Idade:" + inscription.age)
+    lines.append("Data de Nascimento: " + str(inscription.birthday))
+    lines.append("Gênero: " + inscription.gender)
+    lines.append("Gênero outro: " +inscription.gender_other)
+    lines.append("Raça: " + inscription.ethnicity)
+    lines.append("Etinia outra " +inscription.ethnicity_other)
+    lines.append("CEP: " + inscription.zipcode)
+    # lines.append("Endereço: " + inscription.address)
+    # lines.append("Complemento: " + inscription.address_line_1)
+    lines.append("Bairro: " + inscription.neighberhood)
+    lines.append("Cidade: " + inscription.city)
+    lines.append("Outra cidade " + inscription.city_other)
+    lines.append("Telefone: " + str(inscription.phone))
+    lines.append("Whatsapp: " + str(inscription.whatsapp))
+    lines.append("E-mail: " + str(inscription.email))
+    lines.append("Escolaridade: " + inscription.scholl_level)
+    # lines.append("Instituição: " + inscription.school)
+    # lines.append("Série: " + inscription.grade)
+    # lines.append("Turno: " + inscription.studing)
+    # lines.append("Curso: " + inscription.course)
+    lines.append("Renda familiar: " + inscription.income)
+    lines.append("Quantas pessoas usufruem desta renda? " + inscription.family)
+    lines.append("Trabalha ou faz estágio: " + inscription.intern)
+    lines.append("Horário Trabalho/Estágio: " + inscription.intern_time)
+    # lines.append(" " + inscription.looking_work)
+    lines.append("Possui alguma deficiência? " + inscription.deficincy)
+    lines.append("Qual defiencia? " + inscription.deficincy_type)
+    lines.append("Precisa de atendimento especial? " + inscription.special_need)
+    lines.append("Qual atendimento especial? " + inscription.special_interview)
+    lines.append("Já se inscreveu: " + inscription.prior_inscription)
+    lines.append("Como conheceu: " + inscription.knowloge)
+    lines.append("Conheceu outro lugar " + inscription.knowloge_other)
+    lines.append("Já participou? " + inscription.prior_course)
+    lines.append("Qual edição? " + str(inscription.prior_course_year))
+    lines.append("Está disposto a se dedicar com essa frequência? " + inscription.dedication)
+    lines.append("Qual a disponibilidade de horário? " )
+    lines.append("Como você se sente em relação ao uso do cut-out? ")
+    lines.append(inscription.tablet)
+    # lines.append("Você gosta de desenhar? " + inscription.likes_to_draw)
+    lines.append("Com que frequência você desenha? " + inscription.frequency)
+    lines.append("Numa escala de - à 10, o quanto você gosta de trabalhar em grupo? " + str(inscription.group_rating))
+    lines.append("Como você lida com críticas em relação ao seu trabalho? ")
+    lines.append(inscription.critics)
+    lines.append(" ")
+    lines.append("Dos itens abaixo, marque aqueles que você já teve a oportunidade de realizar: ")
+    lines.append(" ")
+    lines.append("Há outra coisa que você já fez relacionada à animação? ")
+    lines.append(inscription.previous_work)
+    lines.append("  ")
+    lines.append("Por que você se interessou em participar do Estúdio Escola? ")
+    lines.append(inscription.message )
+    lines.append(" ")
+    lines.append("Possui um local onde divulga o seu trabalho artístico? ")
+    lines.append(inscription.portifolio)
+    lines.append(" ")
+    # Loop
+    for line in lines:
+        wrapped_lines = wrap(line, 127)  # Wrap text to fit within 100 characters per line
+        for wrapped_line in wrapped_lines:
+            textob.textLine(wrapped_line)
 
     # Finish Up
-	c.drawText(textob)
-	c.showPage()
-	print(str(inscription.file.url))
-	# images = convert_from_path("/estudioescoladeanimacao" + str(inscription.file.url))
+    c.drawText(textob)
+    c.showPage()
 
-#   # Construct the correct file path
-# 	file_path = default_storage.path(inscription.file.name)
-# 	print(file_path)
+    # Construct the correct file path
+    file_path = default_storage.path(inscription.file.name)
+    print(file_path)
 
-#     # Check if the file exists
-# 	# if not os.path.exists(file_path):
-# 	# 	return HttpResponse("File not found.", status=404)
+    # Check if the file exists
+    if not os.path.exists(file_path):
+        return HttpResponse("File not found.", status=404)
 
-#     # Convert PDF to images
-# 	images = convert_from_path(file_path)
-# 	for image in images:
-# 		with tempfile.NamedTemporaryFile(delete=False, suffix=".jpg") as temp_image:
-# 			image.save(temp_image, format='JPEG')
-# 			temp_image_path = temp_image.name
-#         # Get the dimensions of the image
-# 		img_width, img_height = image.size
-#         # Adjust the transformation matrix to flip the image vertically
-# 		c.saveState()
-# 		c.translate(0, A4[1])
-# 		c.scale(1, -1)
-# 		c.drawImage(temp_image_path, 0, 0, width=A4[0], height=A4[1])
-# 		c.restoreState()
-# 		c.showPage()
-# 		os.remove(temp_image_path)
+    # Convert PDF to images using PyMuPDF
+    pdf_document = fitz.open(file_path)
+    for page_num in range(len(pdf_document)):
+        page = pdf_document.load_page(page_num)
+        pix = page.get_pixmap()
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".png") as temp_image:
+            pix.save(temp_image.name)
+            temp_image_path = temp_image.name
+        # Get the dimensions of the image
+        img_width, img_height = pix.width, pix.height
+        # Adjust the transformation matrix to flip the image vertically
+        c.saveState()
+        c.translate(0, A4[1])
+        c.scale(1, -1)
+        c.drawImage(temp_image_path, 0, 0, width=img_width, height=img_height)
+        c.restoreState()
+        c.showPage()
+        os.remove(temp_image_path)
 
-	c.save()
-	buf.seek(0)
-    # Return something
-	return FileResponse(buf, as_attachment=True, filename=inscription.name +'.pdf')
+    c.save()
+    buf.seek(0)
+    # Return the PDF as a response
+    return FileResponse(buf, as_attachment=True, filename=inscription.name + '.pdf')
 
 
 
