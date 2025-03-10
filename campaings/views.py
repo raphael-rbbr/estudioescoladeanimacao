@@ -328,30 +328,30 @@ def inscription_pdf(request, pk):
 	print(str(inscription.file.url))
 	# images = convert_from_path("/estudioescoladeanimacao" + str(inscription.file.url))
 
-  # Construct the correct file path
-	file_path = default_storage.path(inscription.file.name)
-	print(file_path)
+#   # Construct the correct file path
+# 	file_path = default_storage.path(inscription.file.name)
+# 	print(file_path)
 
-    # Check if the file exists
-	# if not os.path.exists(file_path):
-	# 	return HttpResponse("File not found.", status=404)
+#     # Check if the file exists
+# 	# if not os.path.exists(file_path):
+# 	# 	return HttpResponse("File not found.", status=404)
 
-    # Convert PDF to images
-	images = convert_from_path(file_path)
-	for image in images:
-		with tempfile.NamedTemporaryFile(delete=False, suffix=".jpg") as temp_image:
-			image.save(temp_image, format='JPEG')
-			temp_image_path = temp_image.name
-        # Get the dimensions of the image
-		img_width, img_height = image.size
-        # Adjust the transformation matrix to flip the image vertically
-		c.saveState()
-		c.translate(0, A4[1])
-		c.scale(1, -1)
-		c.drawImage(temp_image_path, 0, 0, width=A4[0], height=A4[1])
-		c.restoreState()
-		c.showPage()
-		os.remove(temp_image_path)
+#     # Convert PDF to images
+# 	images = convert_from_path(file_path)
+# 	for image in images:
+# 		with tempfile.NamedTemporaryFile(delete=False, suffix=".jpg") as temp_image:
+# 			image.save(temp_image, format='JPEG')
+# 			temp_image_path = temp_image.name
+#         # Get the dimensions of the image
+# 		img_width, img_height = image.size
+#         # Adjust the transformation matrix to flip the image vertically
+# 		c.saveState()
+# 		c.translate(0, A4[1])
+# 		c.scale(1, -1)
+# 		c.drawImage(temp_image_path, 0, 0, width=A4[0], height=A4[1])
+# 		c.restoreState()
+# 		c.showPage()
+# 		os.remove(temp_image_path)
 
 	c.save()
 	buf.seek(0)
