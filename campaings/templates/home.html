@@ -9,47 +9,6 @@
 
   <div id="cover" style="display: none;"></div>
 
-  {% comment %} <div class="popupformcl">
-
-<div class="formpopupcl">
-
-  <span class="closepopupcl"><i class="fas fa-times" aria-hidden="true"></i></span>
-
-  <img src="https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/logo-eea-cl.png">
-
-  <p>Cadastre-se e garanta seu desconto!</p>
-
-
-  <form action="index" method="POST" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
-    {% csrf_token %}
-    <div class="flexfields">
-    <input type="text" value="" name="FNAME" class="" id="mce-FNAME" placeholder="Nome Completo">
-
-    <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="E-mail">
-
-    <input type="text" name="PHONE" class="" value="" id="mce-PHONE" placeholder="Telefone">
-
-    <select name="INTERESSE" class="" id="mce-INTERESSE" placeholder="">
-      <option value="">Área de Interesse</option>
-      <option value="Processos da animação">Processos da animação</option>
-      <option value="Princípios da animação">Princípios da animação</option>
-      <option value="Roteiro">Roteiro</option>
-      <option value="Storyboard">Storyboard</option>
-      <option value="Design de personagens">Design de personagens</option>
-      <option value="Outros">Outros</option>
-    </select>
-    </div>
-
-    <div class="response" id="mce-error-response" style="display:none"></div>
-    <div class="response" id="mce-success-response" style="display:none"></div>
-
-    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_5246cb86ae4edf01550aaeb29_9a93b95153" tabindex="-1" value=""></div>
-
-    <input type="submit" value="Enviar" name="subscribe" id="mc-embedded-subscribe" class="button">
-
-  </form>
-
-</div> {% endcomment %}
 
 <div class="shadowcl"></div>
 
@@ -149,19 +108,7 @@
   <div class="content">
 
       <div class="form">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required=""  aria-required="true">
-          <label class="form-check-label " for="flexCheckDefault" style="display: block;
-        color: #fff;
-        font-weight: bold;
-        font-size: 16px;
-        margin: 0px 0px 10px 10px;">
-            Ao selecionar esta opção e prosseguir com a inscrição, você declara que está de acordo a nossa Política de Privacidade
 
-            <a href="https://estudioescola.com.br/politica-de-privacidade" target="_blank" rel="noopener noreferrer">https://estudioescola.com.br/politica-de-privacidade</a>
-            , assim como seus responsáveis legais caso seja menor de idade"
-          </label>
-        </div>
     <div class="navform">
 
               <p class="tabum active">Seus dados</p>
@@ -180,7 +127,7 @@
 
               <input type="checkbox" name="mc4wp-subscribe" value="1" checked="" class="none">
 
-                  <!-- <label><input type="checkbox" id="aceitoregulamento">ao selecionar esta opção e prosseguir com a inscrição, você declara que está de acordo a nossa <a href="https://estudioescola.com.br/politica-de-privacidade/" target="_blank">Política de Privacidade</a>, assim como seus responsáveis legais caso seja menor de idade</label> -->
+                  <label><input type="checkbox" id="aceitoregulamento">ao selecionar esta opção e prosseguir com a inscrição, você declara que está de acordo a nossa <a href="https://estudioescola.com.br/politica-de-privacidade/" target="_blank">Política de Privacidade</a>, assim como seus responsáveis legais caso seja menor de idade</label>
 
                   <label for="first_name">Nome Completo (Nome Social para pessoas transgênero):</label>
                   <input type="text" name="first_name" id="first_name" placeholder="Nome Completo">
@@ -331,7 +278,7 @@
 
                   <p class="smalltext">Caso você seja selecionado (a) este será o email para qual enviaremos todas as informações do projeto, informe um email que você costuma consultar.</p>
 
-                  <a class="btn small tabdois">Seguir</a>
+                  <a class="btn small tabdois" id="seguirBtn">Seguir</a>
 
               </div>
 
@@ -1079,6 +1026,14 @@
   </div>
 
   <script src="https://kit.fontawesome.com/04aeb4c834.js" crossorigin="anonymous"></script>
-
+  <script>
+document.getElementById('seguirBtn').addEventListener('click', function(event) {
+    var checkbox = document.getElementById('aceitoregulamento');
+    if (!checkbox.checked) {
+        event.preventDefault();
+        alert('Você deve aceitar o regulamento antes de prosseguir.');
+    }
+});
+</script>
  </body>
 {% endblock %}
