@@ -15,6 +15,10 @@ from pathlib import Path
 import json
 import dj_database_url
 from os import environ
+import os
+from dotenv import load_dotenv
+# Load environment variables from .env file
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -51,6 +55,7 @@ THIRD_PARTY_APPS = [
     # "crispy_forms",
     'phonenumber_field',
     'bootstrap_datepicker_plus',
+    'bootstrap5',
     # 'cpffield',
 
 ]
@@ -87,25 +92,25 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = 'estudioescoladeanimacao.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-if "DATABASE_SECRET" in environ:
-    DATABASES = {
+
+
+DATABASES = {
         "default": {
-            "ENGINE": "django.db.backends.postgresql",
-            "NAME": "mydb",
-            "USER": "dbmasteruser",
-            "PASSWORD": "Ru=9Gq?JC;U9Iq8dDfQ#,Foggk&7M}fw",
-            "HOST": "ls-acd547e8f997acde208fd498b7981a748b280baa.cg18io8mso62.us-east-1.rds.amazonaws.com",
-            "PORT": "5432",
-        }
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "mydb",
+        "USER": "dbmasteruser",
+        "PASSWORD": "Ru=9Gq?JC;U9Iq8dDfQ#,Foggk&7M}fw",
+        "HOST": "ls-acd547e8f997acde208fd498b7981a748b280baa.cg18io8mso62.us-east-1.rds.amazonaws.com",
+        "PORT": "5432",
     }
-else:
-    DATABASES = {"default": dj_database_url.parse("sqlite:///db.sqlite3")}
+}
 
 
 # Password validation
@@ -168,3 +173,15 @@ MEDIAROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+
+# Host for sending e-mail.
+EMAIL_HOST = 'localhost'
+# Port for sending e-mail.
+EMAIL_PORT = 1025
+# Optional SMTP authentication information for EMAIL_HOST.
+EMAIL_HOST_USER = 'estudioescoladeanimacao@gmail.com'
+EMAIL_HOST_PASSWORD = 'kszv adke wtdg dqwd'
+EMAIL_USE_TLS = False
