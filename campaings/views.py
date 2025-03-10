@@ -173,7 +173,7 @@ def ListInscriprion(request):
 # Generate CSV File inscription List
 def inscription_csv(request):
     response = HttpResponse(content_type='text/csv')
-    response['Content-Disposition'] = 'attachment; filename=inscription.xls'
+    response['Content-Disposition'] = 'attachment; filename=inscription.csv'
 
     # Create a csv writer
     writer = csv.writer(response, quoting=csv.QUOTE_ALL)
@@ -329,7 +329,6 @@ def inscription_pdf(request, pk):
 
     # Construct the correct file path
     file_path = default_storage.path(inscription.file.name)
-    print(file_path)
 
     # Check if the file exists
     if not os.path.exists(file_path):
@@ -339,12 +338,14 @@ def inscription_pdf(request, pk):
     pdf_document = fitz.open(file_path)
     for page_num in range(len(pdf_document)):
         page = pdf_document.load_page(page_num)
-        pix = page.get_pixmap()
+        pix = page.get_pixmap(dpi=300)
         with tempfile.NamedTemporaryFile(delete=False, suffix=".png") as temp_image:
             pix.save(temp_image.name)
             temp_image_path = temp_image.name
         # Get the dimensions of the image
-        img_width, img_height = pix.width, pix.height
+        img_width, img_height = 595, 842
+        print(img_width)
+        print(img_height)
         # Adjust the transformation matrix to flip the image vertically
         c.saveState()
         c.translate(0, A4[1])
