@@ -22,7 +22,7 @@ class Inscription(models.Model):
 
     birthday = models.DateTimeField(verbose_name="nascimento", null=True)
     cpf = models.BigIntegerField(verbose_name="CPF", unique=True)
-    rg = models.CharField(verbose_name="RG",null=False,blank=False)
+    # rg = models.CharField(verbose_name="RG",null=False,blank=False)
     # AGE_CHOICES = [
     #     ("15", "anos ou menos"),
     #     ("16", "16"),
@@ -62,8 +62,8 @@ class Inscription(models.Model):
                              help_text=("Clique para selecionar"), blank=True, null=True)
     ethnicity_other = models.CharField(max_length=80, default=" ", verbose_name=("etinia"), help_text=("Em caso de outra etinia favor informa-la"), blank=True)
     zipcode = models.CharField(max_length=20, default=" ", null=True, blank=True, help_text="CEP do usuário")
-    address = models.CharField(max_length=80, default=" ", verbose_name=("Endereço"), help_text=("Endereço"))
-    address_line_1 = models.CharField(max_length=80, default=" ", verbose_name=("Complemento"), help_text=("Complemento"))
+    # address = models.CharField(max_length=80, default=" ", verbose_name=("Endereço"), help_text=("Endereço"))
+    # address_line_1 = models.CharField(max_length=80, default=" ", verbose_name=("Complemento"), help_text=("Complemento"))
     neighberhood = models.CharField(max_length=80, default=" ", verbose_name=("Bairro"), help_text=("Bairro"))
     # CITY_CHOICES = [
     #     ("BEL", "Belford Roxo"),
@@ -115,8 +115,8 @@ class Inscription(models.Model):
     scholl_level = models.CharField(max_length=50, default=" ", verbose_name=("escolaridade"),
                              help_text=("NÍVEL DE ESCOLARIDADE:"))
 
-    school = models.CharField(max_length=80, default=" ", verbose_name=("Escola"), help_text=("INSTITUIÇÃO DE ENSINO:"))
-    grade = models.CharField(max_length=80, default=" ", verbose_name=("Série"), help_text=("SE ESTIVER ESTUDANDO NESTE ANO, INFORME SÉRIE / PERÍODO:"),null=True,blank=True)
+    # school = models.CharField(max_length=80, default=" ", verbose_name=("Escola"), help_text=("INSTITUIÇÃO DE ENSINO:"))
+    # grade = models.CharField(max_length=80, default=" ", verbose_name=("Série"), help_text=("SE ESTIVER ESTUDANDO NESTE ANO, INFORME SÉRIE / PERÍODO:"),null=True,blank=True)
 
     # STUDING_CHOICES = [
     #     ("MAN", "manhã"),
@@ -125,10 +125,10 @@ class Inscription(models.Model):
     #     ("INT", "integral"),
 
     # ]
-    studing = models.CharField(max_length=50, default=" ", verbose_name=("período"),
-                             help_text=("SE ESTIVER ESTUDANDO NESTE ANO, INFORME SÉRIE / PERÍODO:"),null=True,blank=True)
+    # studing = models.CharField(max_length=50, default=" ", verbose_name=("período"),
+    #                          help_text=("SE ESTIVER ESTUDANDO NESTE ANO, INFORME SÉRIE / PERÍODO:"),null=True,blank=True)
 
-    course = models.CharField(max_length=80, default=" ", verbose_name=("Curso"), help_text=("CURSO (CASO ESTEJA NA ESCOLA TÉCNICA OU NA FACULDADE):"), blank=True)
+    # course = models.CharField(max_length=80, default=" ", verbose_name=("Curso"), help_text=("CURSO (CASO ESTEJA NA ESCOLA TÉCNICA OU NA FACULDADE):"), blank=True)
     parent = models.CharField(max_length=80, default=" ", verbose_name=("Responsalvel"), help_text=("Nome completo do responsável "), blank=True)
     parent_phone = PhoneNumberField(max_length=50, default=" ", verbose_name="Telefone", blank=True)
     intern = models.CharField(max_length=50, default=" ", verbose_name=("Estágio"), null=False, blank=False)
@@ -194,7 +194,7 @@ class Inscription(models.Model):
     # ]
     tablet = models.CharField(max_length=100,  default="OK", verbose_name=("tablet"),
                              help_text=("Clique para selecionar"))
-    likes_to_draw = models.CharField(max_length=50, default=" ", verbose_name=("desenha"), null=False, blank=False)
+    # likes_to_draw = models.CharField(max_length=50, default=" ", verbose_name=("desenha"), null=False, blank=False)
     # FREQUENCY_CHOICES = [
     #     ("DAY", "Diariamente"),
     #     ("WEK", "Semanalmente"),

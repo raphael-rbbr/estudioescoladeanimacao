@@ -31,15 +31,15 @@ def CreateInscriprion(request):
         new_name = request.POST.get('first_name')
         new_birthday = request.POST.get('nascimento')
         new_cpf = request.POST.get('cpf')
-        new_rg = request.POST.get('rg')
+        # new_rg = request.POST.get('rg')
         new_age = request.POST.get('idade')
         new_gender = request.POST.get('genero')
         new_gender_other = request.POST.get('generooutros')
         new_ethnicity = request.POST.get('raca')
         new_ethnicity_other = request.POST.get('racaoutros')
         new_zipcode = request.POST.get('cep')
-        new_address = request.POST.get('endereco')
-        new_address_line_1 = request.POST.get('complemento')
+        # new_address = request.POST.get('endereco')
+        # new_address_line_1 = request.POST.get('complemento')
         new_neighberhood = request.POST.get('bairro')
         new_city = request.POST.get('cidade')
         new_city_other = request.POST.get('outracidade')
@@ -47,18 +47,18 @@ def CreateInscriprion(request):
         new_whatsapp = request.POST.get('whatsapp')
         new_email = request.POST.get('email')
         new_scholl_level = request.POST.get('escolaridade')
-        new_school = request.POST.get('instituicao')
-        new_grade = request.POST.get('serie')
-        if request.POST.get('turno') == None:
-            new_studing = " "
-        else:
-            new_studing = request.POST.get('turno')
-        new_course = request.POST.get('curso')
+        # new_school = request.POST.get('instituicao')
+        # new_grade = request.POST.get('serie')
+        # if request.POST.get('turno') == None:
+        #     new_studing = " "
+        # else:
+        #     new_studing = request.POST.get('turno')
+        # new_course = request.POST.get('curso')
         new_parent = request.POST.get('nomeresponsavel')
         new_parent_phone = request.POST.get('telefoneresponsavel')
         new_intern = request.POST.get('estagio')
         new_intern_time = request.POST.get('horarioestagio')
-        new_looking_work = request.POST.get('buscaestagio')
+        # new_looking_work = request.POST.get('buscaestagio')
         new_income = request.POST.get('renda')
         new_family = request.POST.get('pessoasrenda')
         new_deficincy = request.POST.get('deficiencia')
@@ -72,7 +72,7 @@ def CreateInscriprion(request):
         new_prior_course_year = request.POST.get('qualedicao')
         new_dedication = request.POST.get('frequencia')
         new_tablet = request.POST.get('cutout')
-        new_likes_to_draw = request.POST.get('gostadesenhar')
+        # new_likes_to_draw = request.POST.get('gostadesenhar')
         new_frequency = request.POST.get('freqdesenho')
         new_group_rating = request.POST.get('trabalharemgrupo')
         new_critics = request.POST.get('criticastrabalgo')
@@ -189,25 +189,25 @@ def inscription_csv(request):
             inscription.name,
             inscription.age,
             inscription.cpf,
-            inscription.rg,
+            # inscription.rg,
             inscription.gender,
             inscription.gender_other,
             inscription.ethnicity,
             inscription.ethnicity_other,
             inscription.email,
             inscription.zipcode,
-            inscription.address,
-            inscription.address_line_1,
+            # inscription.address,
+            # inscription.address_line_1,
             inscription.neighberhood,
             inscription.city,
             inscription.city_other,
             inscription.phone,
             inscription.whatsapp,
             inscription.scholl_level,
-            inscription.school,
-            inscription.grade,
-            inscription.studing,
-            inscription.course,
+            # inscription.school,
+            # inscription.grade,
+            # inscription.studing,
+            # inscription.course,
             inscription.parent,
             inscription.parent_phone,
             inscription.intern,
@@ -225,7 +225,7 @@ def inscription_csv(request):
             inscription.prior_course,
             inscription.dedication,
             inscription.tablet,
-            inscription.likes_to_draw,
+            # inscription.likes_to_draw,
             inscription.frequency,
             inscription.group_rating,
             inscription.critics,
@@ -260,7 +260,7 @@ def inscription_pdf(request, pk):
 	lines = []
 	lines.append("Nome:" + inscription.name)
 	lines.append("CPF:" + str(inscription.cpf))
-	lines.append("RG:" + str(inscription.rg))
+	# lines.append("RG:" + str(inscription.rg))
 	lines.append("Idade:" + inscription.age)
 	lines.append("Data de Nascimento: " + str(inscription.birthday))
 	lines.append("Gênero: " + inscription.gender)
@@ -268,8 +268,8 @@ def inscription_pdf(request, pk):
 	lines.append("Raça: " + inscription.ethnicity)
 	lines.append("Etinia outra " +inscription.ethnicity_other)
 	lines.append("CEP: " + inscription.zipcode)
-	lines.append("Endereço: " + inscription.address)
-	lines.append("Complemento: " + inscription.address_line_1)
+	# lines.append("Endereço: " + inscription.address)
+	# lines.append("Complemento: " + inscription.address_line_1)
 	lines.append("Bairro: " + inscription.neighberhood)
 	lines.append("Cidade: " + inscription.city)
 	lines.append("Outra cidade " + inscription.city_other)
@@ -277,10 +277,10 @@ def inscription_pdf(request, pk):
 	lines.append("Whatsapp: " + str(inscription.whatsapp))
 	lines.append("E-mail: " + str(inscription.email))
 	lines.append("Escolaridade: " + inscription.scholl_level)
-	lines.append("Instituição: " + inscription.school)
-	lines.append("Série: " + inscription.grade)
-	lines.append("Turno: " + inscription.studing)
-	lines.append("Curso: " + inscription.course)
+	# lines.append("Instituição: " + inscription.school)
+	# lines.append("Série: " + inscription.grade)
+	# lines.append("Turno: " + inscription.studing)
+	# lines.append("Curso: " + inscription.course)
 	lines.append("Renda familiar: " + inscription.income)
 	lines.append("Quantas pessoas usufruem desta renda? " + inscription.family)
 	lines.append("Trabalha ou faz estágio: " + inscription.intern)
@@ -299,7 +299,7 @@ def inscription_pdf(request, pk):
 	lines.append("Qual a disponibilidade de horário? " )
 	lines.append("Como você se sente em relação ao uso do cut-out? ")
 	lines.append(inscription.tablet)
-	lines.append("Você gosta de desenhar? " + inscription.likes_to_draw)
+	# lines.append("Você gosta de desenhar? " + inscription.likes_to_draw)
 	lines.append("Com que frequência você desenha? " + inscription.frequency)
 	lines.append("Numa escala de - à 10, o quanto você gosta de trabalhar em grupo? " + str(inscription.group_rating))
 	lines.append("Como você lida com críticas em relação ao seu trabalho? ")
