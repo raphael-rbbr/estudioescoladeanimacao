@@ -10,8 +10,11 @@
   </div>
 
   <div class="text-center mb-5">
-    <a class="btn btn-primary" href="{% url 'inscription_csv' %}">Excell com todas as inscrições</a>
+    <a class="btn btn-primary" href="{% url 'inscription_csv' %}">CSV com todas as inscrições</a>
   </div>
+  <div class="text-center mb-5">
+    <a class="btn btn-primary" href="{% url 'inscription_excel' %}">Excell com todas as inscrições</a>
+    </div>
   {% for inscription in inscriptions %}
 
   <div class="card mb-3">
@@ -21,6 +24,7 @@
           <div class="col-sm-5">
             <h4 class="h5">{{ inscription.name }}</h4>
             <span class="badge bg-secondary">{{ inscription.cpf  }}</span>
+            <span class="badge bg-secondary">{{ inscription.created_at  }}</span>
           </div>
           <div class="col-sm-4 py-2">
             <a class="btn btn-secondary" target="_blank" href="{{ inscription.file.url }}">Desenho</a>

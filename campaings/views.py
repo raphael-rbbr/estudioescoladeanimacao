@@ -17,15 +17,9 @@ import tempfile
 from textwrap import wrap
 from django.core.mail import send_mail
 import fitz  # PyMuPDF
+from openpyxl import Workbook
+from django.utils.html import strip_tags
 
-
-
-# from reportlab.lib.utils import simpleSplit
-# L = simpleSplit(text,canv._fontname,canv._fontsize,maxWidth)
-
-# for t in L:
-# canv.drawString(x,y,t)
-# y -= canv._leading
 
 def CreateInscriprion(request):
     if request.method == "POST":
@@ -81,7 +75,7 @@ def CreateInscriprion(request):
         new_message = request.POST.get('porqueinteresse')
         new_portifolio = request.POST.get('linkportifolio')
         new_file = request.FILES['desenho']
-        Inscription.objects.create(
+        inscription = Inscription.objects.create(
                                     name = new_name,
                                     birthday = new_birthday,
                                     cpf = new_cpf,
@@ -132,6 +126,16 @@ def CreateInscriprion(request):
                                     portifolio = new_portifolio,
                                     file = new_file,)
 
+        # Load and render the email template
+        subject = 'Inscription Confirmation'
+        html_message = render_to_string('campaings/emails/inscriprionconfirmed.html', {'inscription': inscription})
+        plain_message = strip_tags(html_message)
+        from_email = 'estudioescoladeanimacao@gmail.com'
+        to = new_email
+
+        # Send the email
+        send_mail(subject, plain_message, from_email, [to], html_message=html_message)
+
         return redirect(InscriptionSucess)
 
     context= {}
@@ -150,7 +154,7 @@ def ListInscriprion(request):
     # context= {'incripitions': incripitions}
     # incripitions = Inscription.objects.all()
     if request.user.is_authenticated:
-        inscriptions = Inscription.objects.all
+        inscriptions = Inscription.objects.all().order_by('-created_at')
         return render(request, 'list.html', {'inscriptions': inscriptions})
     else:
          return redirect(CreateInscriprion)
@@ -241,8 +245,9 @@ def inscription_pdf(request, pk):
     c = canvas.Canvas(buf, pagesize=A4, bottomup=0)
     # Create a text object
     textob = c.beginText()
-    textob.setTextOrigin(1*cm, 1*cm)
+    textob.setTextOrigin(1*cm, 1*cm)  # Adjust the text origin to leave space for the logo
     textob.setFont("Helvetica", 10)
+    textob.setLeading(14)  # Set the leading to increase line spacing (default is 12)
     textob.maxLineLength = 80
     # Designate The Model
     inscription = Inscription.objects.get(id=pk)
@@ -307,6 +312,13 @@ def inscription_pdf(request, pk):
     lines.append(inscription.portifolio)
     lines.append(" ")
     # Loop
+    logo_path = '/home/raphael-2/code/raphael-rbbr/estudioescoladeanimacao/campaings/static/campaings/logo-eea.png'  # Use the absolute path to the logo
+    c.saveState()
+    c.translate(15*cm, 5*cm)  # Translate to the position where you want to place the logo
+    c.scale(1, -1)  # Flip the image vertically
+    c.drawImage(logo_path, 0, 0, width=5*cm, height=5*cm)  # Draw the image at the origin
+    c.restoreState()
+
     for line in lines:
         wrapped_lines = wrap(line, 127)  # Wrap text to fit within 100 characters per line
         for wrapped_line in wrapped_lines:
@@ -323,7 +335,7 @@ def inscription_pdf(request, pk):
     # if not os.path.exists(file_path):
     #     return HttpResponse("File not found.", status=404)
 
-# Convert PDF to images using PyMuPDF with higher DPI
+    # Convert PDF to images using PyMuPDF with higher DPI
     pdf_document = fitz.open(file_path)
     for page_num in range(len(pdf_document)):
         page = pdf_document.load_page(page_num)
@@ -350,6 +362,79 @@ def inscription_pdf(request, pk):
     # Return the PDF as a response
     return FileResponse(buf, as_attachment=True, filename=inscription.name + '.pdf')
 
+
+
+def inscription_excel(request):
+    # Create a workbook and a worksheet
+    wb = Workbook()
+    ws = wb.active
+    ws.title = "Inscriptions"
+
+    # Add column headings to the worksheet
+    columns = ['Nome', 'idade', 'cpf', 'genero', 'genero outro', 'etinia', 'etinia outra', 'email', 'CEP', 'bairro', 'Cidade', 'cidade outra', 'telefone', 'whatsapp', 'escolaridade', 'responsavel', 'telefone responsavel', 'estágio', 'horarios', 'trabalha', 'renda', 'familia renda', 'deficiencia', 'deficiencia qual', 'cuidado especial', 'cuidado entrevista', 'como conheceu', 'como conheceu outros', 'ja se inscreveu', 'curso anterior', 'dedicacao', 'tablet', 'frequencia', 'avaliacao grupo', 'criticas', 'experiencia anterior', 'mensagem', 'portifolio']
+    ws.append(columns)
+
+    # Designate The Model
+    inscriptions = Inscription.objects.all()
+
+    # Loop through and output
+    for inscription in inscriptions:
+        row = [
+            inscription.name,
+            inscription.age,
+            inscription.cpf,
+            # inscription.rg,
+            inscription.gender,
+            inscription.gender_other,
+            inscription.ethnicity,
+            inscription.ethnicity_other,
+            inscription.email,
+            inscription.zipcode,
+            # inscription.address,
+            # inscription.address_line_1,
+            inscription.neighberhood,
+            inscription.city,
+            inscription.city_other,
+            str(inscription.phone),
+            str(inscription.whatsapp),
+            inscription.scholl_level,
+            # inscription.school,
+            # inscription.grade,
+            # inscription.studing,
+            # inscription.course,
+            inscription.parent,
+            str(inscription.parent_phone),
+            inscription.intern,
+            inscription.intern_time,
+            inscription.looking_work,
+            inscription.income,
+            inscription.family,
+            inscription.deficincy,
+            inscription.deficincy_type,
+            inscription.special_need,
+            inscription.special_interview,
+            inscription.knowloge,
+            inscription.knowloge_other,
+            inscription.prior_inscription,
+            inscription.prior_course,
+            inscription.dedication,
+            inscription.tablet,
+            # inscription.likes_to_draw,
+            inscription.frequency,
+            inscription.group_rating,
+            inscription.critics,
+            inscription.previous_work,
+            inscription.message,
+            inscription.portifolio
+        ]
+        ws.append(row)
+
+    # Save the workbook to a bytes buffer
+    response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    response['Content-Disposition'] = 'attachment; filename=inscription.xlsx'
+    wb.save(response)
+
+    return response
 
 
 def Return200(request):
