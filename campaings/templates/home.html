@@ -136,7 +136,8 @@
                   <input type="text" name="social_name" id="social_name" placeholder="Nome Social" /> -->
 
                   <label for="cpf">CPF (Apenas números)</label>
-                  <input type="number" name="cpf" id="cpf" placeholder="CPF" min="00000000001" max="99999999999">
+                  <input type="text" name="cpf" id="cpf" placeholder="CPF" maxlength="11" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+
 {% comment %}
                   <label for="rg">RG </label>
                   <input type="text" name="rg" id="rg" placeholder="RG" min="000000001" max="999999999"> {% endcomment %}
@@ -188,7 +189,7 @@
                   <p class="smalltext">Utilizamos a referência do IBGE que, desde 2010, considera que as categorias preta e parda constituem a população negra e, por isso, só devem ser selecionadas por pessoas que se autodeclaram como tal.<br>Para mais informações, recomendamos: <a href="https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/13ee0337cffc1de37bf0cd4da3988e1f.pdf" target="_blank" rel="noopener noreferrer">https://agenciadenoticias.ibge.gov.br/13ee0337cffc1de37bf0cd4da3988e1f.pdf</a></p>
                   <select name="raca" id="raca">
                       <option value="">--</option>
-                      <option value="Amarela">Amarelo (pessoa de origem oriental, japonesa, chinesa, coreana, etc.)'</option>
+                      <option value="Amarela">Amarelo (pessoa de origem oriental, japonesa, chinesa, coreana, etc.)</option>
                       <option value="Branca">Branca</option>
                       <option value="Indígena">Indígena (oriundos de comunidades indígenas, aldeadas ou urbanas)</option>
                       <option value="Parda">Parda (negra de pele clara)</option>
@@ -494,7 +495,7 @@
                       <label for="conheceu_youtube">YouTube</label>
 
                       <input type="checkbox" name="conheceu[]" id="conheceu_tiktok" value="tiktok">
-                      <label for="conheceu_tiktok">Tik Tok</label>
+                      <label for="conheceu_tiktok">TikTok</label>
 
                       <input type="checkbox" name="conheceu[]" id="conheceu_twitter" value="twitter">
                       <label for="conheceu_twitter">Twitter</label>
@@ -506,7 +507,7 @@
                       <label for="conheceu_email">Email</label>
 
                       <input type="checkbox" name="conheceu[]" id="conheceu_whatsapp" value="whatsapp">
-                      <label for="conheceu_whatsapp">Whatsapp</label>
+                      <label for="conheceu_whatsapp">WhatsApp</label>
 
                       <input type="checkbox" name="conheceu[]" id="conheceu_outros" value="outros">
                       <label for="conheceu_outros">Outros</label>
@@ -1031,6 +1032,10 @@ document.getElementById('seguirBtn').addEventListener('click', function(event) {
         event.preventDefault();
         alert('Você precisa aceitar o regulamento antes de prosseguir.');
     }
+});
+
+document.getElementById('cpf').addEventListener('input', function(event) {
+    this.value = this.value.replace(/[^0-9]/g, '');
 });
 </script>
  </body>

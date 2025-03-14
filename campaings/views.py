@@ -75,59 +75,102 @@ def CreateInscriprion(request):
         new_message = request.POST.get('porqueinteresse')
         new_portifolio = request.POST.get('linkportifolio')
         new_file = request.FILES['desenho']
+
+        # # Print debug information
+        # print(f"new_name: {new_name}")
+        # print(f"new_birthday: {new_birthday}")
+        # print(f"new_cpf: {new_cpf}")
+        # print(f"new_age: {new_age}")
+        # print(f"new_gender: {new_gender}")
+        # print(f"new_gender_other: {new_gender_other}")
+        # print(f"new_ethnicity: {new_ethnicity}")
+        # print(f"new_ethnicity_other: {new_ethnicity_other}")
+        # print(f"new_zipcode: {new_zipcode}")
+        # print(f"new_neighberhood: {new_neighberhood}")
+        # print(f"new_city: {new_city}")
+        # print(f"new_city_other: {new_city_other}")
+        # print(f"new_phone: {new_phone}")
+        # print(f"new_whatsapp: {new_whatsapp}")
+        # print(f"new_email: {new_email}")
+        # print(f"new_scholl_level: {new_scholl_level}")
+        # print(f"new_parent: {new_parent}")
+        # print(f"new_parent_phone: {new_parent_phone}")
+        # print(f"new_intern: {new_intern}")
+        # print(f"new_intern_time: {new_intern_time}")
+        # print(f"new_income: {new_income}")
+        # print(f"new_family: {new_family}")
+        # print(f"new_deficincy: {new_deficincy}")
+        # print(f"new_deficincy_type: {new_deficincy_type}")
+        # print(f"new_special_need: {new_special_need}")
+        # print(f"new_special_interview: {new_special_interview}")
+        # print(f"new_knowloge: {new_knowloge}")
+        # print(f"new_knowloge_other: {new_knowloge_other}")
+        # print(f"new_prior_inscription: {new_prior_inscription}")
+        # print(f"new_prior_course: {new_prior_course}")
+        # print(f"new_prior_course_year: {new_prior_course_year}")
+        # print(f"new_dedication: {new_dedication}")
+        # print(f"new_tablet: {new_tablet}")
+        # print(f"new_frequency: {new_frequency}")
+        # print(f"new_group_rating: {new_group_rating}")
+        # print(f"new_critics: {new_critics}")
+        # print(f"new_previous_work: {new_previous_work}")
+        # print(f"new_message: {new_message}")
+        # print(f"new_portifolio: {new_portifolio}")
+
         inscription = Inscription.objects.create(
-                                    name = new_name,
-                                    birthday = new_birthday,
-                                    cpf = new_cpf,
-                                    # rg = new_rg,
-                                    age = new_age,
-                                    gender = new_gender,
-                                    gender_other = new_gender_other,
-                                    ethnicity = new_ethnicity,
-                                    ethnicity_other = new_ethnicity_other,
-                                    # address = new_address,
-                                    # address_line_1 = new_address_line_1,
-                                    neighberhood = new_neighberhood,
-                                    city = new_city,
-                                    city_other = new_city_other,
-                                    phone = new_phone,
-                                    whatsapp = new_whatsapp,
-                                    email = new_email,
-                                    zipcode = new_zipcode,
-                                    parent = new_parent,
-                                    parent_phone = new_parent_phone,
-                                    scholl_level = new_scholl_level,
-                                    # school = new_school,
-                                    # grade = new_grade,
-                                    # studing = new_studing,
-                                    # course = new_course,
-                                    intern = new_intern,
-                                    intern_time = new_intern_time,
-                                    # looking_work = new_looking_work,
-                                    income = new_income,
-                                    family = new_family,
-                                    deficincy = new_deficincy,
-                                    deficincy_type = new_deficincy_type,
-                                    special_need = new_special_need,
-                                    special_interview = new_special_interview,
-                                    knowloge = new_knowloge,
-                                    knowloge_other = new_knowloge_other,
-                                    prior_inscription = new_prior_inscription,
-                                    prior_course = new_prior_course,
-                                    prior_course_year = new_prior_course_year,
-                                    dedication = new_dedication,
-                                    tablet = new_tablet,
-                                    # likes_to_draw = new_likes_to_draw,
-                                    frequency = new_frequency,
-                                    group_rating = new_group_rating,
-                                    critics = new_critics,
-                                    previous_work = new_previous_work,
-                                    message = new_message,
-                                    portifolio = new_portifolio,
-                                    file = new_file,)
+            name=new_name,
+            birthday=new_birthday,
+            cpf=new_cpf,
+            # rg=new_rg,
+            age=new_age,
+            gender=new_gender,
+            gender_other=new_gender_other,
+            ethnicity=new_ethnicity,
+            ethnicity_other=new_ethnicity_other,
+            # address=new_address,
+            # address_line_1=new_address_line_1,
+            neighberhood=new_neighberhood,
+            city=new_city,
+            city_other=new_city_other,
+            phone=new_phone,
+            whatsapp=new_whatsapp,
+            email=new_email,
+            zipcode=new_zipcode,
+            parent=new_parent,
+            parent_phone=new_parent_phone,
+            scholl_level=new_scholl_level,
+            # school=new_school,
+            # grade=new_grade,
+            # studing=new_studing,
+            # course=new_course,
+            intern=new_intern,
+            intern_time=new_intern_time,
+            # looking_work=new_looking_work,
+            income=new_income,
+            family=new_family,
+            deficincy=new_deficincy,
+            deficincy_type=new_deficincy_type,
+            special_need=new_special_need,
+            special_interview=new_special_interview,
+            knowloge=new_knowloge,
+            knowloge_other=new_knowloge_other,
+            prior_inscription=new_prior_inscription,
+            prior_course=new_prior_course,
+            prior_course_year=new_prior_course_year,
+            dedication=new_dedication,
+            tablet=new_tablet,
+            # likes_to_draw=new_likes_to_draw,
+            frequency=new_frequency,
+            group_rating=new_group_rating,
+            critics=new_critics,
+            previous_work=new_previous_work,
+            message=new_message,
+            portifolio=new_portifolio,
+            file=new_file,
+        )
 
         # Load and render the email template
-        subject = 'Inscription Confirmation'
+        subject = 'Inscrição Confirmada'
         html_message = render_to_string('campaings/emails/inscriprionconfirmed.html', {'inscription': inscription})
         plain_message = strip_tags(html_message)
         from_email = 'estudioescoladeanimacao@gmail.com'
@@ -138,7 +181,7 @@ def CreateInscriprion(request):
 
         return redirect(InscriptionSucess)
 
-    context= {}
+    context = {}
     return render(request, "home.html", context)
 
 
@@ -312,8 +355,8 @@ def inscription_pdf(request, pk):
     lines.append(inscription.portifolio)
     lines.append(" ")
     # Loop
-    # logo_path = '/home/raphael-2/code/raphael-rbbr/estudioescoladeanimacao/campaings/static/campaings/logo-eea.png'  # Use the absolute path to the logo
-    logo_path = '/estudioescoladeanimacao/campaings/static/campaings/logo-eea.png'  # Use the absolute path to the logo
+    # logo_path = '/home/raphael-2/code/raphael-rbbr/estudioescoladeanimacao/campaings/static/campaings/logo-eea.png'  # --> dev
+    logo_path = '/estudioescoladeanimacao/campaings/static/campaings/logo-eea.png'  # --> prod
     c.saveState()
     c.translate(15*cm, 5*cm)  # Translate to the position where you want to place the logo
     c.scale(1, -1)  # Flip the image vertically
