@@ -763,7 +763,7 @@
 
                   <div class="spacer"></div>
 
-                  <input type="file" name="desenho" id="desenho" accept="application/pdf">
+                  <input type="file" name="desenho" id="desenho" accept="application/pdf" onchange="validateFileSize(this)">
 
                   <p class="smalltext">Enviando os desenhos poderemos conhecer melhor seu potencial e você terá mais chances de ser selecionado(a). Lembre-se que todos os desenhos precisam estar no mesmo arquivo e não podem ultrapassar a capacidade de 2MB permitida.</p>
 
@@ -818,11 +818,11 @@
 
 
       <div>
-          <div class="logopat">
+        <div class="logopat">
 
           <p>  </p>
 
-          <a href="" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2024/03/Captura-de-tela-2024-03-14-105332.png" class=""></a>
+          <a href="" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2025/03/copy_of_leirouanetincentivoaprojetoscoloridafundosclaros.png" class=""></a>
 
           </div>
 
@@ -1037,6 +1037,14 @@ document.getElementById('seguirBtn').addEventListener('click', function(event) {
 document.getElementById('cpf').addEventListener('input', function(event) {
     this.value = this.value.replace(/[^0-9]/g, '');
 });
+
+function validateFileSize(input) {
+    var file = input.files[0];
+    if (file.size > 2 * 1024 * 1024) { // 2MB in bytes
+        alert('O arquivo não pode ser maior que 2MB.');
+        input.value = ''; // Clear the input
+    }
+}
 </script>
  </body>
 {% endblock %}
