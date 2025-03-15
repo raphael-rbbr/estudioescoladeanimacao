@@ -355,12 +355,12 @@ def inscription_pdf(request, pk):
     lines.append(inscription.portifolio)
     lines.append(" ")
     # Loop
-    # logo_path = '/home/raphael-2/code/raphael-rbbr/estudioescoladeanimacao/campaings/static/campaings/logo-eea.png'  # --> dev
-    logo_path = '/estudioescoladeanimacao/campaings/static/campaings/logo-eea.png'  # --> prod
+    logo_path = '/home/raphael-2/code/raphael-rbbr/estudioescoladeanimacao/campaings/static/campaings/logo-eea.png'
+    # logo_path = '/estudioescoladeanimacao/campaings/static/campaings/logo-eea.png'  # --> prod
     c.saveState()
     c.translate(15*cm, 5*cm)  # Translate to the position where you want to place the logo
     c.scale(1, -1)  # Flip the image vertically
-    c.drawImage(logo_path, 0, 0, width=5*cm, height=5*cm)  # Draw the image at the origin
+    c.drawImage(logo_path, 0, 0, width=7*cm, height=5*cm)  # Draw the image at the origin
     c.restoreState()
 
     for line in lines:
