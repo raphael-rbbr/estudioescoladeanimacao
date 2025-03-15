@@ -360,7 +360,7 @@ def inscription_pdf(request, pk):
     c.saveState()
     c.translate(15*cm, 5*cm)  # Translate to the position where you want to place the logo
     c.scale(1, -1)  # Flip the image vertically
-    c.drawImage(logo_path, 0, 0, width=5*cm, height=5*cm)  # Draw the image at the origin
+    c.drawImage(logo_path, 0, 0, width=7*cm, height=5*cm)  # Draw the image at the origin
     c.restoreState()
 
     for line in lines:
