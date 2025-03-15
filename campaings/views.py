@@ -379,14 +379,14 @@ def inscription_pdf(request, pk):
     # if not os.path.exists(file_path):
     #     return HttpResponse("File not found.", status=404)
 
-    # Convert PDF to images using PyMuPDF with higher DPI
+    # Convert PDF to images using PyMuPDF with lower DPI to avoid DecompressionBombError
     pdf_document = fitz.open(file_path)
     for page_num in range(len(pdf_document)):
         page = pdf_document.load_page(page_num)
         # Rotate the page by 90 degrees if it is in landscape orientation
         if page.rect.width > page.rect.height:
             page.set_rotation(90)
-        pix = page.get_pixmap(dpi=300)  # Set DPI to 300 for higher quality
+        pix = page.get_pixmap(dpi=150)  # Set DPI to 150 for lower quality to avoid DecompressionBombError
         with tempfile.NamedTemporaryFile(delete=False, suffix=".png") as temp_image:
             pix.save(temp_image.name)
             temp_image_path = temp_image.name
