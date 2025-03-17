@@ -10,7 +10,8 @@ servers:
     hosts:
       - 52.45.185.112
       - 52.204.240.12
-
+  healthcheck:
+    interval : 60s
   # job:
   #   hosts:
   #     - 192.168.0.1
@@ -74,8 +75,7 @@ volumes:
 #
 asset_path: /estudioescoladeanimacao/staticfiles
 
-healthcheck:
-  interval : 60s
+
 # Configure rolling deploys by setting a wait time between batches of restarts.
 #
 # boot:
