@@ -770,7 +770,7 @@
 
                   <div class="spacer"></div>
 
-                  <input type="submit" value="Finalizar inscrição!" class="btn enviaforminscricao">
+                  <input id="sendinscription" type="submit" value="Finalizar inscrição!" class="btn enviaforminscricao">
 
               </div>
 
@@ -1026,12 +1026,92 @@
 
 
   <script src="https://kit.fontawesome.com/04aeb4c834.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.19.3/jquery.validate.min.js"></script>
   <script>
-document.getElementById('seguirBtn').addEventListener('click', function(event) {
+document.getElementById('sendinscription').addEventListener('click', function(event) {
     var checkbox = document.getElementById('aceitoregulamento');
     if (!checkbox.checked) {
         event.preventDefault();
         alert('Você precisa aceitar o regulamento antes de prosseguir.');
+        return;
+    }
+
+    // Validate required fields
+    var errors = [];
+
+    // Check if "conheceu[]" is selected
+    var conheceuChecked = document.querySelectorAll('input[name="conheceu[]"]:checked').length > 0;
+    if (!conheceuChecked) {
+        errors.push('Informe como conheceu o Estúdio Escola.');
+    }
+
+    // Check if "inscreveu" is selected
+    var inscreveuChecked = document.querySelector('input[name="inscreveu"]:checked');
+    if (!inscreveuChecked) {
+        errors.push('Informe se você já se inscreveu anteriormente.');
+    }
+
+    // Check if "participou" is selected
+    var participouChecked = document.querySelector('input[name="participou"]:checked');
+    if (!participouChecked) {
+        errors.push('Informe se você já participou de edições anteriores.');
+    }
+
+    // Check if "qualedicao" is selected (only if "participou" is "Sim")
+    if (participouChecked && participouChecked.value === 'Sim') {
+        var qualedicao = document.getElementById('qualedicao').value;
+        if (!qualedicao || qualedicao === '--') {
+            errors.push('Informe qual edição você participou.');
+        }
+    }
+
+    // Check if "frequencia" is selected
+    var frequenciaChecked = document.querySelector('input[name="frequencia"]:checked');
+    if (!frequenciaChecked) {
+        errors.push('Informe se você está disposto a se dedicar com essa frequência.');
+    }
+
+    // Check if "disponibilidadehorario[]" is selected
+    var disponibilidadeChecked = document.querySelectorAll('input[name="disponibilidadehorario[]"]:checked').length > 0;
+    if (!disponibilidadeChecked) {
+        errors.push('Informe sua disponibilidade de horário.');
+    }
+
+    // Check if "cutout" is selected
+    var cutoutChecked = document.querySelector('input[name="cutout"]:checked');
+    if (!cutoutChecked) {
+        errors.push('Informe como você se sente em relação ao uso da tablet.');
+    }
+
+    // Check if "freqdesenho" is selected
+    var freqdesenhoChecked = document.querySelector('input[name="freqdesenho"]:checked');
+    if (!freqdesenhoChecked) {
+        errors.push('Informe com que frequência você desenha.');
+    }
+
+    // Check if "trabalharemgrupo" is filled
+    var trabalharemgrupo = document.getElementById('trabalharemgrupo').value;
+    if (!trabalharemgrupo || trabalharemgrupo.trim() === '') {
+        errors.push('Informe o quanto você gosta de trabalhar em grupo (0 a 10).');
+    }
+
+    // Check if "destacaranimacao" is filled
+    var destacaranimacao = document.getElementById('destacaranimacao').value;
+    if (!destacaranimacao || destacaranimacao.trim() === '') {
+        errors.push('Informe algo que você já fez relacionado à animação/audiovisual.');
+    }
+
+    // Check if "porqueinteresse" is filled
+    var porqueinteresse = document.getElementById('porqueinteresse').value;
+    if (!porqueinteresse || porqueinteresse.trim() === '') {
+        errors.push('Informe por que você se interessou em participar do Estúdio Escola.');
+    }
+
+    // If there are errors, prevent form submission and show the errors
+    if (errors.length > 0) {
+        event.preventDefault();
+        alert('Por favor, preencha os seguintes campos:\n\n' + errors.join('\n'));
     }
 });
 

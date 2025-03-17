@@ -63,6 +63,50 @@ def CreateInscriprion(request):
         new_message = request.POST.get('porqueinteresse')
         new_portifolio = request.POST.get('linkportifolio')
         new_file = request.FILES['desenho']
+
+        # Print debug information
+        print(f"new_name: {new_name}")
+        print(f"new_birthday: {new_birthday}")
+        print(f"new_cpf: {new_cpf}")
+        print(f"new_age: {new_age}")
+        print(f"new_gender: {new_gender}")
+        print(f"new_gender_other: {new_gender_other}")
+        print(f"new_ethnicity: {new_ethnicity}")
+        print(f"new_ethnicity_other: {new_ethnicity_other}")
+        print(f"new_zipcode: {new_zipcode}")
+        print(f"new_neighberhood: {new_neighberhood}")
+        print(f"new_city: {new_city}")
+        print(f"new_city_other: {new_city_other}")
+        print(f"new_phone: {new_phone}")
+        print(f"new_whatsapp: {new_whatsapp}")
+        print(f"new_email: {new_email}")
+        print(f"new_scholl_level: {new_scholl_level}")
+        print(f"new_parent: {new_parent}")
+        print(f"new_parent_phone: {new_parent_phone}")
+        print(f"new_intern: {new_intern}")
+        print(f"new_intern_time: {new_intern_time}")
+        print(f"new_income: {new_income}")
+        print(f"new_family: {new_family}")
+        print(f"new_deficincy: {new_deficincy}")
+        print(f"new_deficincy_type: {new_deficincy_type}")
+        print(f"new_special_need: {new_special_need}")
+        print(f"new_special_interview: {new_special_interview}")
+        print(f"new_knowloge: {new_knowloge}")
+        print(f"new_knowloge_other: {new_knowloge_other}")
+        print(f"new_prior_inscription: {new_prior_inscription}")
+        print(f"new_prior_course: {new_prior_course}")
+        print(f"new_prior_course_year: {new_prior_course_year}")
+        print(f"new_dedication: {new_dedication}")
+        print(f"new_tablet: {new_tablet}")
+        print(f"new_frequency: {new_frequency}")
+        print(f"new_group_rating: {new_group_rating}")
+        print(f"new_critics: {new_critics}")
+        print(f"new_previous_work: {new_previous_work}")
+        print(f"new_message: {new_message}")
+        print(f"new_portifolio: {new_portifolio}")
+        print(f"new_portifolio: {new_file.name}")
+
+
         inscription = Inscription.objects.create(
             name=new_name,
             birthday=new_birthday,
@@ -305,25 +349,9 @@ def inscription_pdf(request, pk):
     lines.append("Dos itens abaixo, marque aqueles que você já teve a oportunidade de realizar: ")
     lines.append(" ")
 
-
-    # Loop
-    # logo_path = '/home/raphael-2/code/raphael-rbbr/estudioescoladeanimacao/campaings/static/campaings/logo-eea.png'  # --> dev
-    logo_path = '/estudioescoladeanimacao/campaings/static/campaings/logo-eea.png'  # --> prod
-    c.saveState()
-    c.translate(15*cm, 5*cm)  # Translate to the position where you want to place the logo
-    c.scale(1, -1)  # Flip the image vertically
-    c.drawImage(logo_path, 0, 0, width=7*cm, height=5*cm)  # Draw the image at the origin
-    c.restoreState()
-
-    for line in lines:
-        wrapped_lines = wrap(line, 127)  # Wrap text to fit within 100 characters per line
-        for wrapped_line in wrapped_lines:
-            textob.textLine(wrapped_line)
-
     # Finish Up
     c.drawText(textob)
     c.showPage()
-
 
     # Construct the correct file path
     file_path = default_storage.path(inscription.file.name)
