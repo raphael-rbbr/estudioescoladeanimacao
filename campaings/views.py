@@ -26,12 +26,15 @@ def CreateInscriprion(request):
         new_name = request.POST.get('first_name')
         new_birthday = request.POST.get('nascimento')
         new_cpf = request.POST.get('cpf')
+        # new_rg = request.POST.get('rg')
         new_age = request.POST.get('idade')
         new_gender = request.POST.get('genero')
         new_gender_other = request.POST.get('generooutros')
         new_ethnicity = request.POST.get('raca')
         new_ethnicity_other = request.POST.get('racaoutros')
         new_zipcode = request.POST.get('cep')
+        # new_address = request.POST.get('endereco')
+        # new_address_line_1 = request.POST.get('complemento')
         new_neighberhood = request.POST.get('bairro')
         new_city = request.POST.get('cidade')
         new_city_other = request.POST.get('outracidade')
@@ -39,10 +42,18 @@ def CreateInscriprion(request):
         new_whatsapp = request.POST.get('whatsapp')
         new_email = request.POST.get('email')
         new_scholl_level = request.POST.get('escolaridade')
+        # new_school = request.POST.get('instituicao')
+        # new_grade = request.POST.get('serie')
+        # if request.POST.get('turno') == None:
+        #     new_studing = " "
+        # else:
+        #     new_studing = request.POST.get('turno')
+        # new_course = request.POST.get('curso')
         new_parent = request.POST.get('nomeresponsavel')
         new_parent_phone = request.POST.get('telefoneresponsavel')
         new_intern = request.POST.get('estagio')
         new_intern_time = request.POST.get('horarioestagio')
+        # new_looking_work = request.POST.get('buscaestagio')
         new_income = request.POST.get('renda')
         new_family = request.POST.get('pessoasrenda')
         new_deficincy = request.POST.get('deficiencia')
@@ -56,6 +67,7 @@ def CreateInscriprion(request):
         new_prior_course_year = request.POST.get('qualedicao')
         new_dedication = request.POST.get('frequencia')
         new_tablet = request.POST.get('cutout')
+        # new_likes_to_draw = request.POST.get('gostadesenhar')
         new_frequency = request.POST.get('freqdesenho')
         new_group_rating = request.POST.get('trabalharemgrupo')
         new_critics = request.POST.get('criticastrabalgo')
@@ -64,58 +76,59 @@ def CreateInscriprion(request):
         new_portifolio = request.POST.get('linkportifolio')
         new_file = request.FILES['desenho']
 
-        # Print debug information
-        print(f"new_name: {new_name}")
-        print(f"new_birthday: {new_birthday}")
-        print(f"new_cpf: {new_cpf}")
-        print(f"new_age: {new_age}")
-        print(f"new_gender: {new_gender}")
-        print(f"new_gender_other: {new_gender_other}")
-        print(f"new_ethnicity: {new_ethnicity}")
-        print(f"new_ethnicity_other: {new_ethnicity_other}")
-        print(f"new_zipcode: {new_zipcode}")
-        print(f"new_neighberhood: {new_neighberhood}")
-        print(f"new_city: {new_city}")
-        print(f"new_city_other: {new_city_other}")
-        print(f"new_phone: {new_phone}")
-        print(f"new_whatsapp: {new_whatsapp}")
-        print(f"new_email: {new_email}")
-        print(f"new_scholl_level: {new_scholl_level}")
-        print(f"new_parent: {new_parent}")
-        print(f"new_parent_phone: {new_parent_phone}")
-        print(f"new_intern: {new_intern}")
-        print(f"new_intern_time: {new_intern_time}")
-        print(f"new_income: {new_income}")
-        print(f"new_family: {new_family}")
-        print(f"new_deficincy: {new_deficincy}")
-        print(f"new_deficincy_type: {new_deficincy_type}")
-        print(f"new_special_need: {new_special_need}")
-        print(f"new_special_interview: {new_special_interview}")
-        print(f"new_knowloge: {new_knowloge}")
-        print(f"new_knowloge_other: {new_knowloge_other}")
-        print(f"new_prior_inscription: {new_prior_inscription}")
-        print(f"new_prior_course: {new_prior_course}")
-        print(f"new_prior_course_year: {new_prior_course_year}")
-        print(f"new_dedication: {new_dedication}")
-        print(f"new_tablet: {new_tablet}")
-        print(f"new_frequency: {new_frequency}")
-        print(f"new_group_rating: {new_group_rating}")
-        print(f"new_critics: {new_critics}")
-        print(f"new_previous_work: {new_previous_work}")
-        print(f"new_message: {new_message}")
-        print(f"new_portifolio: {new_portifolio}")
-        print(f"new_portifolio: {new_file.name}")
-
+        # # Print debug information
+        # print(f"new_name: {new_name}")
+        # print(f"new_birthday: {new_birthday}")
+        # print(f"new_cpf: {new_cpf}")
+        # print(f"new_age: {new_age}")
+        # print(f"new_gender: {new_gender}")
+        # print(f"new_gender_other: {new_gender_other}")
+        # print(f"new_ethnicity: {new_ethnicity}")
+        # print(f"new_ethnicity_other: {new_ethnicity_other}")
+        # print(f"new_zipcode: {new_zipcode}")
+        # print(f"new_neighberhood: {new_neighberhood}")
+        # print(f"new_city: {new_city}")
+        # print(f"new_city_other: {new_city_other}")
+        # print(f"new_phone: {new_phone}")
+        # print(f"new_whatsapp: {new_whatsapp}")
+        # print(f"new_email: {new_email}")
+        # print(f"new_scholl_level: {new_scholl_level}")
+        # print(f"new_parent: {new_parent}")
+        # print(f"new_parent_phone: {new_parent_phone}")
+        # print(f"new_intern: {new_intern}")
+        # print(f"new_intern_time: {new_intern_time}")
+        # print(f"new_income: {new_income}")
+        # print(f"new_family: {new_family}")
+        # print(f"new_deficincy: {new_deficincy}")
+        # print(f"new_deficincy_type: {new_deficincy_type}")
+        # print(f"new_special_need: {new_special_need}")
+        # print(f"new_special_interview: {new_special_interview}")
+        # print(f"new_knowloge: {new_knowloge}")
+        # print(f"new_knowloge_other: {new_knowloge_other}")
+        # print(f"new_prior_inscription: {new_prior_inscription}")
+        # print(f"new_prior_course: {new_prior_course}")
+        # print(f"new_prior_course_year: {new_prior_course_year}")
+        # print(f"new_dedication: {new_dedication}")
+        # print(f"new_tablet: {new_tablet}")
+        # print(f"new_frequency: {new_frequency}")
+        # print(f"new_group_rating: {new_group_rating}")
+        # print(f"new_critics: {new_critics}")
+        # print(f"new_previous_work: {new_previous_work}")
+        # print(f"new_message: {new_message}")
+        # print(f"new_portifolio: {new_portifolio}")
 
         inscription = Inscription.objects.create(
             name=new_name,
             birthday=new_birthday,
             cpf=new_cpf,
+            # rg=new_rg,
             age=new_age,
             gender=new_gender,
             gender_other=new_gender_other,
             ethnicity=new_ethnicity,
             ethnicity_other=new_ethnicity_other,
+            # address=new_address,
+            # address_line_1=new_address_line_1,
             neighberhood=new_neighberhood,
             city=new_city,
             city_other=new_city_other,
@@ -126,8 +139,13 @@ def CreateInscriprion(request):
             parent=new_parent,
             parent_phone=new_parent_phone,
             scholl_level=new_scholl_level,
+            # school=new_school,
+            # grade=new_grade,
+            # studing=new_studing,
+            # course=new_course,
             intern=new_intern,
             intern_time=new_intern_time,
+            # looking_work=new_looking_work,
             income=new_income,
             family=new_family,
             deficincy=new_deficincy,
@@ -141,6 +159,7 @@ def CreateInscriprion(request):
             prior_course_year=new_prior_course_year,
             dedication=new_dedication,
             tablet=new_tablet,
+            # likes_to_draw=new_likes_to_draw,
             frequency=new_frequency,
             group_rating=new_group_rating,
             critics=new_critics,
@@ -277,77 +296,77 @@ def inscription_pdf(request, pk):
     inscription = Inscription.objects.get(id=pk)
     # Create blank list
     lines = []
-    if inscription.name:
-        lines.append("Nome: " + inscription.name)
-    if inscription.cpf:
-        lines.append("CPF: " + str(inscription.cpf))
-    if inscription.age:
-        lines.append("Idade: " + inscription.age)
-    if inscription.birthday:
-        lines.append("Data de Nascimento: " + str(inscription.birthday))
-    if inscription.gender:
-        lines.append("Gênero: " + inscription.gender)
-    if inscription.gender_other:
-        lines.append("Gênero outro: " + inscription.gender_other)
-    if inscription.ethnicity:
-        lines.append("Raça: " + inscription.ethnicity)
-    if inscription.ethnicity_other:
-        lines.append("Etinia outra: " + inscription.ethnicity_other)
-    if inscription.zipcode:
-        lines.append("CEP: " + inscription.zipcode)
-    if inscription.neighberhood:
-        lines.append("Bairro: " + inscription.neighberhood)
-    if inscription.city:
-        lines.append("Cidade: " + inscription.city)
-    if inscription.city_other:
-        lines.append("Outra cidade: " + inscription.city_other)
-    if inscription.phone:
-        lines.append("Telefone: " + str(inscription.phone))
-    if inscription.whatsapp:
-        lines.append("Whatsapp: " + str(inscription.whatsapp))
-    if inscription.email:
-        lines.append("E-mail: " + str(inscription.email))
-    if inscription.scholl_level:
-        lines.append("Escolaridade: " + inscription.scholl_level)
-    if inscription.income:
-        lines.append("Renda familiar: " + inscription.income)
-    if inscription.family:
-        lines.append("Quantas pessoas usufruem desta renda? " + inscription.family)
-    if inscription.intern:
-        lines.append("Trabalha ou faz estágio: " + inscription.intern)
-    if inscription.intern_time:
-        lines.append("Horário Trabalho/Estágio: " + inscription.intern_time)
-    if inscription.deficincy:
-        lines.append("Possui alguma deficiência? " + inscription.deficincy)
-    if inscription.deficincy_type:
-        lines.append("Qual deficiencia? " + inscription.deficincy_type)
-    if inscription.special_need:
-        lines.append("Precisa de atendimento especial? " + inscription.special_need)
-    if inscription.special_interview:
-        lines.append("Qual atendimento especial? " + inscription.special_interview)
-    if inscription.prior_inscription:
-        lines.append("Já se inscreveu: " + inscription.prior_inscription)
-    if inscription.knowloge:
-        lines.append("Como conheceu: " + inscription.knowloge)
-    if inscription.knowloge_other:
-        lines.append("Conheceu outro lugar: " + inscription.knowloge_other)
-    if inscription.prior_course:
-        lines.append("Já participou? " + inscription.prior_course)
-    if inscription.prior_course_year:
-        lines.append("Qual edição? " + str(inscription.prior_course_year))
-    if inscription.dedication:
-        lines.append("Está disposto a se dedicar com essa frequência? " + inscription.dedication)
-    if inscription.tablet:
-        lines.append("Como você se sente em relação ao uso do cut-out? " + inscription.tablet)
-    if inscription.frequency:
-        lines.append("Com que frequência você desenha? " + inscription.frequency)
-    if inscription.group_rating:
-        lines.append("Numa escala de - à 10, o quanto você gosta de trabalhar em grupo? " + str(inscription.group_rating))
-    if inscription.critics:
-        lines.append("Como você lida com críticas em relação ao seu trabalho? " + inscription.critics)
+    lines.append("Nome:" + inscription.name)
+    lines.append("CPF:" + str(inscription.cpf))
+    # lines.append("RG:" + str(inscription.rg))
+    lines.append("Idade:" + inscription.age)
+    lines.append("Data de Nascimento: " + str(inscription.birthday))
+    lines.append("Gênero: " + inscription.gender)
+    lines.append("Gênero outro: " +inscription.gender_other)
+    lines.append("Raça: " + inscription.ethnicity)
+    lines.append("Etinia outra " +inscription.ethnicity_other)
+    lines.append("CEP: " + inscription.zipcode)
+    # lines.append("Endereço: " + inscription.address)
+    # lines.append("Complemento: " + inscription.address_line_1)
+    lines.append("Bairro: " + inscription.neighberhood)
+    lines.append("Cidade: " + inscription.city)
+    lines.append("Outra cidade " + inscription.city_other)
+    lines.append("Telefone: " + str(inscription.phone))
+    lines.append("Whatsapp: " + str(inscription.whatsapp))
+    lines.append("E-mail: " + str(inscription.email))
+    lines.append("Escolaridade: " + inscription.scholl_level)
+    # lines.append("Instituição: " + inscription.school)
+    # lines.append("Série: " + inscription.grade)
+    # lines.append("Turno: " + inscription.studing)
+    # lines.append("Curso: " + inscription.course)
+    lines.append("Renda familiar: " + inscription.income)
+    lines.append("Quantas pessoas usufruem desta renda? " + inscription.family)
+    lines.append("Trabalha ou faz estágio: " + inscription.intern)
+    lines.append("Horário Trabalho/Estágio: " + inscription.intern_time)
+    # lines.append(" " + inscription.looking_work)
+    lines.append("Possui alguma deficiência? " + inscription.deficincy)
+    lines.append("Qual defiencia? " + inscription.deficincy_type)
+    lines.append("Precisa de atendimento especial? " + inscription.special_need)
+    lines.append("Qual atendimento especial? " + inscription.special_interview)
+    lines.append("Já se inscreveu: " + inscription.prior_inscription)
+    lines.append("Como conheceu: " + inscription.knowloge)
+    lines.append("Conheceu outro lugar " + inscription.knowloge_other)
+    lines.append("Já participou? " + inscription.prior_course)
+    lines.append("Qual edição? " + str(inscription.prior_course_year))
+    lines.append("Está disposto a se dedicar com essa frequência? " + inscription.dedication)
+    lines.append("Qual a disponibilidade de horário? " )
+    lines.append("Como você se sente em relação ao uso do cut-out? ")
+    lines.append(inscription.tablet)
+    # lines.append("Você gosta de desenhar? " + inscription.likes_to_draw)
+    lines.append("Com que frequência você desenha? " + inscription.frequency)
+    lines.append("Numa escala de - à 10, o quanto você gosta de trabalhar em grupo? " + str(inscription.group_rating))
+    lines.append("Como você lida com críticas em relação ao seu trabalho? ")
+    lines.append(inscription.critics)
     lines.append(" ")
     lines.append("Dos itens abaixo, marque aqueles que você já teve a oportunidade de realizar: ")
     lines.append(" ")
+    lines.append("Há outra coisa que você já fez relacionada à animação? ")
+    lines.append(inscription.previous_work)
+    lines.append("  ")
+    lines.append("Por que você se interessou em participar do Estúdio Escola? ")
+    lines.append(inscription.message )
+    lines.append(" ")
+    lines.append("Possui um local onde divulga o seu trabalho artístico? ")
+    lines.append(inscription.portifolio)
+    lines.append(" ")
+    # Loop
+    # logo_path = '/home/raphael-2/code/raphael-rbbr/estudioescoladeanimacao/campaings/static/campaings/logo-eea.png'  # --> dev
+    logo_path = '/estudioescoladeanimacao/campaings/static/campaings/logo-eea.png'  # --> prod
+    c.saveState()
+    c.translate(15*cm, 5*cm)  # Translate to the position where you want to place the logo
+    c.scale(1, -1)  # Flip the image vertically
+    c.drawImage(logo_path, 0, 0, width=7*cm, height=5*cm)  # Draw the image at the origin
+    c.restoreState()
+
+    for line in lines:
+        wrapped_lines = wrap(line, 127)  # Wrap text to fit within 100 characters per line
+        for wrapped_line in wrapped_lines:
+            textob.textLine(wrapped_line)
 
     # Finish Up
     c.drawText(textob)
@@ -357,30 +376,30 @@ def inscription_pdf(request, pk):
     file_path = default_storage.path(inscription.file.name)
 
     # Check if the file exists
-    if os.path.exists(file_path):
+    # if not os.path.exists(file_path):
     #     return HttpResponse("File not found.", status=404)
 
     # Convert PDF to images using PyMuPDF with lower DPI to avoid DecompressionBombError
-        pdf_document = fitz.open(file_path)
-        for page_num in range(len(pdf_document)):
-            page = pdf_document.load_page(page_num)
-            # Rotate the page by 90 degrees if it is in landscape orientation
-            if page.rect.width > page.rect.height:
-                page.set_rotation(90)
-            pix = page.get_pixmap(dpi=100)  # Set DPI to 150 for lower quality to avoid DecompressionBombError
-            with tempfile.NamedTemporaryFile(delete=False, suffix=".png") as temp_image:
-                pix.save(temp_image.name)
-                temp_image_path = temp_image.name
-            # Get the dimensions of the image
-            img_width, img_height = 595, 842
-            # Adjust the transformation matrix to flip the image vertically
-            c.saveState()
-            c.translate(0, A4[1])
-            c.scale(1, -1)
-            c.drawImage(temp_image_path, 0, 0, width=img_width, height=img_height)
-            c.restoreState()
-            c.showPage()
-            os.remove(temp_image_path)
+    pdf_document = fitz.open(file_path)
+    for page_num in range(len(pdf_document)):
+        page = pdf_document.load_page(page_num)
+        # Rotate the page by 90 degrees if it is in landscape orientation
+        if page.rect.width > page.rect.height:
+            page.set_rotation(90)
+        pix = page.get_pixmap(dpi=100)  # Set DPI to 150 for lower quality to avoid DecompressionBombError
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".png") as temp_image:
+            pix.save(temp_image.name)
+            temp_image_path = temp_image.name
+        # Get the dimensions of the image
+        img_width, img_height = 595, 842
+        # Adjust the transformation matrix to flip the image vertically
+        c.saveState()
+        c.translate(0, A4[1])
+        c.scale(1, -1)
+        c.drawImage(temp_image_path, 0, 0, width=img_width, height=img_height)
+        c.restoreState()
+        c.showPage()
+        os.remove(temp_image_path)
 
     c.save()
     buf.seek(0)
