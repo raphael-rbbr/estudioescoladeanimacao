@@ -10,8 +10,8 @@ servers:
     hosts:
       - 52.45.185.112
       - 52.204.240.12
-  healthcheck:
-    interval: 60s
+  # healthcheck:
+  #   interval: 60s
   # job:
   #   hosts:
   #     - 192.168.0.1
