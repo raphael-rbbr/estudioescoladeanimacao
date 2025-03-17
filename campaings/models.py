@@ -192,7 +192,7 @@ class Inscription(models.Model):
     #     ("NBW", "Nunca usei mas quero aprender!"),
     #     ("NO", "Nunca usei e não quero aprender a usar."),
     # ]
-    tablet = models.CharField(max_length=100,  default="OK", verbose_name=("tablet"),
+    tablet = models.CharField(max_length=200,  default="OK", verbose_name=("tablet"),
                              help_text=("Clique para selecionar"))
     # likes_to_draw = models.CharField(max_length=50, default=" ", verbose_name=("desenha"), null=False, blank=False)
     # FREQUENCY_CHOICES = [
