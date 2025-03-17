@@ -307,8 +307,8 @@ def inscription_pdf(request, pk):
 
 
     # Loop
-    logo_path = '/home/raphael-2/code/raphael-rbbr/estudioescoladeanimacao/campaings/static/campaings/logo-eea.png'  # --> dev
-    # logo_path = '/estudioescoladeanimacao/campaings/static/campaings/logo-eea.png'  # --> prod
+    # logo_path = '/home/raphael-2/code/raphael-rbbr/estudioescoladeanimacao/campaings/static/campaings/logo-eea.png'  # --> dev
+    logo_path = '/estudioescoladeanimacao/campaings/static/campaings/logo-eea.png'  # --> prod
     c.saveState()
     c.translate(15*cm, 5*cm)  # Translate to the position where you want to place the logo
     c.scale(1, -1)  # Flip the image vertically
