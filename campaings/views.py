@@ -386,7 +386,7 @@ def inscription_pdf(request, pk):
         # Rotate the page by 90 degrees if it is in landscape orientation
         if page.rect.width > page.rect.height:
             page.set_rotation(90)
-        pix = page.get_pixmap(dpi=150)  # Set DPI to 150 for lower quality to avoid DecompressionBombError
+        pix = page.get_pixmap(dpi=100)  # Set DPI to 150 for lower quality to avoid DecompressionBombError
         with tempfile.NamedTemporaryFile(delete=False, suffix=".png") as temp_image:
             pix.save(temp_image.name)
             temp_image_path = temp_image.name
