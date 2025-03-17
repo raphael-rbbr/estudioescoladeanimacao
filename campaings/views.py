@@ -296,63 +296,85 @@ def inscription_pdf(request, pk):
     inscription = Inscription.objects.get(id=pk)
     # Create blank list
     lines = []
-    lines.append("Nome:" + inscription.name)
-    lines.append("CPF:" + str(inscription.cpf))
-    # lines.append("RG:" + str(inscription.rg))
-    lines.append("Idade:" + inscription.age)
-    lines.append("Data de Nascimento: " + str(inscription.birthday))
-    lines.append("Gênero: " + inscription.gender)
-    lines.append("Gênero outro: " +inscription.gender_other)
-    lines.append("Raça: " + inscription.ethnicity)
-    lines.append("Etinia outra " +inscription.ethnicity_other)
-    lines.append("CEP: " + inscription.zipcode)
-    # lines.append("Endereço: " + inscription.address)
-    # lines.append("Complemento: " + inscription.address_line_1)
-    lines.append("Bairro: " + inscription.neighberhood)
-    lines.append("Cidade: " + inscription.city)
-    lines.append("Outra cidade " + inscription.city_other)
-    lines.append("Telefone: " + str(inscription.phone))
-    lines.append("Whatsapp: " + str(inscription.whatsapp))
-    lines.append("E-mail: " + str(inscription.email))
-    lines.append("Escolaridade: " + inscription.scholl_level)
-    # lines.append("Instituição: " + inscription.school)
-    # lines.append("Série: " + inscription.grade)
-    # lines.append("Turno: " + inscription.studing)
-    # lines.append("Curso: " + inscription.course)
-    lines.append("Renda familiar: " + inscription.income)
-    lines.append("Quantas pessoas usufruem desta renda? " + inscription.family)
-    lines.append("Trabalha ou faz estágio: " + inscription.intern)
-    lines.append("Horário Trabalho/Estágio: " + inscription.intern_time)
-    # lines.append(" " + inscription.looking_work)
-    lines.append("Possui alguma deficiência? " + inscription.deficincy)
-    lines.append("Qual defiencia? " + inscription.deficincy_type)
-    lines.append("Precisa de atendimento especial? " + inscription.special_need)
-    lines.append("Qual atendimento especial? " + inscription.special_interview)
-    lines.append("Já se inscreveu: " + inscription.prior_inscription)
-    lines.append("Como conheceu: " + inscription.knowloge)
-    lines.append("Conheceu outro lugar " + inscription.knowloge_other)
-    lines.append("Já participou? " + inscription.prior_course)
-    lines.append("Qual edição? " + str(inscription.prior_course_year))
-    lines.append("Está disposto a se dedicar com essa frequência? " + inscription.dedication)
-    lines.append("Qual a disponibilidade de horário? " )
-    lines.append("Como você se sente em relação ao uso do cut-out? ")
-    lines.append(inscription.tablet)
-    # lines.append("Você gosta de desenhar? " + inscription.likes_to_draw)
-    lines.append("Com que frequência você desenha? " + inscription.frequency)
-    lines.append("Numa escala de - à 10, o quanto você gosta de trabalhar em grupo? " + str(inscription.group_rating))
-    lines.append("Como você lida com críticas em relação ao seu trabalho? ")
-    lines.append(inscription.critics)
+    if inscription.name:
+        lines.append("Nome: " + inscription.name)
+    if inscription.cpf:
+        lines.append("CPF: " + str(inscription.cpf))
+    if inscription.age:
+        lines.append("Idade: " + inscription.age)
+    if inscription.birthday:
+        lines.append("Data de Nascimento: " + str(inscription.birthday))
+    if inscription.gender:
+        lines.append("Gênero: " + inscription.gender)
+    if inscription.gender_other:
+        lines.append("Gênero outro: " + inscription.gender_other)
+    if inscription.ethnicity:
+        lines.append("Raça: " + inscription.ethnicity)
+    if inscription.ethnicity_other:
+        lines.append("Etinia outra: " + inscription.ethnicity_other)
+    if inscription.zipcode:
+        lines.append("CEP: " + inscription.zipcode)
+    if inscription.neighberhood:
+        lines.append("Bairro: " + inscription.neighberhood)
+    if inscription.city:
+        lines.append("Cidade: " + inscription.city)
+    if inscription.city_other:
+        lines.append("Outra cidade: " + inscription.city_other)
+    if inscription.phone:
+        lines.append("Telefone: " + str(inscription.phone))
+    if inscription.whatsapp:
+        lines.append("Whatsapp: " + str(inscription.whatsapp))
+    if inscription.email:
+        lines.append("E-mail: " + str(inscription.email))
+    if inscription.scholl_level:
+        lines.append("Escolaridade: " + inscription.scholl_level)
+    if inscription.income:
+        lines.append("Renda familiar: " + inscription.income)
+    if inscription.family:
+        lines.append("Quantas pessoas usufruem desta renda? " + inscription.family)
+    if inscription.intern:
+        lines.append("Trabalha ou faz estágio: " + inscription.intern)
+    if inscription.intern_time:
+        lines.append("Horário Trabalho/Estágio: " + inscription.intern_time)
+    if inscription.deficincy:
+        lines.append("Possui alguma deficiência? " + inscription.deficincy)
+    if inscription.deficincy_type:
+        lines.append("Qual deficiencia? " + inscription.deficincy_type)
+    if inscription.special_need:
+        lines.append("Precisa de atendimento especial? " + inscription.special_need)
+    if inscription.special_interview:
+        lines.append("Qual atendimento especial? " + inscription.special_interview)
+    if inscription.prior_inscription:
+        lines.append("Já se inscreveu: " + inscription.prior_inscription)
+    if inscription.knowloge:
+        lines.append("Como conheceu: " + inscription.knowloge)
+    if inscription.knowloge_other:
+        lines.append("Conheceu outro lugar: " + inscription.knowloge_other)
+    if inscription.prior_course:
+        lines.append("Já participou? " + inscription.prior_course)
+    if inscription.prior_course_year:
+        lines.append("Qual edição? " + str(inscription.prior_course_year))
+    if inscription.dedication:
+        lines.append("Está disposto a se dedicar com essa frequência? " + inscription.dedication)
+    if inscription.tablet:
+        lines.append("Como você se sente em relação ao uso do cut-out? " + inscription.tablet)
+    if inscription.frequency:
+        lines.append("Com que frequência você desenha? " + inscription.frequency)
+    if inscription.group_rating:
+        lines.append("Numa escala de - à 10, o quanto você gosta de trabalhar em grupo? " + str(inscription.group_rating))
+    if inscription.critics:
+        lines.append("Como você lida com críticas em relação ao seu trabalho? " + inscription.critics)
     lines.append(" ")
     lines.append("Dos itens abaixo, marque aqueles que você já teve a oportunidade de realizar: ")
     lines.append(" ")
-    lines.append("Há outra coisa que você já fez relacionada à animação? ")
-    lines.append(inscription.previous_work)
+    if inscription.previous_work:
+        lines.append("Há outra coisa que você já fez relacionada à animação? " + inscription.previous_work)
     lines.append("  ")
-    lines.append("Por que você se interessou em participar do Estúdio Escola? ")
-    lines.append(inscription.message )
+    if inscription.message:
+        lines.append("Por que você se interessou em participar do Estúdio Escola? " + inscription.message)
     lines.append(" ")
-    lines.append("Possui um local onde divulga o seu trabalho artístico? ")
-    lines.append(inscription.portifolio)
+    if inscription.portifolio:
+        lines.append("Possui um local onde divulga o seu trabalho artístico? " + inscription.portifolio)
     lines.append(" ")
     # Loop
     # logo_path = '/home/raphael-2/code/raphael-rbbr/estudioescoladeanimacao/campaings/static/campaings/logo-eea.png'  # --> dev
