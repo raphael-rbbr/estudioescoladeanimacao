@@ -386,7 +386,7 @@ def inscription_pdf(request, pk):
     c.restoreState()
 
     for line in lines:
-        wrapped_lines = wrap(line, 127)  # Wrap text to fit within 100 characters per line
+        wrapped_lines = wrap(line, 120)  # Wrap text to fit within 100 characters per line
         for wrapped_line in wrapped_lines:
             textob.textLine(wrapped_line)
 
