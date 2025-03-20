@@ -198,6 +198,7 @@ def ListInscriprion(request):
     # incripitions = Inscription.objects.all()
     if request.user.is_authenticated:
         inscriptions = Inscription.objects.all().order_by('-created_at')
+        print(Inscription.objects.count())
         return render(request, 'list.html', {'inscriptions': inscriptions})
     else:
          return redirect(CreateInscriprion)
@@ -215,7 +216,7 @@ def inscription_csv(request):
     writer = csv.writer(response, quoting=csv.QUOTE_ALL)
 
     # Designate The Model
-    inscriptions = Inscription.objects.all()
+    inscriptions = Inscription.objects.all().order_by('-created_at')
 
     # Add column headings to the csv file
     writer.writerow(['Nome', 'idade', 'cpf', 'rg', 'genero', 'genero outro', 'etinia', 'etinia outra', 'email', 'CEP', 'endereço', 'complemento', 'bairro', 'Cidade', 'cidade outra', 'telefone', 'whatsapp', 'escolaridade', 'escola', 'série', 'período', 'curso', 'responsavel', 'telefone responsavel', 'estágio', 'horarios', 'trabalha', 'renda', 'familia renda', 'deficiencia', 'deficiencia qual', 'cuidado especial', 'cuidado entrevista', 'como conheceu', 'como conheceu outros', 'ja se inscreveu', 'curso anterior', 'dedicacao', 'tablet', 'gosta de desenhar', 'frequencia', 'avaliacao grupo', 'criticas', 'experiencia anterior', 'mensagem', 'portifolio'])
@@ -294,6 +295,8 @@ def inscription_pdf(request, pk):
     textob.maxLineLength = 80
     # Designate The Model
     inscription = Inscription.objects.get(id=pk)
+    i = str(inscription.id - 109)
+
     # Create blank list
     lines = []
     if inscription.name:
@@ -426,7 +429,7 @@ def inscription_pdf(request, pk):
     c.save()
     buf.seek(0)
     # Return the PDF as a response
-    return FileResponse(buf, as_attachment=True, filename=inscription.name + '.pdf')
+    return FileResponse(buf, as_attachment=True, filename=i + '_' + inscription.name + '.pdf')
 
 
 
@@ -437,15 +440,17 @@ def inscription_excel(request):
     ws.title = "Inscriptions"
 
     # Add column headings to the worksheet
-    columns = ['Nome', 'idade', 'cpf', 'genero', 'genero outro', 'etinia', 'etinia outra', 'email', 'CEP', 'bairro', 'Cidade', 'cidade outra', 'telefone', 'whatsapp', 'escolaridade', 'responsavel', 'telefone responsavel', 'estágio', 'horarios', 'trabalha', 'renda', 'familia renda', 'deficiencia', 'deficiencia qual', 'cuidado especial', 'cuidado entrevista', 'como conheceu', 'como conheceu outros', 'ja se inscreveu', 'curso anterior', 'dedicacao', 'tablet', 'frequencia', 'avaliacao grupo', 'criticas', 'experiencia anterior', 'mensagem', 'portifolio']
+    columns = ['', 'Nome', 'idade', 'cpf', 'genero', 'genero outro', 'etinia', 'etinia outra', 'email', 'CEP', 'bairro', 'Cidade', 'cidade outra', 'telefone', 'whatsapp', 'escolaridade', 'responsavel', 'telefone responsavel', 'estágio', 'horarios', 'trabalha', 'renda', 'familia renda', 'deficiencia', 'deficiencia qual', 'cuidado especial', 'cuidado entrevista', 'como conheceu', 'como conheceu outros', 'ja se inscreveu', 'curso anterior', 'dedicacao', 'tablet', 'frequencia', 'avaliacao grupo', 'criticas', 'experiencia anterior', 'mensagem', 'portifolio']
     ws.append(columns)
 
     # Designate The Model
-    inscriptions = Inscription.objects.all()
+    inscriptions = Inscription.objects.all().order_by('created_at')
+    i = Inscription.objects.all().count()
 
     # Loop through and output
     for inscription in inscriptions:
         row = [
+            inscription.id -109,
             inscription.name,
             inscription.age,
             inscription.cpf,
