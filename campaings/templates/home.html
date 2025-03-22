@@ -516,6 +516,8 @@
                       <label for="conheceuoutros">Outros</label>
                       <input type="text" name="conheceuoutros" id="conheceuoutros" placeholder="Outros">
 
+                      <input type="hidden" name="conheceu_concatenated" id="conheceu_concatenated">
+
                   <div class="spacer"></div>
 
                   <p>Você já se inscreveu para outras edições do Estúdio Escola de Animação?</p>
@@ -607,6 +609,8 @@
 
                       <input type="checkbox" name="disponibilidadehorario[]" id="disponibilidadehorario_sete" value="Não tenho disponibilidade em nenhuma das opções acima.">
                       <label for="disponibilidadehorario_sete">Não tenho disponibilidade em nenhuma das opções acima.</label>
+
+                      <input type="hidden" name="disponibilidadehorario_concatenated" id="disponibilidadehorario_concatenated">
 
                       <div class="spacer"></div>
 
@@ -1037,12 +1041,36 @@ document.getElementById('sendinscription').addEventListener('click', function(ev
         return;
     }
 
-    // Validate required fields
+    // Concatenate all selected "disponibilidadehorario[]" values
+    var disponibilidadeCheckboxes = document.querySelectorAll('input[name="disponibilidadehorario[]"]:checked');
+    var disponibilidadeValues = Array.from(disponibilidadeCheckboxes).map(function(checkbox) {
+        return checkbox.value;
+    });
+    var concatenatedDisponibilidade = disponibilidadeValues.join(', ');
+
+    // Set the concatenated values into the hidden input field
+    document.getElementById('disponibilidadehorario_concatenated').value = concatenatedDisponibilidade;
+
+    // Concatenate all selected "conheceu[]" values
+    var conheceuCheckboxes = document.querySelectorAll('input[name="conheceu[]"]:checked');
+    var conheceuValues = Array.from(conheceuCheckboxes).map(function(checkbox) {
+        return checkbox.value;
+    });
+    var concatenatedConheceu = conheceuValues.join(', ');
+
+    // Set the concatenated values into the hidden input field
+    document.getElementById('conheceu_concatenated').value = concatenatedConheceu;
+
+    // Continue with other validations...
     var errors = [];
 
-    // Check if "conheceu[]" is selected
-    var conheceuChecked = document.querySelectorAll('input[name="conheceu[]"]:checked').length > 0;
-    if (!conheceuChecked) {
+    // Example validation for "disponibilidadehorario[]"
+    if (disponibilidadeValues.length === 0) {
+        errors.push('Informe sua disponibilidade de horário.');
+    }
+
+    // Example validation for "conheceu[]"
+    if (conheceuValues.length === 0) {
         errors.push('Informe como conheceu o Estúdio Escola.');
     }
 
@@ -1070,12 +1098,6 @@ document.getElementById('sendinscription').addEventListener('click', function(ev
     var frequenciaChecked = document.querySelector('input[name="frequencia"]:checked');
     if (!frequenciaChecked) {
         errors.push('Informe se você está disposto a se dedicar com essa frequência.');
-    }
-
-    // Check if "disponibilidadehorario[]" is selected
-    var disponibilidadeChecked = document.querySelectorAll('input[name="disponibilidadehorario[]"]:checked').length > 0;
-    if (!disponibilidadeChecked) {
-        errors.push('Informe sua disponibilidade de horário.');
     }
 
     // Check if "cutout" is selected

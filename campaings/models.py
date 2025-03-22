@@ -159,7 +159,7 @@ class Inscription(models.Model):
     #     ("OT", "Outros"),
 
     # ]
-    knowloge = models.CharField(default="outros", verbose_name=("conhecia"),
+    knowloge = models.TextField(default="outros", verbose_name=("conhecia"),
                              help_text=("Clique para selecionar"))
     knowloge_other = models.CharField(default=" ", verbose_name=("conhecimento"), help_text="COMO VOCÊ FICOU SABENDO DAS INSCRIÇÕES PARA O PROCESSO SELETIVO DESTE ANO? ", blank=True)
 
@@ -185,6 +185,7 @@ class Inscription(models.Model):
     prior_course = models.CharField(default=" ", verbose_name="curso_anterior", null=True, blank=True)
     prior_course_year = models.CharField(default=" ", verbose_name="curso_anterior", null=True, blank=True)
     dedication = models.CharField(default=" ", verbose_name=("dedicação"), null=True, blank=True)
+    availability = models.TextField(default=" ", verbose_name=("disponibilidade"), null=True, blank=True)
     # multiplechoices
     # TABLET_CHOICES = [
     #     ("OK", "Estou tranquilo(a)! Já faço uso da tablet e estou confortável com isso."),

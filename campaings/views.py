@@ -60,12 +60,13 @@ def CreateInscriprion(request):
         new_deficincy_type = request.POST.get('qualdeficiencia')
         new_special_need = request.POST.get('atendimento')
         new_special_interview = request.POST.get('qualatendimento')
-        new_knowloge = request.POST.get('conheceu[]')
+        new_knowloge = request.POST.get('conheceu_concatenated')
         new_knowloge_other = request.POST.get('conheceuoutros')
         new_prior_inscription = request.POST.get('inscreveu')
         new_prior_course = request.POST.get('participou')
         new_prior_course_year = request.POST.get('qualedicao')
         new_dedication = request.POST.get('frequencia')
+        new_availability = request.POST.get('disponibilidadehorario_concatenated')
         new_tablet = request.POST.get('cutout')
         # new_likes_to_draw = request.POST.get('gostadesenhar')
         new_frequency = request.POST.get('freqdesenho')
@@ -76,7 +77,14 @@ def CreateInscriprion(request):
         new_portifolio = request.POST.get('linkportifolio')
         new_file = request.FILES['desenho']
 
-        # # Print debug information
+
+
+
+
+
+
+
+          # Print debug information
         # print(f"new_name: {new_name}")
         # print(f"new_birthday: {new_birthday}")
         # print(f"new_cpf: {new_cpf}")
@@ -116,6 +124,7 @@ def CreateInscriprion(request):
         # print(f"new_previous_work: {new_previous_work}")
         # print(f"new_message: {new_message}")
         # print(f"new_portifolio: {new_portifolio}")
+        # print(f"new_portifolio: {test}")
 
         inscription = Inscription.objects.create(
             name=new_name,
@@ -158,6 +167,7 @@ def CreateInscriprion(request):
             prior_course=new_prior_course,
             prior_course_year=new_prior_course_year,
             dedication=new_dedication,
+            availability=new_availability,
             tablet=new_tablet,
             # likes_to_draw=new_likes_to_draw,
             frequency=new_frequency,
@@ -219,49 +229,61 @@ def inscription_csv(request):
     inscriptions = Inscription.objects.all().order_by('-created_at')
 
     # Add column headings to the csv file
-    writer.writerow(['Nome', 'idade', 'cpf', 'rg', 'genero', 'genero outro', 'etinia', 'etinia outra', 'email', 'CEP', 'endereço', 'complemento', 'bairro', 'Cidade', 'cidade outra', 'telefone', 'whatsapp', 'escolaridade', 'escola', 'série', 'período', 'curso', 'responsavel', 'telefone responsavel', 'estágio', 'horarios', 'trabalha', 'renda', 'familia renda', 'deficiencia', 'deficiencia qual', 'cuidado especial', 'cuidado entrevista', 'como conheceu', 'como conheceu outros', 'ja se inscreveu', 'curso anterior', 'dedicacao', 'tablet', 'gosta de desenhar', 'frequencia', 'avaliacao grupo', 'criticas', 'experiencia anterior', 'mensagem', 'portifolio'])
+    writer.writerow([
+        '', 'Nome','cpf', 'Data de nascimento', 'idade',
+                 'genero', 'genero outro', 'etinia','etinia outra', 'CEP','bairro', 'Cidade', 'cidade outra', 'telefone', 'whatsapp','email','responsavel', 'telefone responsavel','renda', 'familia renda', 'deficiencia', 'deficiencia qual', 'cuidado especial', 'cuidado entrevista','escolaridade',  'estágio', 'horarios', 'trabalha',
+                    'como conheceu', 'como conheceu outros', 'ja se inscreveu', 'curso anterior',
+                    'curso anterior ano', 'dedicacao', 'disponibilidade',
+                    'tablet', 'desenha', 'avaliacao grupo', 'criticas', 'experiencia anterior', 'mensagem', 'portifolio'
+        ])
 
     # Loop through and output
     for inscription in inscriptions:
         writer.writerow([
+            inscription.id -109,
             inscription.name,
-            inscription.age,
             inscription.cpf,
-            # inscription.rg,
+            str(inscription.birthday),
+            inscription.age,
             inscription.gender,
             inscription.gender_other,
             inscription.ethnicity,
             inscription.ethnicity_other,
-            inscription.email,
             inscription.zipcode,
-            # inscription.address,
-            # inscription.address_line_1,
             inscription.neighberhood,
             inscription.city,
             inscription.city_other,
-            inscription.phone,
-            inscription.whatsapp,
-            inscription.scholl_level,
-            # inscription.school,
-            # inscription.grade,
-            # inscription.studing,
-            # inscription.course,
+            str(inscription.phone),
+            str(inscription.whatsapp),
+            inscription.email,
             inscription.parent,
-            inscription.parent_phone,
-            inscription.intern,
-            inscription.intern_time,
-            inscription.looking_work,
+            str(inscription.parent_phone),
             inscription.income,
             inscription.family,
             inscription.deficincy,
             inscription.deficincy_type,
             inscription.special_need,
             inscription.special_interview,
+
+
+            # inscription.rg,
+            # inscription.address,
+            # inscription.address_line_1,
+            # inscription.school,
+            # inscription.grade,
+            # inscription.studing,
+            # inscription.course,
+            inscription.scholl_level,
+            inscription.intern,
+            inscription.intern_time,
+            inscription.looking_work,
             inscription.knowloge,
             inscription.knowloge_other,
             inscription.prior_inscription,
             inscription.prior_course,
+            inscription.prior_course_year,
             inscription.dedication,
+            inscription.availability,
             inscription.tablet,
             # inscription.likes_to_draw,
             inscription.frequency,
@@ -440,7 +462,11 @@ def inscription_excel(request):
     ws.title = "Inscriptions"
 
     # Add column headings to the worksheet
-    columns = ['', 'Nome', 'idade', 'cpf', 'genero', 'genero outro', 'etinia', 'etinia outra', 'email', 'CEP', 'bairro', 'Cidade', 'cidade outra', 'telefone', 'whatsapp', 'escolaridade', 'responsavel', 'telefone responsavel', 'estágio', 'horarios', 'trabalha', 'renda', 'familia renda', 'deficiencia', 'deficiencia qual', 'cuidado especial', 'cuidado entrevista', 'como conheceu', 'como conheceu outros', 'ja se inscreveu', 'curso anterior', 'dedicacao', 'tablet', 'frequencia', 'avaliacao grupo', 'criticas', 'experiencia anterior', 'mensagem', 'portifolio']
+    columns = ['', 'Nome','cpf', 'Data de nascimento', 'idade',
+                 'genero', 'genero outro', 'etinia','etinia outra', 'CEP','bairro', 'Cidade', 'cidade outra', 'telefone', 'whatsapp','email','responsavel', 'telefone responsavel','renda', 'familia renda', 'deficiencia', 'deficiencia qual', 'cuidado especial', 'cuidado entrevista','escolaridade',  'estágio', 'horarios', 'trabalha',
+                    'como conheceu', 'como conheceu outros', 'ja se inscreveu', 'curso anterior',
+                    'curso anterior ano', 'dedicacao', 'disponibilidade',
+                    'tablet', 'desenha', 'avaliacao grupo', 'criticas', 'experiencia anterior', 'mensagem', 'portifolio']
     ws.append(columns)
 
     # Designate The Model
@@ -452,43 +478,48 @@ def inscription_excel(request):
         row = [
             inscription.id -109,
             inscription.name,
-            inscription.age,
             inscription.cpf,
-            # inscription.rg,
+            str(inscription.birthday),
+            inscription.age,
             inscription.gender,
             inscription.gender_other,
             inscription.ethnicity,
             inscription.ethnicity_other,
-            inscription.email,
             inscription.zipcode,
-            # inscription.address,
-            # inscription.address_line_1,
             inscription.neighberhood,
             inscription.city,
             inscription.city_other,
             str(inscription.phone),
             str(inscription.whatsapp),
-            inscription.scholl_level,
-            # inscription.school,
-            # inscription.grade,
-            # inscription.studing,
-            # inscription.course,
+            inscription.email,
             inscription.parent,
             str(inscription.parent_phone),
-            inscription.intern,
-            inscription.intern_time,
-            inscription.looking_work,
             inscription.income,
             inscription.family,
             inscription.deficincy,
             inscription.deficincy_type,
             inscription.special_need,
             inscription.special_interview,
+
+
+            # inscription.rg,
+            # inscription.address,
+            # inscription.address_line_1,
+            # inscription.school,
+            # inscription.grade,
+            # inscription.studing,
+            # inscription.course,
+            inscription.scholl_level,
+            inscription.intern,
+            inscription.intern_time,
+            inscription.looking_work,
             inscription.knowloge,
             inscription.knowloge_other,
             inscription.prior_inscription,
             inscription.prior_course,
+            inscription.prior_course_year,
             inscription.dedication,
+            inscription.availability,
             inscription.tablet,
             # inscription.likes_to_draw,
             inscription.frequency,
