@@ -80,52 +80,6 @@ def CreateInscriprion(request):
 
 
 
-
-
-
-
-          # Print debug information
-        # print(f"new_name: {new_name}")
-        # print(f"new_birthday: {new_birthday}")
-        # print(f"new_cpf: {new_cpf}")
-        # print(f"new_age: {new_age}")
-        # print(f"new_gender: {new_gender}")
-        # print(f"new_gender_other: {new_gender_other}")
-        # print(f"new_ethnicity: {new_ethnicity}")
-        # print(f"new_ethnicity_other: {new_ethnicity_other}")
-        # print(f"new_zipcode: {new_zipcode}")
-        # print(f"new_neighberhood: {new_neighberhood}")
-        # print(f"new_city: {new_city}")
-        # print(f"new_city_other: {new_city_other}")
-        # print(f"new_phone: {new_phone}")
-        # print(f"new_whatsapp: {new_whatsapp}")
-        # print(f"new_email: {new_email}")
-        # print(f"new_scholl_level: {new_scholl_level}")
-        # print(f"new_parent: {new_parent}")
-        # print(f"new_parent_phone: {new_parent_phone}")
-        # print(f"new_intern: {new_intern}")
-        # print(f"new_intern_time: {new_intern_time}")
-        # print(f"new_income: {new_income}")
-        # print(f"new_family: {new_family}")
-        # print(f"new_deficincy: {new_deficincy}")
-        # print(f"new_deficincy_type: {new_deficincy_type}")
-        # print(f"new_special_need: {new_special_need}")
-        # print(f"new_special_interview: {new_special_interview}")
-        # print(f"new_knowloge: {new_knowloge}")
-        # print(f"new_knowloge_other: {new_knowloge_other}")
-        # print(f"new_prior_inscription: {new_prior_inscription}")
-        # print(f"new_prior_course: {new_prior_course}")
-        # print(f"new_prior_course_year: {new_prior_course_year}")
-        # print(f"new_dedication: {new_dedication}")
-        # print(f"new_tablet: {new_tablet}")
-        # print(f"new_frequency: {new_frequency}")
-        # print(f"new_group_rating: {new_group_rating}")
-        # print(f"new_critics: {new_critics}")
-        # print(f"new_previous_work: {new_previous_work}")
-        # print(f"new_message: {new_message}")
-        # print(f"new_portifolio: {new_portifolio}")
-        # print(f"new_portifolio: {test}")
-
         inscription = Inscription.objects.create(
             name=new_name,
             birthday=new_birthday,
@@ -208,7 +162,6 @@ def ListInscriprion(request):
     # incripitions = Inscription.objects.all()
     if request.user.is_authenticated:
         inscriptions = Inscription.objects.all().order_by('-created_at')
-        print(Inscription.objects.count())
         return render(request, 'list.html', {'inscriptions': inscriptions})
     else:
          return redirect(CreateInscriprion)
@@ -402,8 +355,8 @@ def inscription_pdf(request, pk):
         lines.append("Possui um local onde divulga o seu trabalho artístico? " + inscription.portifolio)
     lines.append(" ")
     # Loop
-    # logo_path = '/home/raphael-2/code/raphael-rbbr/estudioescoladeanimacao/campaings/static/campaings/logo-eea.png'  # --> dev
-    logo_path = '/estudioescoladeanimacao/campaings/static/campaings/logo-eea.png'  # --> prod
+    logo_path = '/home/raphael-2/code/raphael-rbbr/estudioescoladeanimacao/campaings/static/campaings/logo-eea.png'  # --> dev
+    # logo_path = '/estudioescoladeanimacao/campaings/static/campaings/logo-eea.png'  # --> prod
     c.saveState()
     c.translate(15*cm, 5*cm)  # Translate to the position where you want to place the logo
     c.scale(1, -1)  # Flip the image vertically
@@ -419,34 +372,34 @@ def inscription_pdf(request, pk):
     c.drawText(textob)
     c.showPage()
 
-    # Construct the correct file path
-    file_path = default_storage.path(inscription.file.name)
+    # # Construct the correct file path
+    # file_path = default_storage.path(inscription.file.name)
 
-    # Check if the file exists
-    # if not os.path.exists(file_path):
-    #     return HttpResponse("File not found.", status=404)
+    # # Check if the file exists
+    # # if not os.path.exists(file_path):
+    # #     return HttpResponse("File not found.", status=404)
 
-    # Convert PDF to images using PyMuPDF with lower DPI to avoid DecompressionBombError
-    pdf_document = fitz.open(file_path)
-    for page_num in range(len(pdf_document)):
-        page = pdf_document.load_page(page_num)
-        # Rotate the page by 90 degrees if it is in landscape orientation
-        if page.rect.width > page.rect.height:
-            page.set_rotation(90)
-        pix = page.get_pixmap(dpi=100)  # Set DPI to 150 for lower quality to avoid DecompressionBombError
-        with tempfile.NamedTemporaryFile(delete=False, suffix=".png") as temp_image:
-            pix.save(temp_image.name)
-            temp_image_path = temp_image.name
-        # Get the dimensions of the image
-        img_width, img_height = 595, 842
-        # Adjust the transformation matrix to flip the image vertically
-        c.saveState()
-        c.translate(0, A4[1])
-        c.scale(1, -1)
-        c.drawImage(temp_image_path, 0, 0, width=img_width, height=img_height)
-        c.restoreState()
-        c.showPage()
-        os.remove(temp_image_path)
+    # # Convert PDF to images using PyMuPDF with lower DPI to avoid DecompressionBombError
+    # pdf_document = fitz.open(file_path)
+    # for page_num in range(len(pdf_document)):
+    #     page = pdf_document.load_page(page_num)
+    #     # Rotate the page by 90 degrees if it is in landscape orientation
+    #     if page.rect.width > page.rect.height:
+    #         page.set_rotation(90)
+    #     pix = page.get_pixmap(dpi=100)  # Set DPI to 150 for lower quality to avoid DecompressionBombError
+    #     with tempfile.NamedTemporaryFile(delete=False, suffix=".png") as temp_image:
+    #         pix.save(temp_image.name)
+    #         temp_image_path = temp_image.name
+    #     # Get the dimensions of the image
+    #     img_width, img_height = 595, 842
+    #     # Adjust the transformation matrix to flip the image vertically
+    #     c.saveState()
+    #     c.translate(0, A4[1])
+    #     c.scale(1, -1)
+    #     c.drawImage(temp_image_path, 0, 0, width=img_width, height=img_height)
+    #     c.restoreState()
+    #     c.showPage()
+    #     os.remove(temp_image_path)
 
     c.save()
     buf.seek(0)
