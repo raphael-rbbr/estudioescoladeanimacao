@@ -27,12 +27,15 @@ def CreateInscriprion(request):
         new_birthday = request.POST.get('nascimento')
         new_cpf = request.POST.get('cpf')
         # new_rg = request.POST.get('rg')
+        # new_rg = request.POST.get('rg')
         new_age = request.POST.get('idade')
         new_gender = request.POST.get('genero')
         new_gender_other = request.POST.get('generooutros')
         new_ethnicity = request.POST.get('raca')
         new_ethnicity_other = request.POST.get('racaoutros')
         new_zipcode = request.POST.get('cep')
+        # new_address = request.POST.get('endereco')
+        # new_address_line_1 = request.POST.get('complemento')
         # new_address = request.POST.get('endereco')
         # new_address_line_1 = request.POST.get('complemento')
         new_neighberhood = request.POST.get('bairro')
@@ -42,6 +45,13 @@ def CreateInscriprion(request):
         new_whatsapp = request.POST.get('whatsapp')
         new_email = request.POST.get('email')
         new_scholl_level = request.POST.get('escolaridade')
+        # new_school = request.POST.get('instituicao')
+        # new_grade = request.POST.get('serie')
+        # if request.POST.get('turno') == None:
+        #     new_studing = " "
+        # else:
+        #     new_studing = request.POST.get('turno')
+        # new_course = request.POST.get('curso')
         # new_school = request.POST.get('instituicao')
         # new_grade = request.POST.get('serie')
         # if request.POST.get('turno') == None:
@@ -68,6 +78,7 @@ def CreateInscriprion(request):
         new_dedication = request.POST.get('frequencia')
         new_availability = request.POST.get('disponibilidadehorario_concatenated')
         new_tablet = request.POST.get('cutout')
+        # new_likes_to_draw = request.POST.get('gostadesenhar')
         # new_likes_to_draw = request.POST.get('gostadesenhar')
         new_frequency = request.POST.get('freqdesenho')
         new_group_rating = request.POST.get('trabalharemgrupo')
@@ -242,6 +253,7 @@ def inscription_csv(request):
             inscription.dedication,
             inscription.availability,
             inscription.tablet,
+            # inscription.likes_to_draw,
             # inscription.likes_to_draw,
             inscription.frequency,
             inscription.group_rating,

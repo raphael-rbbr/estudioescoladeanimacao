@@ -141,6 +141,7 @@
 {% comment %}
                   <label for="rg">RG </label>
                   <input type="text" name="rg" id="rg" placeholder="RG" min="000000001" max="999999999"> {% endcomment %}
+                  <input type="text" name="rg" id="rg" placeholder="RG" min="000000001" max="999999999"> {% endcomment %}
 
                   <div class="small">
 
@@ -196,6 +197,7 @@
                       <option value="Parda">Parda (negra de pele clara)</option>
                       <option value="Preta">Preta (negra de pele escura)</option>
                       <option value="Preta">Outros</option>
+                      <option value="Preta">Outros</option>
                   </select>
 
                   <label for="racaoutros">Outros</label>
@@ -207,6 +209,7 @@
                   <input type="number" name="cep" id="cep" placeholder="CEP">
 
                   {% comment %} <label for="endereco">Endereço</label>
+                  {% comment %} <label for="endereco">Endereço</label>
                   <input type="text" name="endereco" id="endereco" placeholder="Endereço">
 
                   <div class="small">
@@ -214,6 +217,7 @@
                       <label for="complemento">Complemento</label>
                       <input type="text" name="complemento" id="complemento" placeholder="Complemento">
 
+                  </div> {% endcomment %}
                   </div> {% endcomment %}
 
                   <div class="small nomargin">
@@ -323,6 +327,7 @@
                   <div class="spacer"></div>
 
                   {% comment %} <div class="small">
+                  {% comment %} <div class="small">
                       <label for="instituicao">Instituição de Ensino</label>
                       <input type="text" name="instituicao" id="instituicao" placeholder="Instituição de Ensino">
                   </div>
@@ -351,6 +356,7 @@
                   <label for="turno_quatro">Integral</label>
 
                   <div class="spacer"></div> {% endcomment %}
+                  <div class="spacer"></div> {% endcomment %}
 
                   <p>Você trabalha ou faz estágio?</p>
 
@@ -377,6 +383,26 @@
                   </div>
                       <input type="radio" name="buscaestagio" id="buscaestagio_sim" value="Sim">
                       <label for="buscaestagio_sim">Sim</label>
+                  <a class="btn small tabquatro">Seguir</a>
+
+              </div>
+
+              <div class="dadosfamiliares abaform">
+
+              <div class="boxmenor">
+
+                  <p>EM CASO DE TER MENOS DE 18 ANOS, INFORMAR: </p>
+
+                  <label for="nomeresponsavel">Nome completo do Responsável</label>
+                  <input type="text" name="nomeresponsavel" id="nomeresponsavel" placeholder="Nome">
+
+                  <label for="telefoneresponsavel">Telefone para contato </label>
+                  <input type="text" name="telefoneresponsavel" id="telefoneresponsavel" placeholder="Telefone">
+
+                  <!-- <label for="horarioresponsavel">Horário de trabalho</label>
+                  <input type="text" name="horarioresponsavel" id="horarioresponsavel" placeholder="Horário" /> -->
+
+                  </div>
                   <a class="btn small tabquatro">Seguir</a>
 
               </div>
@@ -577,6 +603,7 @@
                   <div class="spacer"></div>
 
                   <p> A décima terceira edição do Estúdio Escola de Animação será presencial e acontecerá durante 7 meses, de maio a dezembro de 2025. Serão 2 encontros (aulas)  por semana com duração de 4 horas por dia. A oficina acontece na cidade do Rio de Janeiro e o local de realização das atividades do EEA será situado na região central da cidade. Os custos com transporte serão financiados pelo projeto.</p>
+                  <p> A décima terceira edição do Estúdio Escola de Animação será presencial e acontecerá durante 7 meses, de maio a dezembro de 2025. Serão 2 encontros (aulas)  por semana com duração de 4 horas por dia. A oficina acontece na cidade do Rio de Janeiro e o local de realização das atividades do EEA será situado na região central da cidade. Os custos com transporte serão financiados pelo projeto.</p>
 
                   <p>VOCÊ ESTÁ DISPOSTO A SE DEDICAR COM ESSA FREQUÊNCIA?</p>
 
@@ -603,8 +630,10 @@
 
                       <input type="checkbox" name="disponibilidadehorario[]" id="disponibilidadehorario_quatro" value="Opção 04: 3ª e 5ª – 08h às 12h">
                       <label for="disponibilidadehorario_quatro">Opção 03: 3ª e 5ª – 08h às 12h</label>
+                      <label for="disponibilidadehorario_quatro">Opção 03: 3ª e 5ª – 08h às 12h</label>
 
                       <input type="checkbox" name="disponibilidadehorario[]" id="disponibilidadehorario_cinco" value="Opção 05: 3ª e 5ª – 14h às 18h">
+                      <label for="disponibilidadehorario_cinco">Opção 04: 3ª e 5ª – 14h às 18h</label>
                       <label for="disponibilidadehorario_cinco">Opção 04: 3ª e 5ª – 14h às 18h</label>
 
                       <input type="checkbox" name="disponibilidadehorario[]" id="disponibilidadehorario_sete" value="Não tenho disponibilidade em nenhuma das opções acima.">
@@ -643,6 +672,7 @@
                   <div class="spacer"></div>
 
                   {% comment %} <p>1) Você gosta de desenhar?</p>
+                  {% comment %} <p>1) Você gosta de desenhar?</p>
 
                       <div class="boxerro">
                           <input type="radio" name="gostadesenhar" id="gostadesenhar_sim" value="Sim">
@@ -653,9 +683,11 @@
 
                       <input type="radio" name="gostadesenhar" id="gostadesenhar_nao" value="Não">
                       <label for="gostadesenhar_nao">Não</label> {% endcomment %}
+                      <label for="gostadesenhar_nao">Não</label> {% endcomment %}
 
                   <div class="spacer"></div>
 
+                  <p>1) Com que frequência você desenha?</p>
                   <p>1) Com que frequência você desenha?</p>
 
                   <div class="boxerrorcheckbox">
@@ -675,8 +707,10 @@
                   <div class="spacer"></div>
 
                   <label for="trabalharemgrupo">2) Numa escala de 0 à 10, o quanto você gosta de trabalhar em grupo?</label>
+                  <label for="trabalharemgrupo">2) Numa escala de 0 à 10, o quanto você gosta de trabalhar em grupo?</label>
                   <input type="number" name="trabalharemgrupo" id="trabalharemgrupo" placeholder="0 à 10" min="0" max="10">
 
+                  <label for="criticastrabalgo">3) COMO VOCÊ LIDA COM CRÍTICAS EM RELAÇÃO AO SEU TRABALHO?</label>
                   <label for="criticastrabalgo">3) COMO VOCÊ LIDA COM CRÍTICAS EM RELAÇÃO AO SEU TRABALHO?</label>
                   <textarea name="criticastrabalgo" id="criticastrabalgo"></textarea>
 
@@ -729,11 +763,13 @@
                   <div class="spacer"></div>
 
                   <p>4) HÁ ALGUMA COISA QUE VOCÊ JÁ FEZ RELACIONADA À ANIMAÇÃO / AUDIOVISUAL QUE GOSTARIA DE DESTACAR?</p>
+                  <p>4) HÁ ALGUMA COISA QUE VOCÊ JÁ FEZ RELACIONADA À ANIMAÇÃO / AUDIOVISUAL QUE GOSTARIA DE DESTACAR?</p>
 
                       <textarea name="destacaranimacao" id="destacaranimacao"></textarea>
 
                   <div class="spacer"></div>
 
+                  <p>5) USE AS LINHAS ABAIXO PARA DAR SEU RECADO: POR QUE VOCÊ SE INTERESSOU EM PARTICIPAR DO ESTÚDIO ESCOLA?</p>
                   <p>5) USE AS LINHAS ABAIXO PARA DAR SEU RECADO: POR QUE VOCÊ SE INTERESSOU EM PARTICIPAR DO ESTÚDIO ESCOLA?</p>
 
                       <textarea name="porqueinteresse" id="porqueinteresse"></textarea>
@@ -741,7 +777,9 @@
                   <div class="spacer"></div>
 
                   <p>6) VOCÊ POSSUI UM LOCAL ONDE DIVULGA SEU TRABALHO ARTÍSTICO? EM CASO AFIRMATIVO COMPARTILHE O LINK COM A GENTE!</p>
+                  <p>6) VOCÊ POSSUI UM LOCAL ONDE DIVULGA SEU TRABALHO ARTÍSTICO? EM CASO AFIRMATIVO COMPARTILHE O LINK COM A GENTE!</p>
 
+                  <p>Aqui vale de tudo: Instagram, Pasta no Google Drive, Site, Tumblr, Facebook, Behance, Art Station, Devian Art, etc.  Obs: Lembre-se de liberar o acesso de visualização dos links quando necessário.</p>
                   <p>Aqui vale de tudo: Instagram, Pasta no Google Drive, Site, Tumblr, Facebook, Behance, Art Station, Devian Art, etc.  Obs: Lembre-se de liberar o acesso de visualização dos links quando necessário.</p>
 
                       <textarea name="linkportifolio" id="linkportifolio"></textarea>
@@ -750,6 +788,7 @@
 
                   <div class="spacer"></div>
 
+                  <p>7) COMPILE EM UM PDF DESENHOS QUE VOCÊ CONSIDERE COMO SENDO SUAS MELHORES CRIAÇÕES! QUANTO MAIS DESENHOS MELHOR!</p>
                   <p>7) COMPILE EM UM PDF DESENHOS QUE VOCÊ CONSIDERE COMO SENDO SUAS MELHORES CRIAÇÕES! QUANTO MAIS DESENHOS MELHOR!</p>
 
                   <p class="smalltext">DICAS<br>

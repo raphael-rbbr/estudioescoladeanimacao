@@ -23,6 +23,7 @@ class Inscription(models.Model):
     birthday = models.DateTimeField(verbose_name="nascimento", null=True)
     cpf = models.BigIntegerField(verbose_name="CPF", unique=True)
     # rg = models.CharField(verbose_name="RG",null=False,blank=False)
+    # rg = models.CharField(verbose_name="RG",null=False,blank=False)
     # AGE_CHOICES = [
     #     ("15", "anos ou menos"),
     #     ("16", "16"),
@@ -117,6 +118,8 @@ class Inscription(models.Model):
 
     # school = models.CharField(max_length=80, default=" ", verbose_name=("Escola"), help_text=("INSTITUIÇÃO DE ENSINO:"))
     # grade = models.CharField(max_length=80, default=" ", verbose_name=("Série"), help_text=("SE ESTIVER ESTUDANDO NESTE ANO, INFORME SÉRIE / PERÍODO:"),null=True,blank=True)
+    # school = models.CharField(max_length=80, default=" ", verbose_name=("Escola"), help_text=("INSTITUIÇÃO DE ENSINO:"))
+    # grade = models.CharField(max_length=80, default=" ", verbose_name=("Série"), help_text=("SE ESTIVER ESTUDANDO NESTE ANO, INFORME SÉRIE / PERÍODO:"),null=True,blank=True)
 
     # STUDING_CHOICES = [
     #     ("MAN", "manhã"),
@@ -125,6 +128,8 @@ class Inscription(models.Model):
     #     ("INT", "integral"),
 
     # ]
+    # studing = models.CharField(max_length=50, default=" ", verbose_name=("período"),
+    #                          help_text=("SE ESTIVER ESTUDANDO NESTE ANO, INFORME SÉRIE / PERÍODO:"),null=True,blank=True)
     # studing = models.CharField(max_length=50, default=" ", verbose_name=("período"),
     #                          help_text=("SE ESTIVER ESTUDANDO NESTE ANO, INFORME SÉRIE / PERÍODO:"),null=True,blank=True)
 
@@ -195,6 +200,7 @@ class Inscription(models.Model):
     # ]
     tablet = models.CharField(default="OK", verbose_name=("tablet"),
                              help_text=("Clique para selecionar"))
+    # likes_to_draw = models.CharField(max_length=50, default=" ", verbose_name=("desenha"), null=False, blank=False)
     # likes_to_draw = models.CharField(max_length=50, default=" ", verbose_name=("desenha"), null=False, blank=False)
     # FREQUENCY_CHOICES = [
     #     ("DAY", "Diariamente"),
