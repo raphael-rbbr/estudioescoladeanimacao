@@ -9,47 +9,6 @@
 
   <div id="cover" style="display: none;"></div>
 
-  {% comment %} <div class="popupformcl">
-
-<div class="formpopupcl">
-
-  <span class="closepopupcl"><i class="fas fa-times" aria-hidden="true"></i></span>
-
-  <img src="https://estudioescola.com.br/wp-content/themes/estudioescoladeanimacao/images/logo-eea-cl.png">
-
-  <p>Cadastre-se e garanta seu desconto!</p>
-
-
-  <form action="index" method="POST" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
-    {% csrf_token %}
-    <div class="flexfields">
-    <input type="text" value="" name="FNAME" class="" id="mce-FNAME" placeholder="Nome Completo">
-
-    <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="E-mail">
-
-    <input type="text" name="PHONE" class="" value="" id="mce-PHONE" placeholder="Telefone">
-
-    <select name="INTERESSE" class="" id="mce-INTERESSE" placeholder="">
-      <option value="">Área de Interesse</option>
-      <option value="Processos da animação">Processos da animação</option>
-      <option value="Princípios da animação">Princípios da animação</option>
-      <option value="Roteiro">Roteiro</option>
-      <option value="Storyboard">Storyboard</option>
-      <option value="Design de personagens">Design de personagens</option>
-      <option value="Outros">Outros</option>
-    </select>
-    </div>
-
-    <div class="response" id="mce-error-response" style="display:none"></div>
-    <div class="response" id="mce-success-response" style="display:none"></div>
-
-    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_5246cb86ae4edf01550aaeb29_9a93b95153" tabindex="-1" value=""></div>
-
-    <input type="submit" value="Enviar" name="subscribe" id="mc-embedded-subscribe" class="button">
-
-  </form>
-
-</div> {% endcomment %}
 
 <div class="shadowcl"></div>
 
@@ -91,9 +50,9 @@
             <a href="https://www.instagram.com/estudioescola/" target="_blank">Instagram</a>
           </li>
 
-          <li class="twitter">
+          {% comment %} <li class="twitter">
             <a href="http://twitter.com/estudio_escola" target="_blank">Twitter</a>
-          </li>
+          </li> {% endcomment %}
 
           <li class="tiktok">
             <a href="https://www.tiktok.com/@estudioescola" target="_blank">Tok Tok</a>
@@ -149,19 +108,7 @@
   <div class="content">
 
       <div class="form">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required=""  aria-required="true">
-          <label class="form-check-label " for="flexCheckDefault" style="display: block;
-        color: #fff;
-        font-weight: bold;
-        font-size: 16px;
-        margin: 0px 0px 10px 10px;">
-            Ao selecionar esta opção e prosseguir com a inscrição, você declara que está de acordo a nossa Política de Privacidade
 
-            <a href="https://estudioescola.com.br/politica-de-privacidade" target="_blank" rel="noopener noreferrer">https://estudioescola.com.br/politica-de-privacidade</a>
-            , assim como seus responsáveis legais caso seja menor de idade"
-          </label>
-        </div>
     <div class="navform">
 
               <p class="tabum active">Seus dados</p>
@@ -180,7 +127,7 @@
 
               <input type="checkbox" name="mc4wp-subscribe" value="1" checked="" class="none">
 
-                  <!-- <label><input type="checkbox" id="aceitoregulamento">ao selecionar esta opção e prosseguir com a inscrição, você declara que está de acordo a nossa <a href="https://estudioescola.com.br/politica-de-privacidade/" target="_blank">Política de Privacidade</a>, assim como seus responsáveis legais caso seja menor de idade</label> -->
+                  <label><input type="checkbox" id="aceitoregulamento">ao selecionar esta opção e prosseguir com a inscrição, você declara que está de acordo a nossa <a href="https://estudioescola.com.br/politica-de-privacidade/" target="_blank">Política de Privacidade</a>, assim como seus responsáveis legais caso seja menor de idade</label>
 
                   <label for="first_name">Nome Completo (Nome Social para pessoas transgênero):</label>
                   <input type="text" name="first_name" id="first_name" placeholder="Nome Completo">
@@ -189,9 +136,11 @@
                   <input type="text" name="social_name" id="social_name" placeholder="Nome Social" /> -->
 
                   <label for="cpf">CPF (Apenas números)</label>
-                  <input type="number" name="cpf" id="cpf" placeholder="CPF" min="00000000001" max="99999999999">
+                  <input type="text" name="cpf" id="cpf" placeholder="CPF" maxlength="11" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+
 {% comment %}
                   <label for="rg">RG </label>
+                  <input type="text" name="rg" id="rg" placeholder="RG" min="000000001" max="999999999"> {% endcomment %}
                   <input type="text" name="rg" id="rg" placeholder="RG" min="000000001" max="999999999"> {% endcomment %}
 
                   <div class="small">
@@ -219,6 +168,7 @@
                           <option>25 anos ou mais</option>
                       </select>
 
+
                   </div>
 
                   <div class="spacer"></div>
@@ -238,14 +188,15 @@
                   <input type="text" name="generooutros" id="generooutros" placeholder="Outros">
 
                   <label for="raca">Como você se autodeclara em relação à raça/etnia?</label>
-                  <p class="smalltext">Utilizamos a referência do IBGE que, desde 2010, considera que as categorias preta e parda constituem a população negra e, por isso, só devem ser selecionadas por pessoas que se autodeclaram como tal.<br>Para mais informações, recomendamos: <a href="https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/13ee0337cffc1de37bf0cd4da3988e1f.pdf" target="_blank" rel="noopener noreferrer">https://agenciadenoticias.ibge.gov.br/13ee0337cffc1de37bf0cd4da3988e1f.pdf</a></p>
+                  <p class="smalltext">Utilizamos a referência do IBGE que, desde 2010, considera que as categorias preta e parda constituem a população negra e, por isso, só devem ser selecionadas por pessoas que se autodeclaram como tal.<br>Para mais informações, <a href="https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/13ee0337cffc1de37bf0cd4da3988e1f.pdf" target="_blank" rel="noopener noreferrer">clique aqui.</a></p>
                   <select name="raca" id="raca">
                       <option value="">--</option>
-                      <option value="Amarela">Amarelo (pessoa de origem oriental, japonesa, chinesa, coreana, etc.)'</option>
+                      <option value="Amarela">Amarelo (pessoa de origem oriental, japonesa, chinesa, coreana, etc.)</option>
                       <option value="Branca">Branca</option>
                       <option value="Indígena">Indígena (oriundos de comunidades indígenas, aldeadas ou urbanas)</option>
                       <option value="Parda">Parda (negra de pele clara)</option>
                       <option value="Preta">Preta (negra de pele escura)</option>
+                      <option value="Preta">Outros</option>
                       <option value="Preta">Outros</option>
                   </select>
 
@@ -258,6 +209,7 @@
                   <input type="number" name="cep" id="cep" placeholder="CEP">
 
                   {% comment %} <label for="endereco">Endereço</label>
+                  {% comment %} <label for="endereco">Endereço</label>
                   <input type="text" name="endereco" id="endereco" placeholder="Endereço">
 
                   <div class="small">
@@ -265,6 +217,7 @@
                       <label for="complemento">Complemento</label>
                       <input type="text" name="complemento" id="complemento" placeholder="Complemento">
 
+                  </div> {% endcomment %}
                   </div> {% endcomment %}
 
                   <div class="small nomargin">
@@ -331,7 +284,7 @@
 
                   <p class="smalltext">Caso você seja selecionado (a) este será o email para qual enviaremos todas as informações do projeto, informe um email que você costuma consultar.</p>
 
-                  <a class="btn small tabdois">Seguir</a>
+                  <a class="btn small tabdois" id="seguirBtn">Seguir</a>
 
               </div>
 
@@ -374,6 +327,7 @@
                   <div class="spacer"></div>
 
                   {% comment %} <div class="small">
+                  {% comment %} <div class="small">
                       <label for="instituicao">Instituição de Ensino</label>
                       <input type="text" name="instituicao" id="instituicao" placeholder="Instituição de Ensino">
                   </div>
@@ -401,6 +355,7 @@
                   <input type="radio" name="turno" id="turno_quatro" value="Integral">
                   <label for="turno_quatro">Integral</label>
 
+                  <div class="spacer"></div> {% endcomment %}
                   <div class="spacer"></div> {% endcomment %}
 
                   <p>Você trabalha ou faz estágio?</p>
@@ -448,6 +403,26 @@
                   <input type="text" name="horarioresponsavel" id="horarioresponsavel" placeholder="Horário" /> -->
 
                   </div>
+                  <a class="btn small tabquatro">Seguir</a>
+
+              </div>
+
+              <div class="dadosfamiliares abaform">
+
+              <div class="boxmenor">
+
+                  <p>EM CASO DE TER MENOS DE 18 ANOS, INFORMAR: </p>
+
+                  <label for="nomeresponsavel">Nome completo do Responsável</label>
+                  <input type="text" name="nomeresponsavel" id="nomeresponsavel" placeholder="Nome">
+
+                  <label for="telefoneresponsavel">Telefone para contato </label>
+                  <input type="text" name="telefoneresponsavel" id="telefoneresponsavel" placeholder="Telefone">
+
+                  <!-- <label for="horarioresponsavel">Horário de trabalho</label>
+                  <input type="text" name="horarioresponsavel" id="horarioresponsavel" placeholder="Horário" /> -->
+
+                  </div>
 
                   <div class="spacer"></div>
 
@@ -455,25 +430,25 @@
                   <div class="spacer"></div>
 
                   <p>Renda familiar mensal</p>
-                  <p class="smalltext">(Para calcular, some a renda individual das pessoas que moram com você e divida pelo número de indivíduos que residem no domicílio. O resultado é a renda familiar mensal). Valor do salário mínimo em 2024 - R$ 1.412,00</p>
+                  <p class="smalltext">(Para calcular, some a renda individual das pessoas que moram com você e divida pelo número de indivíduos que residem no domicílio. O resultado é a renda familiar mensal). Valor do salário mínimo em 2025 - R$ 1.518,00.</p>
                       <div class="boxerro">
-                          <input type="radio" name="renda" id="renda_um" value="até 1 salário mínimo  (R$ 1.412,00)">
-                          <label for="renda_um">até 1 salário mínimo  (R$ 1.412,00)</label>
+                          <input type="radio" name="renda" id="renda_um" value="até 1 salário mínimo  (R$ 1.518,00)">
+                          <label for="renda_um">até 1 salário mínimo  (R$ 1.518,00)</label>
                       </div>
 
                       <div class="clear"></div>
 
-                      <input type="radio" name="renda" id="renda_dois" value="até 2 salários mínimos  (R$ 2.824,00) ">
-                      <label for="renda_dois">até 2 salários mínimos  (R$ 2.824,00) </label>
+                      <input type="radio" name="renda" id="renda_dois" value="até 2 salários mínimos  (R$ 3.036,00) ">
+                      <label for="renda_dois">até 2 salários mínimos  (R$ 3.036,00) </label>
 
-                      <input type="radio" name="renda" id="renda_tres" value="até 3 salários mínimos (R$ 4.236,00) ">
-                      <label for="renda_tres">até 3 salários mínimos (R$ 4.236,00) </label>
+                      <input type="radio" name="renda" id="renda_tres" value="até 3 salários mínimos (R$ 4.554,00) ">
+                      <label for="renda_tres">até 3 salários mínimos (R$ 4.554,00) </label>
 
-                      <input type="radio" name="renda" id="renda_quatro" value="até 4 salários mínimos (R$ 5.648,00)">
-                      <label for="renda_quatro">até 4 salários mínimos (R$ 5.648,00)</label>
+                      <input type="radio" name="renda" id="renda_quatro" value="até 4 salários mínimos (R$ 6.072,00)">
+                      <label for="renda_quatro">até 4 salários mínimos (R$ 6.072,00)</label>
 
-                      <input type="radio" name="renda" id="renda_cinco" value="a partir de 4 salários mínimos  (R$ 5.648,01)">
-                      <label for="renda_cinco">a partir de 4 salários mínimos  (R$ 5.648,01)</label>
+                      <input type="radio" name="renda" id="renda_cinco" value="a partir de 4 salários mínimos  (R$ 6.072,00)">
+                      <label for="renda_cinco">a partir de 4 salários mínimos  (R$ 6.072,00)</label>
 
                   <div class="clear"></div>
 
@@ -547,7 +522,7 @@
                       <label for="conheceu_youtube">YouTube</label>
 
                       <input type="checkbox" name="conheceu[]" id="conheceu_tiktok" value="tiktok">
-                      <label for="conheceu_tiktok">Tik Tok</label>
+                      <label for="conheceu_tiktok">TikTok</label>
 
                       <input type="checkbox" name="conheceu[]" id="conheceu_twitter" value="twitter">
                       <label for="conheceu_twitter">Twitter</label>
@@ -559,13 +534,15 @@
                       <label for="conheceu_email">Email</label>
 
                       <input type="checkbox" name="conheceu[]" id="conheceu_whatsapp" value="whatsapp">
-                      <label for="conheceu_whatsapp">Whatsapp</label>
+                      <label for="conheceu_whatsapp">WhatsApp</label>
 
                       <input type="checkbox" name="conheceu[]" id="conheceu_outros" value="outros">
                       <label for="conheceu_outros">Outros</label>
 
                       <label for="conheceuoutros">Outros</label>
                       <input type="text" name="conheceuoutros" id="conheceuoutros" placeholder="Outros">
+
+                      <input type="hidden" name="conheceu_concatenated" id="conheceu_concatenated">
 
                   <div class="spacer"></div>
 
@@ -626,6 +603,7 @@
                   <div class="spacer"></div>
 
                   <p> A décima terceira edição do Estúdio Escola de Animação será presencial e acontecerá durante 7 meses, de maio a dezembro de 2025. Serão 2 encontros (aulas)  por semana com duração de 4 horas por dia. A oficina acontece na cidade do Rio de Janeiro e o local de realização das atividades do EEA será situado na região central da cidade. Os custos com transporte serão financiados pelo projeto.</p>
+                  <p> A décima terceira edição do Estúdio Escola de Animação será presencial e acontecerá durante 7 meses, de maio a dezembro de 2025. Serão 2 encontros (aulas)  por semana com duração de 4 horas por dia. A oficina acontece na cidade do Rio de Janeiro e o local de realização das atividades do EEA será situado na região central da cidade. Os custos com transporte serão financiados pelo projeto.</p>
 
                   <p>VOCÊ ESTÁ DISPOSTO A SE DEDICAR COM ESSA FREQUÊNCIA?</p>
 
@@ -652,12 +630,16 @@
 
                       <input type="checkbox" name="disponibilidadehorario[]" id="disponibilidadehorario_quatro" value="Opção 04: 3ª e 5ª – 08h às 12h">
                       <label for="disponibilidadehorario_quatro">Opção 03: 3ª e 5ª – 08h às 12h</label>
+                      <label for="disponibilidadehorario_quatro">Opção 03: 3ª e 5ª – 08h às 12h</label>
 
                       <input type="checkbox" name="disponibilidadehorario[]" id="disponibilidadehorario_cinco" value="Opção 05: 3ª e 5ª – 14h às 18h">
+                      <label for="disponibilidadehorario_cinco">Opção 04: 3ª e 5ª – 14h às 18h</label>
                       <label for="disponibilidadehorario_cinco">Opção 04: 3ª e 5ª – 14h às 18h</label>
 
                       <input type="checkbox" name="disponibilidadehorario[]" id="disponibilidadehorario_sete" value="Não tenho disponibilidade em nenhuma das opções acima.">
                       <label for="disponibilidadehorario_sete">Não tenho disponibilidade em nenhuma das opções acima.</label>
+
+                      <input type="hidden" name="disponibilidadehorario_concatenated" id="disponibilidadehorario_concatenated">
 
                       <div class="spacer"></div>
 
@@ -690,6 +672,7 @@
                   <div class="spacer"></div>
 
                   {% comment %} <p>1) Você gosta de desenhar?</p>
+                  {% comment %} <p>1) Você gosta de desenhar?</p>
 
                       <div class="boxerro">
                           <input type="radio" name="gostadesenhar" id="gostadesenhar_sim" value="Sim">
@@ -700,9 +683,11 @@
 
                       <input type="radio" name="gostadesenhar" id="gostadesenhar_nao" value="Não">
                       <label for="gostadesenhar_nao">Não</label> {% endcomment %}
+                      <label for="gostadesenhar_nao">Não</label> {% endcomment %}
 
                   <div class="spacer"></div>
 
+                  <p>1) Com que frequência você desenha?</p>
                   <p>1) Com que frequência você desenha?</p>
 
                   <div class="boxerrorcheckbox">
@@ -722,8 +707,10 @@
                   <div class="spacer"></div>
 
                   <label for="trabalharemgrupo">2) Numa escala de 0 à 10, o quanto você gosta de trabalhar em grupo?</label>
+                  <label for="trabalharemgrupo">2) Numa escala de 0 à 10, o quanto você gosta de trabalhar em grupo?</label>
                   <input type="number" name="trabalharemgrupo" id="trabalharemgrupo" placeholder="0 à 10" min="0" max="10">
 
+                  <label for="criticastrabalgo">3) COMO VOCÊ LIDA COM CRÍTICAS EM RELAÇÃO AO SEU TRABALHO?</label>
                   <label for="criticastrabalgo">3) COMO VOCÊ LIDA COM CRÍTICAS EM RELAÇÃO AO SEU TRABALHO?</label>
                   <textarea name="criticastrabalgo" id="criticastrabalgo"></textarea>
 
@@ -776,11 +763,13 @@
                   <div class="spacer"></div>
 
                   <p>4) HÁ ALGUMA COISA QUE VOCÊ JÁ FEZ RELACIONADA À ANIMAÇÃO / AUDIOVISUAL QUE GOSTARIA DE DESTACAR?</p>
+                  <p>4) HÁ ALGUMA COISA QUE VOCÊ JÁ FEZ RELACIONADA À ANIMAÇÃO / AUDIOVISUAL QUE GOSTARIA DE DESTACAR?</p>
 
                       <textarea name="destacaranimacao" id="destacaranimacao"></textarea>
 
                   <div class="spacer"></div>
 
+                  <p>5) USE AS LINHAS ABAIXO PARA DAR SEU RECADO: POR QUE VOCÊ SE INTERESSOU EM PARTICIPAR DO ESTÚDIO ESCOLA?</p>
                   <p>5) USE AS LINHAS ABAIXO PARA DAR SEU RECADO: POR QUE VOCÊ SE INTERESSOU EM PARTICIPAR DO ESTÚDIO ESCOLA?</p>
 
                       <textarea name="porqueinteresse" id="porqueinteresse"></textarea>
@@ -788,7 +777,9 @@
                   <div class="spacer"></div>
 
                   <p>6) VOCÊ POSSUI UM LOCAL ONDE DIVULGA SEU TRABALHO ARTÍSTICO? EM CASO AFIRMATIVO COMPARTILHE O LINK COM A GENTE!</p>
+                  <p>6) VOCÊ POSSUI UM LOCAL ONDE DIVULGA SEU TRABALHO ARTÍSTICO? EM CASO AFIRMATIVO COMPARTILHE O LINK COM A GENTE!</p>
 
+                  <p>Aqui vale de tudo: Instagram, Pasta no Google Drive, Site, Tumblr, Facebook, Behance, Art Station, Devian Art, etc.  Obs: Lembre-se de liberar o acesso de visualização dos links quando necessário.</p>
                   <p>Aqui vale de tudo: Instagram, Pasta no Google Drive, Site, Tumblr, Facebook, Behance, Art Station, Devian Art, etc.  Obs: Lembre-se de liberar o acesso de visualização dos links quando necessário.</p>
 
                       <textarea name="linkportifolio" id="linkportifolio"></textarea>
@@ -797,6 +788,7 @@
 
                   <div class="spacer"></div>
 
+                  <p>7) COMPILE EM UM PDF DESENHOS QUE VOCÊ CONSIDERE COMO SENDO SUAS MELHORES CRIAÇÕES! QUANTO MAIS DESENHOS MELHOR!</p>
                   <p>7) COMPILE EM UM PDF DESENHOS QUE VOCÊ CONSIDERE COMO SENDO SUAS MELHORES CRIAÇÕES! QUANTO MAIS DESENHOS MELHOR!</p>
 
                   <p class="smalltext">DICAS<br>
@@ -815,13 +807,13 @@
 
                   <div class="spacer"></div>
 
-                  <input type="file" name="desenho" id="desenho" accept="application/pdf">
+                  <input type="file" name="desenho" id="desenho" accept="application/pdf" onchange="validateFileSize(this)">
 
                   <p class="smalltext">Enviando os desenhos poderemos conhecer melhor seu potencial e você terá mais chances de ser selecionado(a). Lembre-se que todos os desenhos precisam estar no mesmo arquivo e não podem ultrapassar a capacidade de 2MB permitida.</p>
 
                   <div class="spacer"></div>
 
-                  <input type="submit" value="Finalizar inscrição!" class="btn enviaforminscricao">
+                  <input id="sendinscription" type="submit" value="Finalizar inscrição!" class="btn enviaforminscricao">
 
               </div>
 
@@ -859,226 +851,375 @@
 
 <div class="footer">
 
-    <div class="content">
+  <div class="content">
 
 
 
 
-    <div class="patrocinio">
+  <div class="patrocinio">
 
 
 
 
+      <div>
+        <div class="logopat">
 
-            <div class="logopat">
+          <p>  </p>
 
-            <p>  </p>
+          <a href="" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2025/03/copy_of_leirouanetincentivoaprojetoscoloridafundosclaros.png" class=""></a>
 
-            <a href="" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2024/03/Captura-de-tela-2024-03-14-105332.png" class=""></a>
+          </div>
 
-            </div>
 
+          <div class="logopat">
 
+          <p>Patrocínio Master  </p>
 
+          <a href="https://glp.com.br/" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2025/02/Logo_GLP_RGB-e1739480660314.png" class=""></a>
 
+          </div>
 
-            <div class="logopat">
-
-            <p>Copatrocínio  </p>
-
-            <a href="https://eletromidia.com.br/" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2024/03/Horizontal_RGB_laranja-e1711463861213.png" class=""></a>
-
-            </div>
-
-
-            <div class="logopat">
-
-            <p>  </p>
-
-            <a href="https://pages.atlasprofessionals.com/brasil" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2024/03/Captura-de-tela-2024-03-14-110949.png" class=""></a>
-
-            </div>
-
-
-            <div class="logopat">
-
-            <p>  </p>
-
-            <a href="" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2024/06/tke_logo_rgb_standard_black-1-scaled-e1717789967701.jpg" class=""></a>
-
-            </div>
-
-
-            <div class="logopat">
-
-            <p>Apoio  </p>
-
-            <a href="https://dreamers.gr/" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2024/03/Captura-de-tela-2024-03-22-183703.png" class=""></a>
-
-            </div>
-
-
-            <div class="logopat">
-
-            <p>  </p>
-
-            <a href="" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2024/03/Captura-de-tela-2024-03-14-113249.png" class=""></a>
-
-            </div>
-
-
-            <div class="logopat">
-
-            <p>  </p>
-
-            <a href="https://nasajon.com.br/" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2024/03/Captura-de-tela-2024-03-13-160252.png" class=""></a>
-
-            </div>
-
-
-            <div class="logopat">
-
-            <p>  </p>
-
-            <a href="https://luxor.com.br/pt/" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2024/03/Captura-de-tela-2024-03-14-110525.png" class=""></a>
-
-            </div>
-
-
-            <div class="logopat">
-
-            <p>  </p>
-
-            <a href="https://www.grupocard.com.br/" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2024/07/laranja-1.png" class=""></a>
-
-            </div>
-
-
-
-            <div class="logopat">
-
-            <p>Parceria Institucional  </p>
-
-            <a href="https://www.toonboom.com/" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2024/03/TB_logo_30tb_integrated-e1715260457516.png" class=""></a>
-
-            </div>
-
-
-            <div class="logopat">
-
-            <p>  </p>
-
-            <a href="http://www.marcelabronstein.com.br/" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2023/03/8-2.png" class=""></a>
-
-            </div>
-
-
-
-
-            <div class="logopat">
-
-            <p>Patrocínio  </p>
-
-            <a href="https://www.wilsonsons.com.br/pt/grupo" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2024/03/Captura-de-tela-2024-03-14-113131.png" class=""></a>
-
-            </div>
-
-
-            <div class="logopat">
-
-            <p>  </p>
-
-            <a href="https://www.halliburton.com/" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2023/03/Halliburton_logo.svg_.png" class=""></a>
-
-            </div>
-
-
-            <div class="logopat">
-
-            <p>  </p>
-
-            <a href="https://prefeitura.rio/" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2024/12/RIOPREFEITURA-Cultura-horizontal-azul.png" class=""></a>
-
-            </div>
-
-
-
-            <div class="logopat">
-
-            <p>Realização  </p>
-
-            <a href="https://baluartecultura.com.br/" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2023/03/3-2.png" class=""></a>
-
-            </div>
-
-
-            <div class="logopat">
-
-            <p>  </p>
-
-            <a href="http://copastudio.com/pt/copa-pt/" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2023/03/4-2.png" class=""></a>
-
-            </div>
-
-
-            <div class="logopat">
-
-            <p>  </p>
-
-            <a href="https://www.gov.br/turismo/pt-br/secretaria-especial-da-cultura" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2023/03/1-1.png" class="big"></a>
-
-            </div>
-
-
-        <div class="clear"></div>
-
-      </div>
-
-
-
-      <div class="conteudo">
-
-        <p class="logo"><a href="https://estudioescola.com.br">Estúdio Escola de Animação</a></p>
-
-        <div class="clear"></div>
-
-        <div class="redes">
-
-          <ul>
-
-          <li class="youtube">
-            <a href="https://www.youtube.com/user/eescoladeanimacao" target="_blank">YouTube</a>
-          </li>
-
-          <li class="facebook">
-            <a href="https://www.facebook.com/estudioescola/" target="_blank">Facebook</a>
-          </li>
-
-          <li class="instagram">
-            <a href="https://www.instagram.com/estudioescola/" target="_blank">Instagram</a>
-          </li>
-
-          <li class="twitter">
-            <a href="http://twitter.com/estudio_escola" target="_blank">Twitter</a>
-          </li>
-
-          <li class="tiktok">
-            <a href="https://www.tiktok.com/@estudioescola" target="_blank">Tik Tok</a>
-          </li>
-
-          </ul>
 
         </div>
 
-      </div>
+        <div>
+          <div class="logopat">
+
+          <p>Copatrocínio  </p>
+
+          <a href="https://www.tkelevator.com/br-pt/?utm_source=google&amp;utm_campaign=institucional&amp;gad_source=1&amp;gclid=CjwKCAiAzba9BhBhEiwA7glbahT2N-xRSBFtatp95uQ9aTOfFFEZAZ8aZOP7f6m10hwuVGFbT0uoZBoCXLwQAvD_BwE" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2024/06/tke_logo_rgb_standard_black-1-scaled-e1717789967701.jpg" class=""></a>
+
+          </div>
+
+
+          <div class="logopat">
+
+          <p>  </p>
+
+          <a href="https://www.ons.org.br/" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2025/02/MarcaONS_Principal_colorido.png" class=""></a>
+
+          </div>
+
+
+          <div class="logopat">
+
+          <p>  </p>
+
+          <a href="https://pages.atlasprofessionals.com/brasil" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2024/03/Captura-de-tela-2024-03-14-110949.png" class=""></a>
+
+          </div>
+
+        </div>
+        <div>
+          <div class="logopat">
+
+          <p>Apoio  </p>
+
+          <a href="https://controllab.com/" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2025/03/Captura-de-tela-2025-03-06-150112-e1741284221989.png" class=""></a>
+
+          </div>
+
+
+          <div class="logopat">
+
+          <p>  </p>
+
+          <a href="https://eletromidia.com.br/" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2024/03/Horizontal_RGB_laranja-e1711463861213.png" class=""></a>
+
+          </div>
+
+
+          <div class="logopat">
+
+          <p>  </p>
+
+          <a href="" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2024/03/Captura-de-tela-2024-03-14-113249.png" class=""></a>
+
+          </div>
+
+
+          <div class="logopat">
+
+          <p>  </p>
+
+          <a href="https://nasajon.com.br/" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2024/03/Captura-de-tela-2024-03-13-160252.png" class=""></a>
+
+          </div>
+
+
+          <div class="logopat">
+
+          <p>  </p>
+
+          <a href="https://luxor.com.br/pt/" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2024/03/Captura-de-tela-2024-03-14-110525.png" class=""></a>
+
+          </div>
+
+
+        </div>
+
+        <div>
+          <div class="logopat">
+
+          <p>Parceria Institucional  </p>
+
+          <a href="https://www.toonboom.com/" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2025/02/Toon_Boom_2022_logo.svg-1.png" class=""></a>
+
+          </div>
+
+
+          <div class="logopat">
+
+          <p>  </p>
+
+          <a href="http://www.marcelabronstein.com.br/" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2023/03/8-2.png" class=""></a>
+
+          </div>
+
+
+
+
+
+          <div class="logopat">
+
+          <p>Patrocínio  </p>
+
+          <a href="https://prefeitura.rio/" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2025/02/RIOPREFEITURA-Cultura-horizontal-azul-2.png" class=""></a>
+
+          </div>
+
+
+        </div>
+
+        <div>
+          <div class="logopat">
+
+          <p>Realização  </p>
+
+          <a href="https://baluartecultura.com.br/" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2025/03/Artboard-1-copy-e1741284023340.png" class=""></a>
+
+          </div>
+
+
+          <div class="logopat">
+
+          <p>  </p>
+
+          <a href="http://copastudio.com/pt/copa-pt/" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2023/03/4-2.png" class=""></a>
+
+          </div>
+
+
+          <div class="logopat">
+
+          <p>  </p>
+
+          <a href="https://www.gov.br/turismo/pt-br/secretaria-especial-da-cultura" target="_blank"><img src="https://estudioescola.com.br/wp-content/uploads/2023/03/1-1.png" class=""></a>
+
+          </div>
+        </div>
 
       <div class="clear"></div>
 
     </div>
 
+
+
+    <div class="conteudo">
+
+      <p class="logo"><a href="https://estudioescola.com.br">Estúdio Escola de Animação</a></p>
+
+      <div class="clear"></div>
+
+      <div class="redes">
+
+        <ul>
+
+        <li class="youtube">
+          <a href="https://www.youtube.com/user/eescoladeanimacao" target="_blank">YouTube</a>
+        </li>
+
+        <li class="facebook">
+          <a href="https://www.facebook.com/estudioescola/" target="_blank">Facebook</a>
+        </li>
+
+        <li class="instagram">
+          <a href="https://www.instagram.com/estudioescola/" target="_blank">Instagram</a>
+        </li>
+
+        {% comment %} <li class="twitter">
+          <a href="http://twitter.com/estudio_escola" target="_blank">Twitter</a>
+        </li> {% endcomment %}
+
+        <li class="tiktok">
+          <a href="https://www.tiktok.com/@estudioescoladeanimacao" target="_blank">Tok Tok</a>
+        </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="clear"></div>
+
   </div>
 
-  <script src="https://kit.fontawesome.com/04aeb4c834.js" crossorigin="anonymous"></script>
+</div>
 
+
+  <script src="https://kit.fontawesome.com/04aeb4c834.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.19.3/jquery.validate.min.js"></script>
+  <script>
+document.getElementById('sendinscription').addEventListener('click', function(event) {
+    var checkbox = document.getElementById('aceitoregulamento');
+    if (!checkbox.checked) {
+        event.preventDefault();
+        alert('Você precisa aceitar o regulamento antes de prosseguir.');
+        return;
+    }
+
+    // Concatenate all selected "disponibilidadehorario[]" values
+    var disponibilidadeCheckboxes = document.querySelectorAll('input[name="disponibilidadehorario[]"]:checked');
+    var disponibilidadeValues = Array.from(disponibilidadeCheckboxes).map(function(checkbox) {
+        return checkbox.value;
+    });
+    var concatenatedDisponibilidade = disponibilidadeValues.join(', ');
+
+    // Set the concatenated values into the hidden input field
+    document.getElementById('disponibilidadehorario_concatenated').value = concatenatedDisponibilidade;
+
+    // Concatenate all selected "conheceu[]" values
+    var conheceuCheckboxes = document.querySelectorAll('input[name="conheceu[]"]:checked');
+    var conheceuValues = Array.from(conheceuCheckboxes).map(function(checkbox) {
+        return checkbox.value;
+    });
+    var concatenatedConheceu = conheceuValues.join(', ');
+
+    // Set the concatenated values into the hidden input field
+    document.getElementById('conheceu_concatenated').value = concatenatedConheceu;
+
+    // Continue with other validations...
+    var errors = [];
+
+    // Example validation for "disponibilidadehorario[]"
+    if (disponibilidadeValues.length === 0) {
+        errors.push('Informe sua disponibilidade de horário.');
+    }
+
+    // Example validation for "conheceu[]"
+    if (conheceuValues.length === 0) {
+        errors.push('Informe como conheceu o Estúdio Escola.');
+    }
+
+    // Check if "inscreveu" is selected
+    var inscreveuChecked = document.querySelector('input[name="inscreveu"]:checked');
+    if (!inscreveuChecked) {
+        errors.push('Informe se você já se inscreveu anteriormente.');
+    }
+
+    // Check if "participou" is selected
+    var participouChecked = document.querySelector('input[name="participou"]:checked');
+    if (!participouChecked) {
+        errors.push('Informe se você já participou de edições anteriores.');
+    }
+
+    // Check if "qualedicao" is selected (only if "participou" is "Sim")
+    if (participouChecked && participouChecked.value === 'Sim') {
+        var qualedicao = document.getElementById('qualedicao').value;
+        if (!qualedicao || qualedicao === '--') {
+            errors.push('Informe qual edição você participou.');
+        }
+    }
+
+    // Check if "frequencia" is selected
+    var frequenciaChecked = document.querySelector('input[name="frequencia"]:checked');
+    if (!frequenciaChecked) {
+        errors.push('Informe se você está disposto a se dedicar com essa frequência.');
+    }
+
+    // Check if "cutout" is selected
+    var cutoutChecked = document.querySelector('input[name="cutout"]:checked');
+    if (!cutoutChecked) {
+        errors.push('Informe como você se sente em relação ao uso da tablet.');
+    }
+
+    // Check if "freqdesenho" is selected
+    var freqdesenhoChecked = document.querySelector('input[name="freqdesenho"]:checked');
+    if (!freqdesenhoChecked) {
+        errors.push('Informe com que frequência você desenha.');
+    }
+
+    // Check if "trabalharemgrupo" is filled
+    var trabalharemgrupo = document.getElementById('trabalharemgrupo').value;
+    if (!trabalharemgrupo || trabalharemgrupo.trim() === '') {
+        errors.push('Informe o quanto você gosta de trabalhar em grupo (0 a 10).');
+    }
+
+    // Check if "destacaranimacao" is filled
+    var destacaranimacao = document.getElementById('destacaranimacao').value;
+    if (!destacaranimacao || destacaranimacao.trim() === '') {
+        errors.push('Informe algo que você já fez relacionado à animação/audiovisual.');
+    }
+
+    // Check if "porqueinteresse" is filled
+    var porqueinteresse = document.getElementById('porqueinteresse').value;
+    if (!porqueinteresse || porqueinteresse.trim() === '') {
+        errors.push('Informe por que você se interessou em participar do Estúdio Escola.');
+    }
+
+    // Validate CPF length
+    var cpf = document.getElementById('cpf').value;
+    if (cpf.length !== 11) {
+        errors.push('O CPF deve conter exatamente 11 números.');
+    }
+
+    // Validate file type (PDF)
+    var fileInput = document.getElementById('desenho');
+    if (fileInput.files.length > 0) {
+        var file = fileInput.files[0];
+        var fileType = file.type;
+        if (fileType !== 'application/pdf') {
+            errors.push('O arquivo enviado deve ser um PDF.');
+        }
+    } else {
+        errors.push('Por favor, envie um arquivo PDF.');
+    }
+
+    // If there are errors, prevent form submission and show the errors
+    if (errors.length > 0) {
+        event.preventDefault();
+        alert('Por favor, preencha os seguintes campos:\n\n' + errors.join('\n'));
+    }
+});
+
+document.getElementById('cpf').addEventListener('input', function(event) {
+    this.value = this.value.replace(/[^0-9]/g, '');
+});
+
+function validateFileSize(input) {
+    var file = input.files[0];
+    if (file.size > 2 * 1024 * 1024) { // 2MB in bytes
+        alert('O arquivo não pode ser maior que 2MB.');
+        input.value = ''; // Clear the input
+    }
+}
+
+document.getElementById('seguirBtn').addEventListener('click', function(event) {
+
+    var checkbox = document.getElementById('aceitoregulamento');
+    if (!checkbox.checked) {
+        event.preventDefault();
+        alert('Você precisa aceitar o regulamento antes de prosseguir.');
+        return;
+    }
+    // If there are errors, prevent form submission and show the errors
+    if (errors.length > 0) {
+        event.preventDefault();
+        alert('Por favor, preencha os seguintes campos:\n\n' + errors.join('\n'));
+    }
+});
+</script>
  </body>
 {% endblock %}

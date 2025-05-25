@@ -8,9 +8,11 @@ image: raphaelrrb/estudioescoladeanimacao
 servers:
   web:
     hosts:
-      - 52.204.240.12
-      - 52.45.185.112
-
+      - 44.199.94.165
+      # - 52.45.185.112
+      # - 52.204.240.12
+  # healthcheck:
+  #   interval: 60s
   # job:
   #   hosts:
   #     - 192.168.0.1
@@ -73,6 +75,7 @@ volumes:
 # version inside the asset_path.
 #
 asset_path: /estudioescoladeanimacao/staticfiles
+
 
 # Configure rolling deploys by setting a wait time between batches of restarts.
 #

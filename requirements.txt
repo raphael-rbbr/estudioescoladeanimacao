@@ -7,7 +7,9 @@ Django==4.2.19
 django-bootstrap-datepicker-plus==5.0.3
 django-bootstrap-v5==1.0.11
 django-phonenumber-field==5.2.0
+et_xmlfile==2.0.0
 gunicorn==20.1.0
+openpyxl==3.1.5
 pdf2image==1.17.0
 phonenumbers==8.13.54
 pillow==11.1.0

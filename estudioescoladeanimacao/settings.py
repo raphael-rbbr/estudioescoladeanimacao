@@ -33,7 +33,7 @@ SECRET_KEY = 'django-insecure-zwt6_ju#u_fmf(46^4tntmd8c%b75nca5d7lt646y!t=*5*lvh
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*', ".awsapprunner.com"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -148,8 +148,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 
-STATIC_URL = "static/"
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 STORAGES = {
     "default": {
@@ -165,9 +165,29 @@ STATICFIELDS_DIRS = [
     BASE_DIR / 'campaings/static'
 ]
 
-# MEDIA FILES
+# Media files
 MEDIA_URL = '/media/'
-MEDIAROOT = BASE_DIR / 'media'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Logging configuration
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': BASE_DIR / 'debug.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -177,11 +197,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # Host for sending e-mail.
-EMAIL_HOST = 'localhost'
+EMAIL_HOST="smtp.gmail.com"
 # Port for sending e-mail.
-EMAIL_PORT = 1025
+EMAIL_PORT=587
 # Optional SMTP authentication information for EMAIL_HOST.
 EMAIL_HOST_USER = 'estudioescoladeanimacao@gmail.com'
 EMAIL_HOST_PASSWORD = 'kszv adke wtdg dqwd'
-EMAIL_USE_TLS = False
+EMAIL_USE_TLS = True
