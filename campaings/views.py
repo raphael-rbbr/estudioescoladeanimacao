@@ -155,6 +155,10 @@ def InscriptionSucess(request):
     return render(request, 'sucess.html')
 
 
+def Rulesview(request):
+    # specify the model to use
+    return render(request, 'rules.html')
+
 
 @login_required(login_url='/admin/')
 def ListInscriprion(request):
